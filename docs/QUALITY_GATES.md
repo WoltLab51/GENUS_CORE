@@ -131,3 +131,52 @@ Overengineering-Risk: low/medium/high
 Documentation-Drift-Risk: low/medium/high
 Decision: accept/harden/stop
 ```
+
+## 9. v0.0.2 Foundation Hardening Gate
+
+`v0.0.2 - Foundation Hardening` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+forbidden objects absent
+ledger append-only verified
+SQLite invariants verified
+model invariants verified
+package version is 0.0.2
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+documentation updated
+no product scope expansion
+```
+
+## 10. v0.0.2 Technical Gate
+
+The following must be tested:
+
+```text
+evidence_records persists EvidenceRecord.
+ledger_entries persists LedgerEntry.
+ledger_entries has UNIQUE(chain_id, step).
+ledger_entries has CHECK(step >= 1).
+truth_status only allows observed, derived, rejected.
+schema_version is persisted and required for persisted v0.0.1 objects.
+Observation confidence only allows low, medium, high.
+Observation scope only allows input, memory, system, worker.
+BeliefStateSnapshot requires Evidence IDs.
+ObservationReport rejects decision/action/execute/approval/reaction/memory_write.
+Unknown GENUS language sentence types are rejected.
+Repeated CLI smoke runs do not collide in the ledger.
+```
+
+## 11. v0.0.2 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+A new product capability appears.
+A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+CLI grows beyond thin composition.
+Domain functions gain hidden persistence side effects.
+Ledger update/delete APIs appear.
+```
