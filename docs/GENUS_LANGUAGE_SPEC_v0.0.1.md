@@ -42,6 +42,26 @@ REPORT
 
 No other sentence type is allowed in v0.0.1.
 
+In `GENUS_CORE v0.0.3`, this allowed set is centralized in code as the minimal
+foundation language:
+
+```text
+WORLD_EVENT
+OBSERVATION
+EVIDENCE
+LEDGER
+BELIEF
+REPORT
+```
+
+Unknown sentence types must be rejected.
+
+v0.0.3 does not change the schema version. `schema_version` remains:
+
+```text
+genus.foundation.v0.0.1
+```
+
 ## 4. Required Common Fields
 
 Every GENUS language object must include:

@@ -119,3 +119,22 @@ Impact:
 
 No product scope expansion is allowed in v0.0.2. The package version may move to
 0.0.2, but the foundation schema version remains `genus.foundation.v0.0.1`.
+
+## Decision 0008 - v0.0.3 centralizes minimal sentence types
+
+Decision:
+
+v0.0.3 centralizes and hardens the minimal internal GENUS sentence types without
+expanding product scope.
+
+Reason:
+
+Before Physics, Map, Transition, Constraint, Reaction, Memory, Worker, Cell,
+Organ, Agent, or LLM concepts exist, GENUS must prevent uncontrolled internal
+vocabulary drift.
+
+Impact:
+
+Only WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, and REPORT are valid
+sentence types in the foundation language. The package version may move to
+0.0.3, but `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.

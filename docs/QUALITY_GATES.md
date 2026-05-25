@@ -180,3 +180,46 @@ CLI grows beyond thin composition.
 Domain functions gain hidden persistence side effects.
 Ledger update/delete APIs appear.
 ```
+
+## 12. v0.0.3 Minimal Language Hardening Gate
+
+`v0.0.3 - Minimal Language Hardening` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+allowed sentence types accepted
+unknown sentence types rejected
+forbidden future sentence types rejected
+package version is 0.0.3
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+forbidden objects absent
+documentation updated
+no product scope expansion
+```
+
+## 13. v0.0.3 Technical Gate
+
+The following must be tested:
+
+```text
+ALLOWED_SENTENCE_TYPES contains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
+validate_sentence_type returns allowed sentence types unchanged.
+validate_sentence_type rejects unknown sentence types.
+validate_sentence_type rejects ACTION, REACTION, EXECUTION, MEMORY_WRITE, PHYSICS, MAP, TRANSITION, CONSTRAINT, AGENT, WORKER, CELL, ORGAN.
+Package version is 0.0.3.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+Existing v0.0.2 hardening tests remain green.
+```
+
+## 14. v0.0.3 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+A parser, DSL, registry, dispatcher, adapter hierarchy, or grammar engine appears.
+A new CLI command appears.
+A new product capability appears.
+A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+```
