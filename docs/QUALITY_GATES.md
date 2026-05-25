@@ -273,3 +273,52 @@ A forbidden v0.1+ artifact appears as class, module, file, import, or public exp
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 observe_event creates Evidence, Ledger, Belief, Report, memory writes, reactions, decisions, transitions, or physics artifacts.
 ```
+
+## 18. v0.0.5 Evidence Boundary Hardening Gate
+
+`v0.0.5 - Evidence Boundary Hardening` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+provenance constrained
+evidence claim present
+belief/action fields absent from evidence payload
+side-effect-free evidence creation
+forbidden objects absent
+package version is 0.0.5
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+documentation updated
+no product scope expansion
+```
+
+## 19. v0.0.5 Technical Gate
+
+The following must be tested:
+
+```text
+create_evidence_record accepts only Observation.
+EvidenceRecord rejects invalid provenance.
+SQLite rejects invalid evidence provenance for newly initialized stores.
+Evidence payload contains evidence_claim = observation_recorded.
+Evidence payload contains source observation type, payload, confidence, and scope.
+Evidence payload does not contain pending_memory_request, decision, action, reaction, or memory_write.
+Evidence remains not Belief and not world truth.
+Evidence creation does not create LedgerEntry, BeliefStateSnapshot, ObservationReport, MemoryWrite, Reaction, Decision, Transition, or Physics artifacts.
+Package version is 0.0.5.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+```
+
+## 20. v0.0.5 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Evidence claims world truth.
+Evidence contains belief, decision, action, reaction, or memory-write fields.
+create_evidence_record writes SQLite, appends Ledger, builds Belief, creates Report, or creates any action-capable object.
+A new CLI command appears.
+A new product capability appears.
+A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+```

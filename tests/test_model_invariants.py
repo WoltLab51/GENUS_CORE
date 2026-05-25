@@ -36,6 +36,15 @@ def test_evidence_record_rejects_invalid_truth_status() -> None:
         )
 
 
+def test_evidence_record_rejects_invalid_provenance() -> None:
+    with pytest.raises(ValueError, match="Invalid provenance"):
+        EvidenceRecord(
+            source_observation_id="obs_1",
+            truth_status="observed",
+            provenance="rumor",
+        )
+
+
 def test_belief_state_snapshot_rejects_empty_evidence_ids() -> None:
     with pytest.raises(ValueError, match="requires at least one EvidenceRecord"):
         BeliefStateSnapshot(scope="memory", source_evidence_ids_json=[])

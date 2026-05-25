@@ -8,6 +8,9 @@ from genus_core.ids import new_id
 from genus_core.time import utc_now_iso
 
 ALLOWED_TRUTH_STATUS = frozenset({"observed", "derived", "rejected"})
+ALLOWED_PROVENANCE = frozenset(
+    {"user_input", "system_event", "runtime_probe", "manual_entry"}
+)
 
 
 @dataclass(frozen=True)
@@ -23,6 +26,8 @@ class EvidenceRecord:
     def __post_init__(self) -> None:
         if self.truth_status not in ALLOWED_TRUTH_STATUS:
             raise ValueError(f"Invalid truth_status: {self.truth_status}")
+        if self.provenance not in ALLOWED_PROVENANCE:
+            raise ValueError(f"Invalid provenance: {self.provenance}")
 
     @property
     def id(self) -> str:

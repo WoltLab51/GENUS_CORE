@@ -188,10 +188,23 @@ Allowed provenance examples:
 
 ```text
 user_input
-system_log
+system_event
 runtime_probe
 manual_entry
 ```
+
+In `GENUS_CORE v0.0.5`, provenance is constrained to:
+
+```text
+user_input
+system_event
+runtime_probe
+manual_entry
+```
+
+An EVIDENCE sentence claims that GENUS recorded an Observation. It does not
+claim that the observed content is world-true, believed, action-ready, or
+memory-worthy.
 
 ## 8. LEDGER
 

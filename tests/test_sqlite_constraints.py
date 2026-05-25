@@ -69,6 +69,34 @@ def test_sqlite_rejects_invalid_truth_status(tmp_path) -> None:
         )
 
 
+def test_sqlite_rejects_invalid_evidence_provenance(tmp_path) -> None:
+    connection = connect(tmp_path / "truth.sqlite3")
+
+    with pytest.raises(sqlite3.IntegrityError):
+        connection.execute(
+            """
+            INSERT INTO evidence_records (
+                evidence_id,
+                source_observation_id,
+                truth_status,
+                provenance,
+                payload_json,
+                created_at,
+                schema_version
+            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                "ev_invalid_provenance",
+                "obs_1",
+                "observed",
+                "rumor",
+                "{}",
+                "2026-05-25T00:00:00Z",
+                SCHEMA_VERSION,
+            ),
+        )
+
+
 def test_sqlite_requires_evidence_schema_version(tmp_path) -> None:
     connection = connect(tmp_path / "truth.sqlite3")
 

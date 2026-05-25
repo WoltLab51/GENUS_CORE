@@ -24,7 +24,14 @@ def initialize_schema(connection: sqlite3.Connection) -> None:
             truth_status TEXT NOT NULL CHECK (
                 truth_status IN ('observed', 'derived', 'rejected')
             ),
-            provenance TEXT NOT NULL,
+            provenance TEXT NOT NULL CHECK (
+                provenance IN (
+                    'user_input',
+                    'system_event',
+                    'runtime_probe',
+                    'manual_entry'
+                )
+            ),
             payload_json TEXT NOT NULL,
             created_at TEXT NOT NULL,
             schema_version TEXT NOT NULL

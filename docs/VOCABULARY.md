@@ -74,6 +74,27 @@ rejected
 
 Allowed in: v0.0.1
 
+For `EvidenceRecord`, `truth_status = observed` means GENUS recorded the source
+Observation. It does not mean the observed content is world-true, believed,
+action-ready, or memory-worthy.
+
+## Provenance
+
+A controlled enum describing where an EvidenceRecord came from.
+
+Allowed values:
+
+```text
+user_input
+system_event
+runtime_probe
+manual_entry
+```
+
+It is not a trust score, belief, decision, action, or proof of world truth.
+
+Allowed in: v0.0.5
+
 ## Confidence
 
 A controlled enum describing observation confidence.

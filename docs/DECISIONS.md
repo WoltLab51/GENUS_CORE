@@ -167,3 +167,25 @@ ambiguous_input_observed
 Observation classification remains side-effect free and must not create
 EvidenceRecord, LedgerEntry, BeliefStateSnapshot, ObservationReport, memory
 writes, reactions, decisions, transitions, or physics artifacts.
+
+## Decision 0010 - v0.0.5 hardens the Evidence boundary
+
+Decision:
+
+v0.0.5 hardens Evidence as a provenance-marked record of Observation, not world
+truth, belief, decision, memory, or action.
+
+Reason:
+
+Before GENUS can derive stronger belief states or introduce later cognitive
+mechanics, the Observation -> EvidenceRecord boundary must prove that evidence
+records only claim that an Observation was recorded with provenance and truth
+status.
+
+Impact:
+
+Evidence payloads include `evidence_claim = "observation_recorded"`, source
+observation type, source observation payload, confidence snapshot, and scope
+snapshot. Evidence payloads must not contain belief, decision, action, reaction,
+or memory-write fields. Provenance is limited to `user_input`, `system_event`,
+`runtime_probe`, and `manual_entry`.
