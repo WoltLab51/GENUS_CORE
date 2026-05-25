@@ -138,3 +138,32 @@ Impact:
 Only WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, and REPORT are valid
 sentence types in the foundation language. The package version may move to
 0.0.3, but `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
+
+## Decision 0009 - v0.0.4 hardens observation classification
+
+Decision:
+
+v0.0.4 hardens deterministic observation classification without introducing
+Meaning, Intent, Parser, LLM, Physics, Transition, Constraint, Reaction, or
+Memory concepts.
+
+Reason:
+
+Before GENUS can measure forces or propose transitions, it must safely classify
+raw WorldEvents into limited and explicit Observations.
+
+Impact:
+
+The allowed observation types are limited to:
+
+```text
+memory_request_observed
+memory_lookup_failure_observed
+guard_block_observed
+unknown_input_observed
+ambiguous_input_observed
+```
+
+Observation classification remains side-effect free and must not create
+EvidenceRecord, LedgerEntry, BeliefStateSnapshot, ObservationReport, memory
+writes, reactions, decisions, transitions, or physics artifacts.

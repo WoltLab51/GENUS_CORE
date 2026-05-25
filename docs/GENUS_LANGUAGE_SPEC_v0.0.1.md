@@ -143,7 +143,22 @@ memory_request_observed
 memory_lookup_failure_observed
 guard_block_observed
 unknown_input_observed
+ambiguous_input_observed
 ```
+
+In `GENUS_CORE v0.0.4`, these are the only allowed observation classifications:
+
+```text
+memory_request_observed
+memory_lookup_failure_observed
+guard_block_observed
+unknown_input_observed
+ambiguous_input_observed
+```
+
+Observation classification is deterministic and non-agentic. It does not create
+Evidence, Belief, decisions, actions, memory writes, reactions, MeaningCandidate,
+Intent, parser objects, LLM calls, or execution paths.
 
 ## 7. EVIDENCE
 

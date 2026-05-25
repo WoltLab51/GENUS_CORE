@@ -10,6 +10,11 @@ import genus_core
 
 FORBIDDEN_OBJECTS = {
     "PhysicsMetric",
+    "Pressure",
+    "Potential",
+    "Cost",
+    "Inhibition",
+    "Stability",
     "CognitiveStateMap",
     "TransitionCandidate",
     "ConstraintDecision",
@@ -21,7 +26,13 @@ FORBIDDEN_OBJECTS = {
     "RuntimeCell",
     "Organ",
     "Agent",
+    "Character",
     "LLM",
+    "Autonomy",
+    "Mutation",
+    "Evolution",
+    "GraphDB",
+    "RuntimeShape",
 }
 
 

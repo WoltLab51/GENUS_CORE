@@ -223,3 +223,53 @@ A new product capability appears.
 A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 ```
+
+## 15. v0.0.4 Observation Classification Hardening Gate
+
+`v0.0.4 - Observation Classification Hardening` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+allowed observation classifications tested
+unsupported events become unknown_input_observed
+incomplete memory requests become ambiguous_input_observed
+observation classification has no side effects
+forbidden objects absent
+package version is 0.0.4
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+documentation updated
+no product scope expansion
+```
+
+## 16. v0.0.4 Technical Gate
+
+The following must be tested:
+
+```text
+user_text "merk dir das: larumipsum" becomes memory_request_observed.
+candidate_content is preserved.
+user_text "merk dir das:" becomes ambiguous_input_observed.
+empty user_text becomes unknown_input_observed.
+memory_lookup_failed becomes memory_lookup_failure_observed.
+guard_blocked_transition becomes guard_block_observed.
+unsupported event_type becomes unknown_input_observed.
+unsupported event_type preserves original_event_type.
+observe_event returns Observation only.
+observe_event does not create EvidenceRecord, LedgerEntry, BeliefStateSnapshot, ObservationReport, MemoryWrite, Reaction, Decision, Transition, or Physics artifacts.
+Package version is 0.0.4.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+```
+
+## 17. v0.0.4 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+MeaningCandidate, Intent, parser, LLM adapter, registry, manager, service class, or orchestrator appears.
+A new CLI command appears.
+A new product capability appears.
+A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+observe_event creates Evidence, Ledger, Belief, Report, memory writes, reactions, decisions, transitions, or physics artifacts.
+```

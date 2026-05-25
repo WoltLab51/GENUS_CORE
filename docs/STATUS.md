@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.0.3 - Minimal Language Hardening`
+Current target: `v0.0.4 - Observation Classification Hardening`
 
-Status: implemented after v0.0.2 release freeze
+Status: implemented after v0.0.3 release freeze
 
 ## Released baselines
 
@@ -20,6 +20,13 @@ Tag: genus-core-v0.0.2-foundation-hardening
 Commit: 44c4dfac04e83455d489d4961ac656f7884e48d8
 ```
 
+`GENUS_CORE v0.0.3 - Minimal Language Hardening` is released and frozen at:
+
+```text
+Tag: genus-core-v0.0.3-minimal-language-hardening
+Commit: ebed5c31bfbbfb112cefcace6c684d7dbee0a107
+```
+
 The only active epistemic chain remains:
 
 ```text
@@ -33,37 +40,14 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.0.3` is Minimal Language Hardening.
+`GENUS_CORE v0.0.4` is Observation Classification Hardening.
 
-It adds no new GENUS capability and no new schema version. It centralizes and
-tests the allowed internal sentence types around the existing v0.0.1 foundation
-language.
+It adds no action, memory, physics, transition, reaction, agent, LLM, or schema
+expansion. It only hardens deterministic classification from WorldEvent to
+Observation.
 
-The package version is `0.0.3`, while `SCHEMA_VERSION` remains
+The package version is `0.0.4`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
-
-## Current principle
-
-GENUS still first distinguishes:
-
-```text
-Observation
-Evidence
-Belief
-Ledger
-Report
-```
-
-before it can introduce:
-
-```text
-Physics
-Map
-Transition
-Constraint
-Reaction
-Memory
-```
 
 ## Explicitly not active
 
@@ -96,10 +80,11 @@ The implementation is accepted only while these remain true:
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.0.3
+Package version is 0.0.4
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-Only WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT are valid sentence types
-Unknown and forbidden future sentence types are rejected
+Observation classification remains deterministic and side-effect free
+Unsupported events become unknown_input_observed
+Incomplete memory requests become ambiguous_input_observed
 Forbidden v0.1+ artifacts do not exist
-No product scope expansion exists in v0.0.3
+No product scope expansion exists in v0.0.4
 ```

@@ -182,3 +182,65 @@ A future concept for language model use.
 
 It is not observation, evidence, belief, report, or truth storage and is
 explicitly forbidden in v0.0.1.
+
+## memory_request_observed
+
+An Observation type for user text that explicitly starts with `merk dir das:`
+and contains memory candidate content.
+
+It is not Evidence, Belief, MemoryWrite, Decision, or Action.
+
+Scope: `memory`
+
+Confidence expectation: `high`
+
+Example: `merk dir das: larumipsum`
+
+## memory_lookup_failure_observed
+
+An Observation type for a `memory_lookup_failed` WorldEvent.
+
+It is not Evidence, Belief, MemoryObject, MemoryWrite, Decision, or Action.
+
+Scope: `memory`
+
+Confidence expectation: `high`
+
+Example: a WorldEvent with `event_type = "memory_lookup_failed"`.
+
+## guard_block_observed
+
+An Observation type for a `guard_blocked_transition` WorldEvent.
+
+It is not ConstraintDecision, TransitionCandidate, Reaction, Decision, or Action.
+
+Scope: `system`
+
+Confidence expectation: `high`
+
+Example: a WorldEvent with `event_type = "guard_blocked_transition"`.
+
+## unknown_input_observed
+
+An Observation type for empty user text or unsupported WorldEvent types.
+
+It is not Meaning, Intent, Evidence, Belief, Decision, or Action.
+
+Scope: `input`
+
+Confidence expectation: `low`
+
+Example: an unsupported WorldEvent with `event_type = "unrecognized_event"`.
+
+## ambiguous_input_observed
+
+An Observation type for input that resembles a known observation pattern but is
+missing required content.
+
+It is not MeaningCandidate, Intent, Evidence, Belief, Decision, or Action.
+
+Scope: `memory`
+
+Confidence expectation: `medium`
+
+Example: `merk dir das:`
