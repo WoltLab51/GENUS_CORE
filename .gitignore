@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+*.egg-info/
+.venv/
+venv/
+*.sqlite3
+.genus_core_truth.sqlite3
