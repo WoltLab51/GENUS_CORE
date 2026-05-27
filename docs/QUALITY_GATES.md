@@ -372,3 +372,61 @@ A new product capability appears.
 A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 ```
+
+## 24. v0.0.7 Belief Derivation Hardening Gate
+
+`v0.0.7 - Belief Derivation Hardening` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+Evidence-only belief input verified
+only observed EvidenceRecords accepted
+unsupported observation types rejected
+missing observation_scope rejected
+mixed scopes rejected
+all source EvidenceRecord IDs preserved exactly and in order
+unsafe Belief payload fields absent
+forbidden objects absent
+package version is 0.0.7
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+documentation updated
+no product scope expansion
+```
+
+## 25. v0.0.7 Technical Gate
+
+The following must be tested:
+
+```text
+build_belief_state_snapshot rejects non-EvidenceRecord input.
+Empty evidence list is rejected.
+truth_status = derived and truth_status = rejected are rejected.
+Missing or invalid evidence_claim is rejected.
+Missing observation_scope is rejected.
+Unsupported observed_observation_type is rejected.
+Mixed or incompatible scopes are rejected.
+All supplied EvidenceRecord IDs are preserved exactly and in input order.
+No EvidenceRecord is silently dropped.
+pending_memory_request is true only when a source type is memory_request_observed.
+ambiguous, unknown, guard, and memory lookup failure evidence derive pending_memory_request = false.
+Belief payload does not contain truth, world_truth, truth_status, generic evidence, decision, approval, action, reaction, constraint, transition, physics, memory_write, execute, or generic candidate.
+Package version is 0.0.7.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+```
+
+## 26. v0.0.7 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Belief derives from rejected or derived EvidenceRecords.
+Belief silently drops any supplied EvidenceRecord.
+Belief mixes scopes without rejection.
+Belief payload contains generic evidence, truth, decision, approval, constraint, action, reaction, transition, physics, memory_write, execute, or generic candidate fields.
+Belief creation writes SQLite, appends Ledger, creates Report, writes memory, reacts, decides, transitions, or measures physics.
+A new CLI command appears.
+A new product capability appears.
+A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+```

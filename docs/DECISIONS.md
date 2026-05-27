@@ -210,3 +210,26 @@ The only allowed Ledger event is `evidence_record_created`, with
 `source_kind = observation` and `target_kind = evidence_record`. Ledger payloads
 must not contain truth, belief, decision, action, reaction, memory, transition,
 or physics fields.
+
+## Decision 0012 - v0.0.7 hardens Belief derivation
+
+Decision:
+
+v0.0.7 hardens BeliefStateSnapshot as a scoped derivation from all supplied
+observed EvidenceRecords, not truth, memory, decision, approval, constraint, or
+action.
+
+Reason:
+
+Belief must remain a derived, inspectable internal state. It must not silently
+drop EvidenceRecords, mix scopes, derive from rejected or derived evidence, or
+become a hidden decision or memory-writing surface.
+
+Impact:
+
+Belief derivation accepts only EvidenceRecords with `truth_status = "observed"`,
+`evidence_claim = "observation_recorded"`, a supported observation type, and an
+`observation_scope`. All source EvidenceRecord IDs are preserved exactly and in
+input order. Generic payload fields such as `evidence`, `truth_status`,
+`decision`, `approval`, `constraint`, `action`, `reaction`, `memory_write`, and
+`candidate` are forbidden in Belief payloads.

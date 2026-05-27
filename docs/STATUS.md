@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.0.6 - Ledger Minimal Lineage Hardening`
+Current target: `v0.0.7 - Belief Derivation Hardening`
 
-Status: implemented after v0.0.5 release freeze
+Status: implemented after v0.0.6 release freeze
 
 ## Released baselines
 
@@ -41,6 +41,13 @@ Tag: genus-core-v0.0.5-evidence-boundary-hardening
 Commit: 1cde6bccaed6c27290284762a5f05b9dd7a1aaad
 ```
 
+`GENUS_CORE v0.0.6 - Ledger Minimal Lineage Hardening` is released and frozen at:
+
+```text
+Tag: genus-core-v0.0.6-ledger-lineage-hardening
+Commit: 2407d153fa91e86796cd9f85cf5fed334f603b74
+```
+
 The only active epistemic chain remains:
 
 ```text
@@ -54,17 +61,13 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.0.6` is Ledger Minimal Lineage Hardening.
+`GENUS_CORE v0.0.7` is Belief Derivation Hardening.
 
-It adds no generic lineage model and no new product scope. It only constrains
-the current real Ledger flow:
+It adds no memory, action, decision, approval, constraint, physics, transition,
+reaction, scoring, ranking, or schema version. It only hardens deterministic
+derivation from observed EvidenceRecords to BeliefStateSnapshot.
 
-```text
-Observation -> EvidenceRecord
-event_type = evidence_record_created
-```
-
-The package version is `0.0.6`, while `SCHEMA_VERSION` remains
+The package version is `0.0.7`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -98,13 +101,13 @@ The implementation is accepted only while these remain true:
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.0.6
+Package version is 0.0.7
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-Ledger event_type is only evidence_record_created
-Ledger source_kind is only observation
-Ledger target_kind is only evidence_record
-LedgerEntry is not source_kind or target_kind
-Ledger remains append-only
+Belief derivation accepts only observed EvidenceRecords
+All source EvidenceRecord IDs are preserved exactly and in input order
+Unsupported observation types are rejected
+Mixed scopes are rejected
+Belief payload contains no generic evidence, truth, decision, approval, constraint, action, reaction, transition, physics, memory_write, execute, or candidate fields
 Forbidden v0.1+ artifacts do not exist
-No product scope expansion exists in v0.0.6
+No product scope expansion exists in v0.0.7
 ```

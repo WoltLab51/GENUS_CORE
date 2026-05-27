@@ -48,6 +48,35 @@ It is GENUS' current internal view derived from evidence.
 
 It is not the world and not Evidence.
 
+In v0.0.7, BeliefStateSnapshot is derived only from observed EvidenceRecords.
+It preserves source EvidenceRecord IDs in `source_evidence_ids_json`, rejects
+mixed evidence scopes, and does not contain generic `evidence`, truth, decision,
+approval, constraint, action, reaction, memory-write, execution, or generic
+candidate fields in its payload.
+
+Allowed in: v0.0.1
+
+## pending_memory_request
+
+A Belief payload field indicating that observed Evidence supports the internal
+state "a memory request is pending".
+
+It may only be true when at least one source EvidenceRecord has
+`observed_observation_type = memory_request_observed`.
+
+It is not a MemoryWrite, approval, action, decision, reaction, or guarantee that
+memory will be stored.
+
+Allowed in: v0.0.1
+
+## source_evidence_ids_json
+
+The required top-level BeliefStateSnapshot field that references all source
+EvidenceRecord IDs used for derivation.
+
+It is not the forbidden generic payload key `evidence`; it is the allowed
+lineage reference field.
+
 Allowed in: v0.0.1
 
 ## ObservationReport

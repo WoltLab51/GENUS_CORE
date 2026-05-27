@@ -265,6 +265,22 @@ Required invariant:
 source_evidence_ids_json must contain at least one EvidenceRecord id.
 ```
 
+In `GENUS_CORE v0.0.7`, BELIEF derivation is limited to observed EvidenceRecords:
+
+```text
+truth_status = observed
+evidence_claim = observation_recorded
+observed_observation_type must be supported
+observation_scope is required
+mixed scopes are rejected
+all source EvidenceRecord IDs are preserved in input order
+```
+
+The BELIEF payload may include `pending_memory_request` and `candidate_content`
+for observed memory requests. It must not include generic `evidence`, truth,
+truth_status, decision, approval, action, reaction, constraint, transition,
+physics, memory_write, execute, or generic `candidate` fields.
+
 ## 10. REPORT
 
 A REPORT sentence records an explanation.
