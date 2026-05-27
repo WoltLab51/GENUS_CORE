@@ -251,3 +251,24 @@ Impact:
 
 ObservationReport may explain Belief and preserve safe lineage references, but
 it may not create new facts, decisions, approvals, actions, or side effects.
+
+## Decision 0014 - v0.0.9 audits foundation freeze readiness
+
+Decision:
+
+v0.0.9 performs a Foundation Freeze Readiness Audit and introduces no new GENUS
+capability.
+
+Reason:
+
+After hardening every boundary in the current foundation chain, GENUS_CORE needs
+one audit-only release to verify release history, language boundaries, public
+function boundaries, forbidden-object absence, and roadmap alignment before
+v0.1.0 freezes the epistemic core.
+
+Impact:
+
+v0.0.9 may change documentation, release metadata, and audit tests. It must not
+change domain function behavior, add public functions, add CLI commands, or
+introduce Physics, Map, Transition, Constraint, Reaction, Memory, Worker, Cell,
+Organ, Agent, LLM, RuntimeShape, GraphDB, or other v0.1+ concepts.

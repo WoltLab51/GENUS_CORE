@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.0.8 - Report Boundary Hardening`
+Current target: `v0.0.9 - Foundation Freeze Readiness Audit`
 
-Status: implemented after v0.0.7 release freeze
+Status: audit-only implementation after v0.0.8 release freeze
 
 ## Released baselines
 
@@ -55,6 +55,13 @@ Tag: genus-core-v0.0.7-belief-derivation-hardening
 Commit: e0ea167167f3cb010b60b497631762b6501b5731
 ```
 
+`GENUS_CORE v0.0.8 - Report Boundary Hardening` is released and frozen at:
+
+```text
+Tag: genus-core-v0.0.8-report-boundary-hardening
+Commit: 4f738f10bf221f2b215f765effab80871b9838bb
+```
+
 The only active epistemic chain remains:
 
 ```text
@@ -68,13 +75,14 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.0.8` is Report Boundary Hardening.
+`GENUS_CORE v0.0.9` is Foundation Freeze Readiness Audit.
 
 It adds no memory, action, decision, approval, constraint, physics, transition,
-reaction, scoring, ranking, or schema version. It only hardens ObservationReport
-as a descriptive explanation of BeliefStateSnapshot.
+reaction, scoring, ranking, domain function behavior, public domain function,
+CLI command, or schema version. It only audits the completed v0.0.x foundation
+for freeze readiness.
 
-The package version is `0.0.8`, while `SCHEMA_VERSION` remains
+The package version is `0.0.9`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -131,4 +139,19 @@ ObservationReport summary remains descriptive and does not imply approval, actio
 ObservationReport creation creates no new Evidence, Ledger, Belief, Memory, Reaction, Decision, Transition, or Physics artifact
 Forbidden v0.1+ artifacts do not exist
 No product scope expansion exists in v0.0.8
+```
+
+For v0.0.9, acceptance additionally requires:
+
+```text
+Package version is 0.0.9
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+Foundation audit document exists
+Roadmap matches the actual v0.0.x hardening history
+Allowed sentence types remain exact
+Public foundation functions remain exact
+Public foundation functions do not reference forbidden future artifacts
+CLI exposes no new domain command
+Forbidden v0.1+ artifacts do not exist
+No product scope expansion exists in v0.0.9
 ```

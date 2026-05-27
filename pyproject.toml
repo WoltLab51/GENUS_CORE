@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.0.8"
+version = "0.0.9"
 description = "GENUS_CORE v0.0.1 Observation Truth Seed"
 readme = "README.md"
 requires-python = ">=3.12"

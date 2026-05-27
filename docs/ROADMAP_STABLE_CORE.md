@@ -1,95 +1,51 @@
 # GENUS_CORE Roadmap to Stable Core
 
-Status: draft
+Status: aligned after v0.0.9 foundation audit
 
-## Stable Core Goal
+## Stable Core Direction
 
-GENUS_CORE becomes stable when it can safely and auditably perform the following chain:
-
-```text
-WorldEvent
-→ Observation
-→ EvidenceRecord
-→ LedgerEntry
-→ BeliefStateSnapshot
-→ PhysicsMetric
-→ CognitiveStateMap
-→ TransitionCandidate
-→ ConstraintDecision
-→ ReactionPreview
-→ Controlled Minimal Reaction
-→ MemoryWrite
-→ MaturationObservation
-```
-
-But it must not start with the full chain.
-
-It must grow through quality-gated phases.
-
-## Phase 0 — Foundation Freeze
-
-Deliver documentation only.
-
-```text
-FOUNDATION_SPEC_v0.0.1.md
-GENUS_LANGUAGE_SPEC_v0.0.1.md
-QUALITY_GATES.md
-BUILD_RULES.md
-VOCABULARY.md
-DECISIONS.md
-STATUS.md
-```
-
-Gate:
-
-```text
-All primitives defined.
-All non-confusions defined.
-All forbidden artifacts listed.
-No implementation before acceptance.
-```
-
-## Phase 1 — v0.0.1 Observation Truth Seed
-
-Scope:
+GENUS_CORE becomes stable by first freezing the epistemic foundation:
 
 ```text
 WorldEvent
-Observation
-EvidenceRecord
-LedgerEntry
-BeliefStateSnapshot
-ObservationReport
+-> Observation
+-> EvidenceRecord
+-> LedgerEntry
+-> BeliefStateSnapshot
+-> ObservationReport
+```
+
+Only after that foundation is audited and frozen may later cognitive physics
+concepts be planned.
+
+## Completed v0.0.x Foundation Path
+
+### v0.0.1 - Observation Truth Seed
+
+Established the first active chain:
+
+```text
+WorldEvent -> Observation -> EvidenceRecord -> LedgerEntry -> BeliefStateSnapshot -> ObservationReport
 ```
 
 Goal:
 
 ```text
-Observation ≠ Evidence ≠ Belief
-Ledger ≠ Truth
-Report ≠ Action
+Observation != Evidence
+Evidence != Belief
+Ledger != Truth
+Report != Action
 ```
 
-## Phase 2 — v0.0.2 Foundation Hardening
+### v0.0.2 - Foundation Hardening
 
-Scope:
+Hardened SQLite constraints, append-only Ledger behavior, enum validation,
+schema persistence, model invariants, CLI smoke behavior, and forbidden-object
+scanning.
 
-```text
-SQLite constraints
-append-only ledger tests
-invalid enum rejection
-store-level invariants
-```
+### v0.0.3 - Minimal Language Hardening
 
-Goal:
-
-```text
-Foundational invariants are technically enforced.
-```
-
-## Phase 3 — v0.0.3 Minimal Language Layer
-
-Scope:
+Centralized the allowed sentence types:
 
 ```text
 WORLD_EVENT
@@ -100,224 +56,95 @@ BELIEF
 REPORT
 ```
 
-Goal:
+### v0.0.4 - Observation Classification Hardening
+
+Hardened deterministic `WorldEvent -> Observation` classification without
+Meaning, Intent, parser, LLM, transition, reaction, memory, or physics.
+
+### v0.0.5 - Evidence Boundary Hardening
+
+Hardened `Observation -> EvidenceRecord` so Evidence records an Observation
+with provenance and truth status, but does not become truth, belief, memory,
+decision, or action.
+
+### v0.0.6 - Ledger Minimal Lineage Hardening
+
+Constrained Ledger to the only real v0.0.x lineage event:
 
 ```text
-Internal GENUS language is versioned and controlled.
+event_type = evidence_record_created
+source_kind = observation
+target_kind = evidence_record
 ```
 
-## Phase 4 — v0.0.4 Physics Seed
+### v0.0.7 - Belief Derivation Hardening
 
-Scope:
+Hardened `EvidenceRecord -> BeliefStateSnapshot` so Belief is derived only from
+all supplied observed EvidenceRecords, preserves source evidence IDs, rejects
+mixed scopes, and remains neither truth nor action.
 
-```text
-belief_confidence
-observation_pressure
-inhibition_hint
-```
+### v0.0.8 - Report Boundary Hardening
 
-Goal:
+Hardened `BeliefStateSnapshot -> ObservationReport` so Report is
+descriptive-only and cannot become decision, approval, action, memory, reaction,
+truth, transition, constraint, or physics surface.
 
-```text
-Belief can generate metrics without generating action.
-```
+### v0.0.9 - Foundation Freeze Readiness Audit
 
-## Phase 5 — v0.0.5 Cognitive Map Seed
+Audits the complete foundation chain, release history, boundary invariants,
+forbidden objects, version/schema invariants, and roadmap alignment.
 
-Scope:
+It adds no new GENUS capability.
 
-```text
-CognitiveStateMap
-```
+## Next Planned Foundation Step
 
-Goal:
-
-```text
-Map is projection, not truth.
-```
-
-## Phase 6 — v0.0.6 Transition Seed
-
-Scope:
-
-```text
-TransitionCandidate
-```
-
-Goal:
-
-```text
-Possibility is represented without action.
-```
-
-## Phase 7 — v0.0.7 Constraint Seed
-
-Scope:
-
-```text
-ConstraintDecision = no_action only
-```
-
-Goal:
-
-```text
-Candidates are constrained before any reaction exists.
-```
-
-## Phase 8 — v0.1.0 Full Passive Cognitive Physics
+### v0.1.0 - Full Epistemic Core Freeze
 
 Scope:
 
 ```text
 WorldEvent
-→ Observation
-→ EvidenceRecord
-→ LedgerEntry
-→ BeliefStateSnapshot
-→ PhysicsMetric
-→ CognitiveStateMap
-→ TransitionCandidate
-→ ConstraintDecision
-→ RegulationReport
+-> Observation
+-> EvidenceRecord
+-> LedgerEntry
+-> BeliefStateSnapshot
+-> ObservationReport
 ```
 
 Goal:
 
 ```text
-Full passive cognition, still no action.
+The complete passive epistemic foundation is frozen as the base for future work.
 ```
 
-## Phase 9 — v0.2.0 Reaction Preview
+v0.1.0 should not introduce Physics, Map, Transition, Constraint, Reaction,
+MemoryWrite, Worker, Cell, Organ, Agent, LLM, RuntimeShape, or GraphDB.
 
-Scope:
+## Later, Not Yet Active
 
-```text
-ReactionPreview
-```
+Future planning may later introduce passive cognitive physics concepts, but
+only after the v0.1.0 foundation freeze is accepted.
 
-Goal:
-
-```text
-GENUS can describe possible reactions but not execute them.
-```
-
-## Phase 10 — v0.3.0 Controlled Minimal Reaction
-
-Scope:
+Still forbidden before explicit future acceptance:
 
 ```text
-ReactionExecution minimal
-explicit allow boundary
-ledger entry required
-```
-
-Goal:
-
-```text
-First controlled effect, still tiny.
-```
-
-## Phase 11 — v0.4.0 Memory Write
-
-Scope:
-
-```text
+PhysicsMetric
+CognitiveStateMap
+TransitionCandidate
+ConstraintDecision
+Reaction
+ReactionExecution
+MemoryWrite
 MemoryObject
-MemoryWrite
-MemoryStore
-```
-
-Goal:
-
-```text
-Memory requires Evidence, Constraint Allow, ReactionExecution, and Ledger.
-```
-
-## Phase 12 — v0.5.0 Maturation Seed
-
-Scope:
-
-```text
-ReactionOutcome
-PatternObservation
-CapabilityNeed
-ImprovementProposal
-```
-
-Goal:
-
-```text
-GENUS observes patterns and proposes improvements without activation.
-```
-
-## Phase 13 — v0.6.0 Function Contract
-
-Scope:
-
-```text
-FunctionContract
-InputSchema
-OutputSchema
-EffectDeclaration
-```
-
-Goal:
-
-```text
-Key functions gain explicit contracts.
-```
-
-## Phase 14 — v0.7.0 Cell Candidate
-
-Scope:
-
-```text
-CellCandidate
-CellIdentity
-CellContract
-CellTrace
-```
-
-Goal:
-
-```text
-A function can become a candidate for a governed capability.
-```
-
-## Phase 15 — v1.0.0 Stable Core
-
-Scope:
-
-```text
-Observation/Evidence/Belief
-Physics
-Map
-Transition
-Constraint
-ReactionPreview
-Controlled Minimal Reaction
-MemoryWrite
-Maturation Proposal
-FunctionContract
-CellCandidate
-```
-
-Goal:
-
-```text
-GENUS has a stable governed core for future organs, workers, LLM adapters, and runtime forms.
-```
-
-Still forbidden at v1.0:
-
-```text
-free agents
-runtime cells
-organ runtime
-autonomous worker execution
-LLM-dispatched internal commands
-self-mutation
-GraphDB as truth
-trading automation
-federation
+Worker
+RuntimeCell
+Organ
+Agent
+Character
+LLM
+Autonomy
+Mutation
+Evolution
+GraphDB
+RuntimeShape
 ```
