@@ -232,6 +232,18 @@ Required invariant:
 (chain_id, step) must be unique.
 ```
 
+In `GENUS_CORE v0.0.6`, Ledger is limited to the current real flow:
+
+```text
+event_type = evidence_record_created
+source_kind = observation
+target_kind = evidence_record
+```
+
+`ledger_entry` is not an allowed source or target kind. Ledger proves lineage
+and sequence only; it does not prove truth, derive belief, decide, act, react,
+write memory, model transitions, or measure physics.
+
 ## 9. BELIEF
 
 A BELIEF sentence records an internal derived state.

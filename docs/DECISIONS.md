@@ -189,3 +189,24 @@ observation type, source observation payload, confidence snapshot, and scope
 snapshot. Evidence payloads must not contain belief, decision, action, reaction,
 or memory-write fields. Provenance is limited to `user_input`, `system_event`,
 `runtime_probe`, and `manual_entry`.
+
+## Decision 0011 - v0.0.6 constrains Ledger to real lineage only
+
+Decision:
+
+v0.0.6 constrains Ledger to the single real current lineage event and does not
+make LedgerEntry itself a provenance source or target.
+
+Reason:
+
+The current v0.0.x runtime only records that an Observation led to creation of
+an EvidenceRecord. Allowing future Ledger event types or LedgerEntry-as-source
+would make the language larger than the system and invite metadata chains that
+do not yet have a real epistemic role.
+
+Impact:
+
+The only allowed Ledger event is `evidence_record_created`, with
+`source_kind = observation` and `target_kind = evidence_record`. Ledger payloads
+must not contain truth, belief, decision, action, reaction, memory, transition,
+or physics fields.

@@ -20,7 +20,7 @@ def test_ledger_is_append_only(tmp_path) -> None:
     duplicate_step = append_ledger_entry(
         chain_id="chain_test",
         step=1,
-        event_type="evidence_record_created_again",
+        event_type="evidence_record_created",
         source_kind="observation",
         source_id="obs_2",
         target_kind="evidence_record",

@@ -7,6 +7,24 @@ from genus_core import SCHEMA_VERSION
 from genus_core.ids import new_id
 from genus_core.time import utc_now_iso
 
+ALLOWED_LEDGER_EVENT_TYPES = frozenset({"evidence_record_created"})
+ALLOWED_LEDGER_SOURCE_KINDS = frozenset({"observation"})
+ALLOWED_LEDGER_TARGET_KINDS = frozenset({"evidence_record"})
+FORBIDDEN_LEDGER_PAYLOAD_FIELDS = frozenset(
+    {
+        "truth",
+        "world_truth",
+        "belief",
+        "pending_memory_request",
+        "decision",
+        "action",
+        "reaction",
+        "transition",
+        "physics",
+        "memory_write",
+    }
+)
+
 
 @dataclass(frozen=True)
 class LedgerEntry:
@@ -25,6 +43,16 @@ class LedgerEntry:
     def __post_init__(self) -> None:
         if self.step < 1:
             raise ValueError("Ledger step must be >= 1")
+        if self.event_type not in ALLOWED_LEDGER_EVENT_TYPES:
+            raise ValueError(f"Invalid ledger event_type: {self.event_type}")
+        if self.source_kind not in ALLOWED_LEDGER_SOURCE_KINDS:
+            raise ValueError(f"Invalid ledger source_kind: {self.source_kind}")
+        if self.target_kind not in ALLOWED_LEDGER_TARGET_KINDS:
+            raise ValueError(f"Invalid ledger target_kind: {self.target_kind}")
+        forbidden = FORBIDDEN_LEDGER_PAYLOAD_FIELDS.intersection(self.payload_json)
+        if forbidden:
+            names = ", ".join(sorted(forbidden))
+            raise ValueError(f"LedgerEntry cannot contain forbidden fields: {names}")
 
     @property
     def id(self) -> str:

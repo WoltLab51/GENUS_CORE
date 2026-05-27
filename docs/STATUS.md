@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.0.5 - Evidence Boundary Hardening`
+Current target: `v0.0.6 - Ledger Minimal Lineage Hardening`
 
-Status: implemented after v0.0.4 release freeze
+Status: implemented after v0.0.5 release freeze
 
 ## Released baselines
 
@@ -34,6 +34,13 @@ Tag: genus-core-v0.0.4-observation-classification-hardening
 Commit: 139ee05e1c6f5a02c430fdce3352fd931f80052f
 ```
 
+`GENUS_CORE v0.0.5 - Evidence Boundary Hardening` is released and frozen at:
+
+```text
+Tag: genus-core-v0.0.5-evidence-boundary-hardening
+Commit: 1cde6bccaed6c27290284762a5f05b9dd7a1aaad
+```
+
 The only active epistemic chain remains:
 
 ```text
@@ -47,12 +54,17 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.0.5` is Evidence Boundary Hardening.
+`GENUS_CORE v0.0.6` is Ledger Minimal Lineage Hardening.
 
-It adds no action, memory, reaction, physics, transition, belief expansion, or
-schema version. It only hardens how Observation becomes EvidenceRecord.
+It adds no generic lineage model and no new product scope. It only constrains
+the current real Ledger flow:
 
-The package version is `0.0.5`, while `SCHEMA_VERSION` remains
+```text
+Observation -> EvidenceRecord
+event_type = evidence_record_created
+```
+
+The package version is `0.0.6`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -86,12 +98,13 @@ The implementation is accepted only while these remain true:
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.0.5
+Package version is 0.0.6
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-EvidenceRecord provenance is constrained
-Evidence payload contains evidence_claim = observation_recorded
-Evidence payload contains no belief, decision, action, reaction, or memory_write fields
-Evidence creation remains side-effect free
+Ledger event_type is only evidence_record_created
+Ledger source_kind is only observation
+Ledger target_kind is only evidence_record
+LedgerEntry is not source_kind or target_kind
+Ledger remains append-only
 Forbidden v0.1+ artifacts do not exist
-No product scope expansion exists in v0.0.5
+No product scope expansion exists in v0.0.6
 ```

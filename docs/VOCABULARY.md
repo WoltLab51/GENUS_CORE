@@ -265,3 +265,44 @@ Scope: `memory`
 Confidence expectation: `medium`
 
 Example: `merk dir das:`
+
+## LedgerEventType
+
+A controlled enum describing why a LedgerEntry exists.
+
+Allowed values in v0.0.6:
+
+```text
+evidence_record_created
+```
+
+It is not a truth claim, belief, decision, action, reaction, transition, or
+physics measurement.
+
+## LedgerSourceKind
+
+A controlled enum describing the source artifact kind for the current Ledger
+lineage event.
+
+Allowed values in v0.0.6:
+
+```text
+observation
+```
+
+It is not `ledger_entry`, world truth, belief, decision, action, reaction,
+transition, or memory write.
+
+## LedgerTargetKind
+
+A controlled enum describing the target artifact kind for the current Ledger
+lineage event.
+
+Allowed values in v0.0.6:
+
+```text
+evidence_record
+```
+
+It is not `ledger_entry`, belief, report, decision, action, reaction,
+transition, or memory write.

@@ -322,3 +322,53 @@ A new product capability appears.
 A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 ```
+
+## 21. v0.0.6 Ledger Minimal Lineage Hardening Gate
+
+`v0.0.6 - Ledger Minimal Lineage Hardening` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+real-flow-only ledger event and kinds verified
+ledger append-only verified
+forbidden ledger payload fields rejected
+forbidden objects absent
+package version is 0.0.6
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+documentation updated
+no product scope expansion
+```
+
+## 22. v0.0.6 Technical Gate
+
+The following must be tested:
+
+```text
+Ledger event_type only allows evidence_record_created.
+Ledger source_kind only allows observation.
+Ledger target_kind only allows evidence_record.
+ledger_entry is rejected as source_kind and target_kind.
+Duplicate chain_id/step is rejected.
+step = 0 is rejected.
+Ledger payload rejects truth, world_truth, belief, pending_memory_request, decision, action, reaction, transition, physics, memory_write.
+append_ledger_entry creates only LedgerEntry and has no SQLite side effects.
+SQLite rejects invalid ledger event_type, source_kind, and target_kind for newly initialized stores.
+Package version is 0.0.6.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+```
+
+## 23. v0.0.6 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+LedgerEntry becomes an allowed source_kind or target_kind.
+Future ledger event types appear before there is a real flow for them.
+Ledger payload contains truth, belief, decision, action, reaction, memory, transition, or physics fields.
+Ledger update/delete APIs appear.
+A new CLI command appears.
+A new product capability appears.
+A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+```

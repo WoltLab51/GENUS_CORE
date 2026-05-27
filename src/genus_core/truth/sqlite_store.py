@@ -44,10 +44,16 @@ def initialize_schema(connection: sqlite3.Connection) -> None:
             ledger_id TEXT PRIMARY KEY,
             chain_id TEXT NOT NULL,
             step INTEGER NOT NULL CHECK (step >= 1),
-            event_type TEXT NOT NULL,
-            source_kind TEXT NOT NULL,
+            event_type TEXT NOT NULL CHECK (
+                event_type IN ('evidence_record_created')
+            ),
+            source_kind TEXT NOT NULL CHECK (
+                source_kind IN ('observation')
+            ),
             source_id TEXT NOT NULL,
-            target_kind TEXT,
+            target_kind TEXT NOT NULL CHECK (
+                target_kind IN ('evidence_record')
+            ),
             target_id TEXT,
             payload_json TEXT NOT NULL,
             created_at TEXT NOT NULL,
