@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.0.7 - Belief Derivation Hardening`
+Current target: `v0.0.8 - Report Boundary Hardening`
 
-Status: implemented after v0.0.6 release freeze
+Status: implemented after v0.0.7 release freeze
 
 ## Released baselines
 
@@ -48,6 +48,13 @@ Tag: genus-core-v0.0.6-ledger-lineage-hardening
 Commit: 2407d153fa91e86796cd9f85cf5fed334f603b74
 ```
 
+`GENUS_CORE v0.0.7 - Belief Derivation Hardening` is released and frozen at:
+
+```text
+Tag: genus-core-v0.0.7-belief-derivation-hardening
+Commit: e0ea167167f3cb010b60b497631762b6501b5731
+```
+
 The only active epistemic chain remains:
 
 ```text
@@ -61,13 +68,13 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.0.7` is Belief Derivation Hardening.
+`GENUS_CORE v0.0.8` is Report Boundary Hardening.
 
 It adds no memory, action, decision, approval, constraint, physics, transition,
-reaction, scoring, ranking, or schema version. It only hardens deterministic
-derivation from observed EvidenceRecords to BeliefStateSnapshot.
+reaction, scoring, ranking, or schema version. It only hardens ObservationReport
+as a descriptive explanation of BeliefStateSnapshot.
 
-The package version is `0.0.7`, while `SCHEMA_VERSION` remains
+The package version is `0.0.8`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -110,4 +117,18 @@ Mixed scopes are rejected
 Belief payload contains no generic evidence, truth, decision, approval, constraint, action, reaction, transition, physics, memory_write, execute, or candidate fields
 Forbidden v0.1+ artifacts do not exist
 No product scope expansion exists in v0.0.7
+```
+
+For v0.0.8, acceptance additionally requires:
+
+```text
+Package version is 0.0.8
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+ObservationReport accepts only BeliefStateSnapshot input through create_observation_report
+ObservationReport has a source_state_id
+ObservationReport payload rejects decision, action, approval, memory, truth, policy, constraint, transition, and physics fields
+ObservationReport summary remains descriptive and does not imply approval, action taken, execution, memory written, or reaction created
+ObservationReport creation creates no new Evidence, Ledger, Belief, Memory, Reaction, Decision, Transition, or Physics artifact
+Forbidden v0.1+ artifacts do not exist
+No product scope expansion exists in v0.0.8
 ```

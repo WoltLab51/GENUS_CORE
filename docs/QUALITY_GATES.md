@@ -430,3 +430,51 @@ A new product capability appears.
 A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 ```
+
+## 27. v0.0.8 Report Boundary Hardening Gate
+
+`v0.0.8 - Report Boundary Hardening` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+create_observation_report accepts only BeliefStateSnapshot
+report has source_state_id
+report payload forbidden fields rejected
+report summary does not imply action taken, approval, execution, memory written, or reaction created
+report creates no new artifacts
+forbidden objects absent
+package version is 0.0.8
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+documentation updated
+no product scope expansion
+```
+
+## 28. v0.0.8 Technical Gate
+
+The following must be tested:
+
+```text
+create_observation_report rejects non-BeliefStateSnapshot input.
+ObservationReport rejects empty or invalid source_state_id.
+ObservationReport payload rejects decision, action, execute, approval, reaction, memory_write, memory, memory_object, constraint, transition, candidate, physics, metric, truth, truth_status, world_truth, evidence_claim, policy, allow, block, approved, and rejected_by_policy.
+Report payload does not contain truth, truth_status, world_truth, or evidence_claim.
+Report summary remains descriptive.
+Report creation creates only ObservationReport.
+Package version is 0.0.8.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+```
+
+## 29. v0.0.8 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+ObservationReport becomes a decision, approval, action, memory, reaction, truth, transition, constraint, or physics surface.
+Report payload contains action, approval, execution, memory, truth, policy, transition, constraint, or physics fields.
+Report creation writes SQLite, appends Ledger, creates Evidence, creates Belief, writes memory, reacts, decides, transitions, or measures physics.
+A new CLI command appears.
+A new product capability appears.
+A forbidden v0.1+ artifact appears as class, module, file, import, or public export.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+```

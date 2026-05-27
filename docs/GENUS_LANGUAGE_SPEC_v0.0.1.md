@@ -283,7 +283,7 @@ physics, memory_write, execute, or generic `candidate` fields.
 
 ## 10. REPORT
 
-A REPORT sentence records an explanation.
+A REPORT sentence records a descriptive-only explanation of a BeliefStateSnapshot.
 
 Required fields:
 
@@ -305,7 +305,29 @@ execute
 approval
 reaction
 memory_write
+memory
+memory_object
+constraint
+transition
+candidate
+physics
+metric
+truth
+truth_status
+world_truth
+evidence_claim
+policy
+allow
+block
+approved
+rejected_by_policy
 ```
+
+In `GENUS_CORE v0.0.8`, REPORT may explain `source_state_id`,
+`pending_memory_request`, optional `candidate_content`, and safe source evidence
+lineage. REPORT must not decide, approve, execute, react, write memory, create
+new truth, create new belief, trigger transitions, apply constraints, or measure
+physics. No new sentence types are introduced.
 
 ## 11. Forbidden Language in v0.0.1
 

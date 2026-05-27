@@ -81,13 +81,49 @@ Allowed in: v0.0.1
 
 ## ObservationReport
 
-A human-readable explanation of what was observed, stored as evidence, and derived as belief.
+A human-readable explanation of a BeliefStateSnapshot.
 
-It explains.
+It explains the current derived Belief and may include safe lineage references.
 
-It does not decide, approve, execute, react, or write memory.
+It does not decide, approve, execute, react, write memory, create truth, create
+Belief, create Evidence, append Ledger, transition, constrain, or measure
+physics.
 
 Allowed in: v0.0.1
+
+## source_state_id
+
+The required ObservationReport field referencing the BeliefStateSnapshot being
+explained.
+
+It is not a decision target, action target, approval target, memory target, or
+new truth claim.
+
+Allowed in: v0.0.1
+
+## report payload
+
+The structured ObservationReport payload containing only descriptive metadata
+and safe lineage references.
+
+It may include `no_action_possible`, `pending_memory_request`,
+`candidate_content`, and `source_evidence_ids` when those are descriptive.
+
+It must not contain decision, action, execute, approval, reaction, memory_write,
+memory, memory_object, constraint, transition, candidate, physics, metric,
+truth, truth_status, world_truth, evidence_claim, policy, allow, block,
+approved, or rejected_by_policy fields.
+
+Allowed in: v0.0.8
+
+## descriptive-only report
+
+An ObservationReport that explains Belief without granting permission, choosing
+an action, writing memory, creating a reaction, or asserting world truth.
+
+It is not a hidden control surface.
+
+Allowed in: v0.0.8
 
 ## TruthStatus
 

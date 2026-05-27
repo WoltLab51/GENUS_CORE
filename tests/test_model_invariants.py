@@ -50,6 +50,17 @@ def test_belief_state_snapshot_rejects_empty_evidence_ids() -> None:
         BeliefStateSnapshot(scope="memory", source_evidence_ids_json=[])
 
 
+@pytest.mark.parametrize("source_state_id", ["", "   ", None])
+def test_observation_report_rejects_invalid_source_state_id(
+    source_state_id: str | None,
+) -> None:
+    with pytest.raises(ValueError, match="requires source_state_id"):
+        ObservationReport(
+            source_state_id=source_state_id,  # type: ignore[arg-type]
+            summary="Invalid report",
+        )
+
+
 @pytest.mark.parametrize("field_name", sorted(FORBIDDEN_REPORT_FIELDS))
 def test_observation_report_rejects_every_forbidden_payload_field(
     field_name: str,

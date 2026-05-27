@@ -233,3 +233,21 @@ Belief derivation accepts only EvidenceRecords with `truth_status = "observed"`,
 input order. Generic payload fields such as `evidence`, `truth_status`,
 `decision`, `approval`, `constraint`, `action`, `reaction`, `memory_write`, and
 `candidate` are forbidden in Belief payloads.
+
+## Decision 0013 - v0.0.8 hardens Report as descriptive-only
+
+Decision:
+
+v0.0.8 hardens ObservationReport as a descriptive-only explanation of
+BeliefStateSnapshot.
+
+Reason:
+
+The final artifact in the v0.0.x epistemic chain must not become a hidden
+decision, approval, action, memory, reaction, truth, transition, constraint, or
+physics surface.
+
+Impact:
+
+ObservationReport may explain Belief and preserve safe lineage references, but
+it may not create new facts, decisions, approvals, actions, or side effects.
