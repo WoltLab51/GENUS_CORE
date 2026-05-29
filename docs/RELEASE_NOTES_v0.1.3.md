@@ -77,7 +77,7 @@ CLI smoke test is green
 Passive Metric Acceptance Criteria are documented
 accepted read surface is limited
 forbidden metric effects are documented
-exact output shape is deferred to v0.1.4
+exact output shape is deferred to v0.1.5
 metric implementation artifacts remain absent from src/genus_core
 allowed sentence types remain unchanged
 public foundation functions remain unchanged

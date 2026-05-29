@@ -98,11 +98,11 @@ def test_acceptance_criteria_forbid_effects() -> None:
         assert phrase in text
 
 
-def test_metric_output_shape_is_deferred_to_v0_1_4() -> None:
+def test_metric_output_shape_is_deferred_to_v0_1_5() -> None:
     text = CRITERIA_PATH.read_text(encoding="utf-8")
 
     assert "passive descriptive label plus explanation only" in text
-    assert "exact output shape is deferred to v0.1.4" in text
+    assert "exact output shape is deferred to v0.1.5" in text
 
 
 def test_metric_implementation_artifacts_remain_absent_from_src() -> None:

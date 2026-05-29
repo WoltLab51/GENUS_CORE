@@ -57,7 +57,7 @@ A future passive metric may produce only:
 passive descriptive label plus explanation only
 ```
 
-The exact output shape is deferred to v0.1.4.
+The exact output shape is deferred to v0.1.5.
 
 v0.1.3 does not define fields, schemas, classes, records, persistence, sentence
 types, numeric scores, or enum values for metric output.

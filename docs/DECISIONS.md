@@ -358,3 +358,25 @@ roadmap/status documentation, and tests proving metric implementation remains
 absent. It must not add metric output schemas, metric models, metric records,
 metric functions, metric persistence, sentence types, CLI commands, domain
 behavior, or product capability.
+
+## Decision 0019 - v0.1.4 adds a minimal CI release integrity gate
+
+Decision:
+
+v0.1.4 adds a minimal GitHub Actions CI gate without changing GENUS_CORE
+product behavior.
+
+Reason:
+
+The frozen foundation and pre-Physics documentation line are now valuable
+enough that every push and pull request to `main` should automatically prove
+pytest and the CLI smoke path still pass. This protects the existing local
+quality gates before any future metric output shape or passive Physics work.
+
+Impact:
+
+v0.1.4 may change release metadata, documentation, tests, and GitHub Actions
+workflow configuration. It must not add coverage, linting, formatting, matrix
+builds, caching, release automation, deployment, metric output shape, metric
+models, metric functions, sentence types, CLI commands, domain behavior, or
+product capability.

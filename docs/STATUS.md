@@ -1,8 +1,9 @@
 # GENUS_CORE Status
 
-Current target: `v0.1.3 - Passive Metric Acceptance Criteria`
+Current target: `v0.1.4 - Release Integrity & CI Gate`
 
-Status: acceptance-criteria-only step after v0.1.2 Passive Metric Vocabulary
+Status: CI-only release integrity step after v0.1.3 Passive Metric Acceptance
+Criteria.
 
 ## Released baselines
 
@@ -54,6 +55,10 @@ Commit: f32aa894f34efbdc4fb007a709f4961a6f4e9731
 v0.1.2 Passive Metric Vocabulary
 Tag: genus-core-v0.1.2-passive-metric-vocabulary
 Commit: 96d9176e3020cea8c20a2fd8e7d835292fb60160
+
+v0.1.3 Passive Metric Acceptance Criteria
+Tag: genus-core-v0.1.3-passive-metric-acceptance-criteria
+Commit: 38e0aa8569dce2d7463ff0db972cf6c77f2c7f18
 ```
 
 ## Frozen foundation chain
@@ -71,15 +76,18 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.3` is Passive Metric Acceptance Criteria.
+`GENUS_CORE v0.1.4` is Release Integrity & CI Gate.
+
+It adds a minimal GitHub Actions workflow that installs the package with dev
+dependencies, runs pytest, and runs the existing CLI smoke command with
+`GENUS_CORE_TRUTH_DB` set under runner temp.
 
 It adds no active Physics, metric model, metric record, metric function, metric
 output shape, metric persistence, memory, action, decision, approval,
 constraint, transition, reaction, domain function behavior, public domain
-function, CLI command, sentence type, or schema version. It only defines
-acceptance criteria for future passive metrics in docs and tests.
+function, CLI command, sentence type, or schema version.
 
-The package version is `0.1.3`, while `SCHEMA_VERSION` remains
+The package version is `0.1.4`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -111,25 +119,24 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.3 Acceptance Criteria Acceptance
+## v0.1.4 CI Gate Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.3
+Package version is 0.1.4
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-PASSIVE_METRIC_ACCEPTANCE_CRITERIA_v0.1.3.md exists
-pressure, inhibition, and stability are first future implementation candidates
-cost and potential remain excluded from first implementation
-Allowed read surface is limited to BeliefStateSnapshot, source_evidence_ids_json, and safe descriptive foundation payload fields
-Output category is passive descriptive label plus explanation only
-Exact output shape is deferred to v0.1.4
-Forbidden effects include Ledger writes, Evidence creation, Belief mutation, Report triggering, TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, prioritization, recommendation, permission, activation, action, and truth creation
-No metric implementation artifacts exist in src/genus_core
+GitHub Actions workflow exists
+CI uses ubuntu-latest
+CI uses actions/checkout and actions/setup-python
+CI uses Python 3.12
+CI runs only install, pytest, and CLI smoke
+CI sets GENUS_CORE_TRUTH_DB under runner temp
+CI does not add coverage, linting, formatting, matrix builds, caching, release automation, or deployment
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.3
+No product scope expansion exists in v0.1.4
 ```

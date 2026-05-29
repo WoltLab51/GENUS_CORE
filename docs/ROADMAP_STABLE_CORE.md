@@ -166,9 +166,25 @@ cost
 potential
 ```
 
-The exact metric output shape is deferred to v0.1.4.
+The exact metric output shape is deferred to v0.1.5.
 
-### v0.1.4 - Passive Metric Output Shape
+### v0.1.4 - Release Integrity & CI Gate
+
+Adds a minimal GitHub Actions gate for the frozen foundation and pre-Physics
+documentation line.
+
+CI runs only:
+
+```text
+install
+pytest
+CLI smoke
+```
+
+It does not add coverage, linting, formatting, matrix builds, caching, release
+automation, deployment, metric output shape, or product behavior.
+
+### v0.1.5 - Passive Metric Output Shape
 
 Planned next step: define the exact passive metric output shape without
 implementing metrics.
@@ -176,7 +192,7 @@ implementing metrics.
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
-only after v0.1.1, v0.1.2, v0.1.3, and v0.1.4 are accepted.
+only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, and v0.1.5 are accepted.
 
 ## Later, Not Yet Active
 

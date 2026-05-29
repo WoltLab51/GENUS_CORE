@@ -696,7 +696,7 @@ pressure, inhibition, and stability are first future implementation candidates
 cost and potential remain excluded from first implementation
 allowed read surface is limited
 forbidden effects are documented
-exact metric output shape is deferred to v0.1.4
+exact metric output shape is deferred to v0.1.5
 metric implementation artifacts remain absent from src/genus_core
 allowed sentence types unchanged
 public foundation functions unchanged
@@ -717,7 +717,7 @@ pressure, inhibition, and stability are accepted future first candidates.
 cost and potential remain excluded from first implementation.
 Allowed read surface is limited to BeliefStateSnapshot, source_evidence_ids_json, and safe descriptive foundation payload fields.
 Forbidden effects include Ledger writes, Evidence creation, Belief mutation, Report triggering, TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, prioritization, recommendation, permission, activation, action, and truth creation.
-Exact metric output shape is explicitly deferred to v0.1.4.
+Exact metric output shape is explicitly deferred to v0.1.5.
 Metric implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
 ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
@@ -739,4 +739,59 @@ Domain function behavior changes.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 Docs describe passive metrics as active in v0.1.3.
 cost or potential are admitted into first implementation.
+```
+
+## 45. v0.1.4 Release Integrity & CI Gate
+
+`v0.1.4 - Release Integrity & CI Gate` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.4
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+GitHub Actions workflow exists
+CI uses ubuntu-latest
+CI uses actions/checkout and actions/setup-python
+CI uses Python 3.12
+CI runs only install, pytest, and CLI smoke
+CI sets GENUS_CORE_TRUTH_DB under runner temp
+documentation updated
+no product scope expansion
+```
+
+## 46. v0.1.4 Technical Gate
+
+The following must be tested:
+
+```text
+Package version is 0.1.4.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+.github/workflows/ci.yml exists.
+Workflow uses ubuntu-latest.
+Workflow uses actions/checkout and actions/setup-python.
+Workflow sets Python version to 3.12.
+Workflow runs python -m pip install -e ".[dev]".
+Workflow runs python -m pytest.
+Workflow runs python -m genus_core.cli observe "merk dir das: larumipsum".
+Workflow sets GENUS_CORE_TRUTH_DB to a path under runner temp.
+Workflow does not add coverage, linting, formatting, matrix builds, caching, release automation, or deployment.
+Existing v0.1.3 tests remain green.
+```
+
+## 47. v0.1.4 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Domain function behavior changes.
+A public domain function is added, removed, or repurposed.
+A new CLI command appears.
+A new product capability appears.
+Metric output shape is implemented or frozen.
+PhysicsMetric or any metric model appears.
+A metric function, metric record, metric persistence, or metric sentence type appears.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+CI adds coverage, linting, formatting, matrix builds, caching, release automation, or deployment.
+Docs describe passive metrics as active in v0.1.4.
 ```
