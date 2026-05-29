@@ -69,8 +69,8 @@ def _snake_case(name: str) -> str:
     return re.sub(r"(?<!^)(?=[A-Z])", "_", name).lower()
 
 
-def test_v0_1_0_version_and_foundation_schema_are_frozen() -> None:
-    assert genus_core.__version__ == "0.1.0"
+def test_current_version_and_foundation_schema_are_frozen() -> None:
+    assert genus_core.__version__ == "0.1.1"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"
 
 

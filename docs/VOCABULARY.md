@@ -371,3 +371,48 @@ evidence_record
 
 It is not `ledger_entry`, belief, report, decision, action, reaction,
 transition, or memory write.
+
+## passive measure
+
+A planned future concept for describing a derived state without decision,
+priority, execution, reaction, memory write, transition, constraint, or truth
+creation.
+
+It is planned, not active in v0.1.1.
+
+## pressure
+
+A planned future passive metric concept for describing accumulated demand or
+tension in an internal state.
+
+It is not active in v0.1.1 and is not a decision, priority, action, transition,
+constraint, or truth claim.
+
+## inhibition
+
+A planned future passive metric concept for describing resistance or blocking
+signals in an internal state.
+
+It is not active in v0.1.1 and is not ConstraintDecision, action, reaction,
+transition, or policy.
+
+## stability
+
+A planned future passive metric concept for describing whether an internal state
+appears steady or fragile.
+
+It is not active in v0.1.1 and is not approval, decision, action, or truth.
+
+## cost
+
+A higher-risk planned future passive metric concept.
+
+It is not active in v0.1.1. Because cost can drift toward prioritization and
+decision matrices, it requires later acceptance before implementation.
+
+## potential
+
+A higher-risk planned future passive metric concept.
+
+It is not active in v0.1.1. Because potential can drift toward transition
+selection, it requires later acceptance before implementation.

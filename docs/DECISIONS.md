@@ -292,3 +292,25 @@ Impact:
 v0.1.0 may change release metadata, README/status documentation, release notes,
 and freeze tests. It must not change domain function behavior, add public
 functions, add CLI commands, change `SCHEMA_VERSION`, or expand product scope.
+
+## Decision 0016 - v0.1.1 defines Pre-Physics requirements only
+
+Decision:
+
+v0.1.1 defines requirements for a future passive Physics layer without
+implementing Physics.
+
+Reason:
+
+Physics is the first planned layer that can introduce measurements such as
+pressure, inhibition, stability, cost, or potential. Those concepts are closer
+to prioritization, transition reasoning, and eventual action than the frozen
+foundation. GENUS_CORE must define their boundaries before any metric code
+exists.
+
+Impact:
+
+v0.1.1 may change release metadata, requirements documentation, roadmap/status
+documentation, vocabulary entries marked as planned, and tests proving Physics
+remains absent. It must not add `PhysicsMetric`, metric records, metric
+functions, sentence types, CLI commands, domain behavior, or product capability.

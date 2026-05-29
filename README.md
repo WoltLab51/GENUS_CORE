@@ -1,8 +1,8 @@
 # GENUS_CORE
 
-`GENUS_CORE v0.1.0` is the Full Epistemic Core Freeze.
+`GENUS_CORE v0.1.1` is Pre-Physics Requirements.
 
-It freezes the passive foundation chain:
+It keeps the `v0.1.0` passive foundation frozen:
 
 ```text
 WorldEvent
@@ -13,9 +13,10 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release does not implement agents, workers, LLM calls, memory writes,
-reactions, decisions, physics metrics, cognitive maps, transition candidates,
-constraint decisions, runtime cells, organs, or GraphDB truth.
+This release adds requirements for future passive Physics work only. It does not
+implement agents, workers, LLM calls, memory writes, reactions, decisions,
+physics metrics, cognitive maps, transition candidates, constraint decisions,
+runtime cells, organs, or GraphDB truth.
 
 ## Install
 
@@ -58,5 +59,5 @@ The report explains what was observed, recorded, and derived. It does not
 decide, approve, execute, react, write memory, create truth, transition,
 constrain, or measure physics.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.1.0 is a release freeze,
-not a schema expansion.
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.1.1 is a requirements
+release, not a schema expansion.

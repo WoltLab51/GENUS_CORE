@@ -574,3 +574,52 @@ A forbidden future artifact appears as class, module, file, import, public expor
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 README, STATUS, release notes, or roadmap describe Physics as active in v0.1.0.
 ```
+
+## 36. v0.1.1 Pre-Physics Requirements Gate
+
+`v0.1.1 - Pre-Physics Requirements` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.1
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PRE_PHYSICS_REQUIREMENTS_v0.1.1.md exists
+passive measure boundaries documented
+Physics artifacts remain absent from src/genus_core
+allowed sentence types unchanged
+public foundation functions unchanged
+CLI exposes only observe
+documentation updated
+no product scope expansion
+```
+
+## 37. v0.1.1 Technical Gate
+
+The following must be tested:
+
+```text
+Package version is 0.1.1.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+Pre-Physics requirements explicitly state that passive measures do not decide, prioritize, execute, react, write memory, transition, constrain, or create truth.
+PhysicsMetric, Pressure, Potential, Cost, Inhibition, and Stability remain absent from src/genus_core as classes, modules, files, imports, public exports, and public function references.
+ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
+Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
+CLI exposes only observe.
+Existing v0.1.0 tests remain green.
+```
+
+## 38. v0.1.1 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+PhysicsMetric or any metric model appears.
+Pressure, Potential, Cost, Inhibition, or Stability appears as active code.
+A metric function, metric record, or metric sentence type appears.
+A new CLI command appears.
+A new product capability appears.
+Domain function behavior changes.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+Docs describe Physics as active in v0.1.1.
+```

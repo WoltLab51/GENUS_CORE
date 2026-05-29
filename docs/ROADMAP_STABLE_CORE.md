@@ -118,10 +118,29 @@ The complete passive epistemic foundation is frozen as the base for future work.
 v0.1.0 does not introduce Physics, Map, Transition, Constraint, Reaction,
 MemoryWrite, Worker, Cell, Organ, Agent, LLM, RuntimeShape, or GraphDB.
 
+### v0.1.1 - Pre-Physics Requirements
+
+Defines requirements for future passive Physics without implementing metrics,
+metric records, metric functions, or new sentence types.
+
+Likely first passive concepts are `pressure`, `inhibition`, and `stability`.
+Higher-risk planned concepts are `cost` and `potential`.
+
+### v0.1.2 - Passive Metric Vocabulary
+
+Planned next step: define the passive metric vocabulary more precisely while
+still keeping metric implementation inactive.
+
+### v0.2.0 - Passive Physics Seed
+
+Planned later step: first implementation of accepted passive Physics concepts,
+only after v0.1.1 and v0.1.2 requirements are accepted.
+
 ## Later, Not Yet Active
 
 Future planning may later introduce passive cognitive physics concepts, but
-only after the v0.1.0 foundation freeze is accepted.
+only after the v0.1.0 foundation freeze and pre-Physics requirements are
+accepted.
 
 Still forbidden before explicit future acceptance:
 
