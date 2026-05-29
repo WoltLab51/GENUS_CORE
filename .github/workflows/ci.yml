@@ -29,4 +29,5 @@ jobs:
       - name: CLI smoke
         env:
           GENUS_CORE_TRUTH_DB: ${{ runner.temp }}/genus_core_truth.sqlite3
-        run: python -m genus_core.cli observe "merk dir das: larumipsum"
+        run: |
+          python -m genus_core.cli observe "merk dir das: larumipsum"

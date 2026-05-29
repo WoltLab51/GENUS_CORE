@@ -102,11 +102,10 @@ The package version is `0.1.7`, while `SCHEMA_VERSION` remains
 
 Local pytest and CLI smoke checks are green for the cleanup state.
 
-The latest GitHub Actions runs on `main` for commit
-`f0bcd1b23212daf1435939576ccc2287663fe35f` still report `failure`, while the
-Jobs API reports `total_count = 0` for the latest run. Treat this as an external
-GitHub Actions signal to rerun or inspect after the cleanup is pushed, not as a
-local pytest failure.
+GitHub Actions initially failed before creating jobs because the CLI smoke
+command used a YAML plain scalar containing `das: larumipsum`. The workflow now
+uses a block scalar for the smoke command so the colon remains part of the CLI
+argument.
 
 ## Explicitly not active
 
