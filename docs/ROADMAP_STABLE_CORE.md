@@ -186,13 +186,32 @@ automation, deployment, metric output shape, or product behavior.
 
 ### v0.1.5 - Passive Metric Output Shape
 
-Planned next step: define the exact passive metric output shape without
+Defines the exact planned-not-active passive metric output shape without
 implementing metrics.
+
+The first output metric names are limited to:
+
+```text
+pressure
+inhibition
+stability
+```
+
+The output shape separates `level` from `assessment_status` so `none` does not
+mean insufficient input.
+
+`cost` and `potential` remain excluded from the first output shape.
+
+### v0.1.6 - Passive Metric Safety Audit
+
+Planned next step: audit requirements, vocabulary, acceptance criteria, output
+shape, CI, forbidden-object absence, and non-agentic metric boundaries before
+the first passive Physics implementation.
 
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
-only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, and v0.1.5 are accepted.
+only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, and v0.1.6 are accepted.
 
 ## Later, Not Yet Active
 

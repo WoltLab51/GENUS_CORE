@@ -380,3 +380,24 @@ workflow configuration. It must not add coverage, linting, formatting, matrix
 builds, caching, release automation, deployment, metric output shape, metric
 models, metric functions, sentence types, CLI commands, domain behavior, or
 product capability.
+
+## Decision 0020 - v0.1.5 defines passive metric output shape only
+
+Decision:
+
+v0.1.5 defines the planned-not-active output shape for future passive metrics
+without implementing metrics.
+
+Reason:
+
+Before passive Physics can exist, GENUS_CORE must define how future metric
+results may describe state without becoming scores, priorities,
+recommendations, permissions, transitions, decisions, actions, or memory-write
+surfaces. `level = none` must also stay distinct from insufficient input.
+
+Impact:
+
+v0.1.5 may change release metadata, output-shape documentation, roadmap/status
+documentation, and tests proving metric implementation remains absent. It must
+not add metric classes, metric records, metric functions, metric persistence,
+sentence types, CLI commands, domain behavior, or product capability.

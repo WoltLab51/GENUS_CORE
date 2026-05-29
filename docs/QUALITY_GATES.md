@@ -795,3 +795,67 @@ SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 CI adds coverage, linting, formatting, matrix builds, caching, release automation, or deployment.
 Docs describe passive metrics as active in v0.1.4.
 ```
+
+## 48. v0.1.5 Passive Metric Output Shape Gate
+
+`v0.1.5 - Passive Metric Output Shape` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.5
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PASSIVE_METRIC_OUTPUT_SHAPE_v0.1.5.md exists
+metric_name values are limited to pressure, inhibition, stability
+cost and potential remain excluded from first output shape
+level values are limited to none, low, medium, high
+assessment_status values are limited to assessed, insufficient_input, not_applicable
+none does not mean insufficient input
+explanation is descriptive-only
+source_evidence_ids_json is lineage only
+metric output implementation artifacts remain absent from src/genus_core
+documentation updated
+no product scope expansion
+```
+
+## 49. v0.1.5 Technical Gate
+
+The following must be tested:
+
+```text
+Package version is 0.1.5.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+PASSIVE_METRIC_OUTPUT_SHAPE_v0.1.5.md exists.
+Allowed metric_name values are exactly pressure, inhibition, stability.
+cost and potential remain excluded from first output shape.
+Allowed level values are exactly none, low, medium, high.
+Allowed assessment_status values are exactly assessed, insufficient_input, not_applicable.
+level = none means assessed with no visible metric expression and must not mean insufficient input.
+Output shape requires explanation, source_state_id, and source_evidence_ids_json.
+explanation must not recommend, permit, approve, rank, prioritize, trigger, execute, transition, react, or write memory.
+explanation must not introduce facts not derivable from source_state_id and source_evidence_ids_json.
+source_evidence_ids_json must not imply scoring, weighting, ranking, priority, or confidence.
+Forbidden output fields include score, priority, rank, recommendation, permission, decision, approval, action, execute, candidate, transition, constraint, reaction, memory_write, and truth.
+Metric output implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
+ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
+Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
+CLI exposes only observe.
+Existing v0.1.4 tests remain green.
+```
+
+## 50. v0.1.5 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Metric output shape is implemented in src/genus_core.
+PhysicsMetric or any metric model appears.
+A metric function, metric record, metric persistence, or metric sentence type appears.
+score, priority, rank, recommendation, permission, decision, approval, action, execute, candidate, transition, constraint, reaction, memory_write, or truth appear as allowed metric output fields.
+cost or potential are admitted into first output shape.
+A new CLI command appears.
+A new product capability appears.
+Domain function behavior changes.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+Docs describe passive metrics as active in v0.1.5.
+```

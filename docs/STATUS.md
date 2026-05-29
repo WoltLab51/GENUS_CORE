@@ -1,9 +1,9 @@
 # GENUS_CORE Status
 
-Current target: `v0.1.4 - Release Integrity & CI Gate`
+Current target: `v0.1.5 - Passive Metric Output Shape`
 
-Status: CI-only release integrity step after v0.1.3 Passive Metric Acceptance
-Criteria.
+Status: docs/tests-only output shape step after v0.1.4 Release Integrity & CI
+Gate.
 
 ## Released baselines
 
@@ -59,6 +59,10 @@ Commit: 96d9176e3020cea8c20a2fd8e7d835292fb60160
 v0.1.3 Passive Metric Acceptance Criteria
 Tag: genus-core-v0.1.3-passive-metric-acceptance-criteria
 Commit: 38e0aa8569dce2d7463ff0db972cf6c77f2c7f18
+
+v0.1.4 Release Integrity & CI Gate
+Tag: genus-core-v0.1.4-release-integrity-ci-gate
+Commit: 43720b9005b134a96a0876981274b42b0ee39f42
 ```
 
 ## Frozen foundation chain
@@ -76,18 +80,14 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.4` is Release Integrity & CI Gate.
+`GENUS_CORE v0.1.5` is Passive Metric Output Shape.
 
-It adds a minimal GitHub Actions workflow that installs the package with dev
-dependencies, runs pytest, and runs the existing CLI smoke command with
-`GENUS_CORE_TRUTH_DB` set under runner temp.
+It defines a planned-not-active future passive metric output shape in docs and
+tests only. It does not add runtime metric classes, metric records, metric
+functions, metric persistence, sentence types, CLI commands, or product
+behavior.
 
-It adds no active Physics, metric model, metric record, metric function, metric
-output shape, metric persistence, memory, action, decision, approval,
-constraint, transition, reaction, domain function behavior, public domain
-function, CLI command, sentence type, or schema version.
-
-The package version is `0.1.4`, while `SCHEMA_VERSION` remains
+The package version is `0.1.5`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -99,6 +99,11 @@ Potential
 Cost
 Inhibition
 Stability
+MetricRecord
+PassiveMetric
+MetricOutput
+PassiveMetricOutput
+MetricOutputShape
 CognitiveStateMap
 TransitionCandidate
 ConstraintDecision
@@ -119,24 +124,27 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.4 CI Gate Acceptance
+## v0.1.5 Output Shape Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.4
+Package version is 0.1.5
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-GitHub Actions workflow exists
-CI uses ubuntu-latest
-CI uses actions/checkout and actions/setup-python
-CI uses Python 3.12
-CI runs only install, pytest, and CLI smoke
-CI sets GENUS_CORE_TRUTH_DB under runner temp
-CI does not add coverage, linting, formatting, matrix builds, caching, release automation, or deployment
+PASSIVE_METRIC_OUTPUT_SHAPE_v0.1.5.md exists
+metric_name values are limited to pressure, inhibition, stability
+cost and potential remain excluded from first output shape
+level values are limited to none, low, medium, high
+assessment_status values are limited to assessed, insufficient_input, not_applicable
+level = none does not mean insufficient input
+explanation is descriptive-only
+explanation does not recommend, permit, approve, rank, prioritize, trigger, execute, transition, react, or write memory
+source_evidence_ids_json is lineage only
+source_evidence_ids_json does not imply scoring, weighting, ranking, priority, or confidence
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.4
+No product scope expansion exists in v0.1.5
 ```
