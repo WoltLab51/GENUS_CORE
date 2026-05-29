@@ -923,3 +923,36 @@ SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 Docs describe passive metrics as active in v0.1.6.
 CI expands beyond install, pytest, and CLI smoke.
 ```
+
+## 54. v0.1.7 Foundation Cleanup and Integrity Repair Gate
+
+`v0.1.7 - Foundation Cleanup and Integrity Repair` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.7
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+LedgerEntry requires target_kind and target_id
+New SQLite ledger_entries tables require non-empty target_id
+worker remains a passive scope label, not a Worker capability
+metric implementation artifacts remain absent from src/genus_core
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+no product scope expansion
+```
+
+## 55. v0.1.7 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new product capability appears.
+Metric safety rules are implemented in src/genus_core.
+PhysicsMetric or any metric model appears.
+Worker becomes an object, runtime, execution surface, or capability.
+Ledger entries can be created without a target EvidenceRecord id.
+```

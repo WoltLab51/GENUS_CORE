@@ -54,7 +54,7 @@ def initialize_schema(connection: sqlite3.Connection) -> None:
             target_kind TEXT NOT NULL CHECK (
                 target_kind IN ('evidence_record')
             ),
-            target_id TEXT,
+            target_id TEXT NOT NULL CHECK (length(trim(target_id)) > 0),
             payload_json TEXT NOT NULL,
             created_at TEXT NOT NULL,
             schema_version TEXT NOT NULL,

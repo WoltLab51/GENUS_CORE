@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.1.6 - Passive Metric Safety Audit`
+Current baseline: `v0.1.7 - Foundation Cleanup and Integrity Repair`
 
-Status: docs/tests-only safety audit after v0.1.5 Passive Metric Output Shape.
+Status: cleanup and integrity repair after v0.1.6 Passive Metric Safety Audit.
 
 ## Released baselines
 
@@ -66,6 +66,10 @@ Commit: 43720b9005b134a96a0876981274b42b0ee39f42
 v0.1.5 Passive Metric Output Shape
 Tag: genus-core-v0.1.5-passive-metric-output-shape
 Commit: 28d0b66c74ffbdd2cbf8ab893aa24815314f31d7
+
+v0.1.6 Passive Metric Safety Audit
+Tag: genus-core-v0.1.6-passive-metric-safety-audit
+Commit: f0bcd1b23212daf1435939576ccc2287663fe35f
 ```
 
 ## Frozen foundation chain
@@ -83,14 +87,26 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.6` is Passive Metric Safety Audit.
+`GENUS_CORE v0.1.7` is Foundation Cleanup and Integrity Repair.
 
-It audits the pre-Physics metric preparation line in docs and tests only. It
-does not add runtime metric classes, metric records, metric functions, metric
-persistence, sentence types, CLI commands, or product behavior.
+It cleans up the released v0.1.6 baseline before passive Physics begins. It
+tightens Ledger lineage target requirements, clarifies passive worker scope
+wording, and records the current GitHub Actions signal. It does not add runtime
+metric classes, metric records, metric functions, metric persistence, sentence
+types, CLI commands, or product behavior.
 
-The package version is `0.1.6`, while `SCHEMA_VERSION` remains
+The package version is `0.1.7`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
+
+## Current CI Signal
+
+Local pytest and CLI smoke checks are green for the cleanup state.
+
+The latest GitHub Actions runs on `main` for commit
+`f0bcd1b23212daf1435939576ccc2287663fe35f` still report `failure`, while the
+Jobs API reports `total_count = 0` for the latest run. Treat this as an external
+GitHub Actions signal to rerun or inspect after the cleanup is pushed, not as a
+local pytest failure.
 
 ## Explicitly not active
 
@@ -126,14 +142,14 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.6 Safety Audit Acceptance
+## v0.1.7 Cleanup Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.6
+Package version is 0.1.7
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
 Pre-Physics Requirements exist
@@ -141,6 +157,9 @@ Passive Metric Vocabulary exists
 Passive Metric Acceptance Criteria exist
 Passive Metric Output Shape exists
 CI Gate exists
+LedgerEntry requires target_kind and target_id
+New SQLite ledger_entries tables require non-empty target_id
+worker remains only a passive scope label, not a Worker capability
 assessment_status = insufficient_input requires level = none
 assessment_status = not_applicable requires level = none
 assessment_status = assessed may use level = none | low | medium | high
@@ -148,5 +167,5 @@ cost and potential remain excluded from first implementation and first output sh
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.6
+No product scope expansion exists in v0.1.7
 ```

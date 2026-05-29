@@ -12,9 +12,9 @@ def append_ledger_entry(
     event_type: str,
     source_kind: str,
     source_id: str,
+    target_kind: str,
+    target_id: str,
     chain_id: str | None = None,
-    target_kind: str | None = None,
-    target_id: str | None = None,
     payload_json: dict[str, Any] | None = None,
 ) -> LedgerEntry:
     return LedgerEntry(

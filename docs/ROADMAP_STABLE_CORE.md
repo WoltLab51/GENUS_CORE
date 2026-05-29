@@ -216,10 +216,19 @@ assessment_status = not_applicable -> level = none
 assessment_status = assessed -> level = none | low | medium | high
 ```
 
+### v0.1.7 - Foundation Cleanup and Integrity Repair
+
+Cleans up the v0.1.6 baseline before passive Physics begins.
+
+It tightens Ledger lineage target requirements, clarifies that `worker` remains
+only a passive observation scope label, records the current GitHub Actions
+signal, and keeps `SCHEMA_VERSION` at `genus.foundation.v0.0.1`.
+
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
-only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, and v0.1.6 are accepted.
+only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, v0.1.6, and v0.1.7 are
+accepted.
 
 ## Later, Not Yet Active
 

@@ -33,8 +33,8 @@ class LedgerEntry:
     event_type: str
     source_kind: str
     source_id: str
-    target_kind: str | None = None
-    target_id: str | None = None
+    target_kind: str
+    target_id: str
     payload_json: dict[str, Any] = field(default_factory=dict)
     ledger_id: str = field(default_factory=lambda: new_id("led_"))
     created_at: str = field(default_factory=utc_now_iso)
@@ -47,8 +47,15 @@ class LedgerEntry:
             raise ValueError(f"Invalid ledger event_type: {self.event_type}")
         if self.source_kind not in ALLOWED_LEDGER_SOURCE_KINDS:
             raise ValueError(f"Invalid ledger source_kind: {self.source_kind}")
+        if (
+            not isinstance(self.target_kind, str)
+            or not self.target_kind.strip()
+        ):
+            raise ValueError("LedgerEntry requires target_kind")
         if self.target_kind not in ALLOWED_LEDGER_TARGET_KINDS:
             raise ValueError(f"Invalid ledger target_kind: {self.target_kind}")
+        if not isinstance(self.target_id, str) or not self.target_id.strip():
+            raise ValueError("LedgerEntry requires target_id")
         forbidden = FORBIDDEN_LEDGER_PAYLOAD_FIELDS.intersection(self.payload_json)
         if forbidden:
             names = ", ".join(sorted(forbidden))

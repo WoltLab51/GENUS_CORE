@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.1.6` is Passive Metric Safety Audit.
+`GENUS_CORE v0.1.7` is Foundation Cleanup and Integrity Repair.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,11 +15,12 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release audits the passive metric preparation line before any passive
-Physics implementation. It does not implement agents, workers, LLM calls,
-memory writes, reactions, decisions, physics metrics, metric functions,
-cognitive maps, transition candidates, constraint decisions, runtime cells,
-organs, or GraphDB truth.
+This release cleans up the v0.1.6 baseline before any passive Physics
+implementation. It tightens Ledger lineage targets, clarifies passive worker
+scope wording, and keeps agents, workers, LLM calls, memory writes, reactions,
+decisions, physics metrics, metric functions, cognitive maps, transition
+candidates, constraint decisions, runtime cells, organs, and GraphDB truth out
+of scope.
 
 ## Install
 
@@ -62,5 +63,5 @@ The report explains what was observed, recorded, and derived. It does not
 decide, approve, execute, react, write memory, create truth, transition,
 constrain, or measure physics.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.1.6 is a safety audit
-step, not a schema expansion.
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.1.7 is a cleanup and
+integrity step, not a schema expansion.

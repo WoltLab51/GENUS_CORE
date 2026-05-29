@@ -42,10 +42,7 @@ level = high
 
 ## Excluded Metric Terms
 
-`cost` and `potential` remain excluded from the first implementation and first
-output shape.
-
-cost and potential remain excluded from the first implementation and first output shape.
+`cost` and `potential` remain excluded from the first implementation and first output shape.
 
 They may remain planned vocabulary only. They must not become first passive
 metric outputs before later explicit acceptance.

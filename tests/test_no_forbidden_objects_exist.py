@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 
 import genus_core
+from genus_core.models.observation import ALLOWED_SCOPE, Observation
 
 
 FORBIDDEN_OBJECTS = {
@@ -85,3 +86,16 @@ def test_no_forbidden_imports_exist() -> None:
                     discovered_imports.add(alias.asname or "")
 
     assert forbidden_imports.isdisjoint(discovered_imports)
+
+
+def test_worker_scope_is_passive_label_not_worker_object() -> None:
+    observation = Observation(
+        source_event_id="evt_worker_scope",
+        observation_type="unknown_input_observed",
+        scope="worker",
+        confidence="low",
+    )
+
+    assert observation.scope == "worker"
+    assert "worker" in ALLOWED_SCOPE
+    assert "Worker" not in vars(genus_core)

@@ -187,6 +187,9 @@ system
 worker
 ```
 
+`worker` is only a passive scope label for an observed source area. It is not a
+`Worker` object, runtime, execution surface, or capability.
+
 Allowed in: v0.0.1
 
 ## ReactionExecution
