@@ -309,11 +309,19 @@ preview types, persistence, CLI commands, schema changes, transition
 candidates, constraint decisions, reactions, memory writes, workers, LLMs,
 GraphDB, or RuntimeShape.
 
+### v0.3.2 - Build Structure Guardrails
+
+Adds project-structure governance without runtime capability.
+
+It treats code, tests, docs, specs, decisions, and quality gates as governed
+artifacts and freezes historical longfiles behind explicit ceilings, reasons,
+and planned split/review notes.
+
 ### Planned v0.4.0 - Passive Boundary Relevance Spec
 
 Spec-only planning for a later passive boundary relevance description.
 
-This is not an implementation and does not change the active v0.3.1 baseline.
+This is not an implementation and does not change the active v0.3.2 baseline.
 It defines how a later `PassiveBoundaryRelevancePreview` and
 `PassiveBoundaryRelevanceReport` may describe relevant boundary areas without
 evaluating boundaries, granting permission, producing policy results,

@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.3.1` is Passive Transition Boundary Audit.
+`GENUS_CORE v0.3.2` is Build Structure Guardrails.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,15 +15,15 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release audits and hardens the narrow passive preview layer after passive
-Physics. It preserves the v0.1.10 governance baseline and keeps agents,
-workers, LLM calls, memory writes, reactions, decisions, cognitive maps,
-transition candidates, constraint decisions, runtime cells, organs, and GraphDB
-truth out of scope.
+This release adds project-structure governance without adding runtime
+capability. It treats code, tests, docs, specs, decisions, and quality gates as
+governed artifacts while keeping agents, workers, LLM calls, memory writes,
+reactions, decisions, cognitive maps, transition candidates, constraint
+decisions, runtime cells, organs, and GraphDB truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.3.1`
+Package version: `0.3.2`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
@@ -39,6 +39,8 @@ is not a `TransitionCandidate`, `ConstraintDecision`, recommendation,
 permission, priority, approval, reaction, memory write, or action.
 v0.3.1 adds no capability; it hardens summary wording and neutralizes the
 memory-tension question.
+v0.3.2 adds no runtime capability; it adds build-structure guardrails for
+governed artifacts.
 
 Planned v0.4.0 work is spec-only: Passive Boundary Relevance may describe how a
 later passive boundary relevance description is allowed to look. It must not

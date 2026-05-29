@@ -1269,3 +1269,39 @@ A new SQLite table appears.
 A new sentence type appears.
 The planned spec permits boundary evaluation, permission evaluation, policy evaluation, approval, rejection, allow/block, decision, recommendation, priority, score, rank, severity, weight, execute, reaction, memory write, TransitionCandidate, ConstraintDecision, PolicyResult, Worker, LLM, GraphDB, or RuntimeShape.
 ```
+
+## 72. v0.3.2 Build Structure Guardrails Gate
+
+`v0.3.2 - Build Structure Guardrails` is accepted only if:
+
+```text
+pytest green
+package version is 0.3.2
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
+PROJECT_STRUCTURE.md exists
+historical longfiles are explicitly listed
+each historical longfile exception has max_lines, reason, and planned_split_or_review
+historical longfiles do not exceed their declared ceilings
+new src, tests, and docs files stay under normal line-count targets unless explicitly excepted
+public foundation functions remain unchanged
+CLI exposes only observe
+SQLite tables remain evidence_records and ledger_entries
+allowed sentence types remain unchanged
+no runtime capability is added
+```
+
+## 73. v0.3.2 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new SQLite table appears.
+A new sentence type appears.
+A runtime capability is added.
+A historical longfile grows beyond its declared ceiling.
+A new oversized file appears without explicit exception.
+Worker, LLM, MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, GraphDB, or RuntimeShape appears as active capability.
+```

@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.3.1 - Passive Transition Boundary Audit`
+Current baseline: `v0.3.2 - Build Structure Guardrails`
 
-Status: passive transition preview boundary audit after v0.3.0.
+Status: project-structure governance baseline after v0.3.1.
 
 ## Released baselines
 
@@ -98,6 +98,10 @@ Commit: 2caeeabb60f9ce34470519448b4c814634bbd8a9
 v0.3.0 Passive Transition Preview Seed
 Tag: genus-core-v0.3.0-passive-transition-preview-seed
 Commit: 2c2bfe1ba8d44662126ba13e9f073475aa96ebe0
+
+v0.3.1 Passive Transition Boundary Audit
+Tag: genus-core-v0.3.1-passive-transition-boundary-audit
+Commit: aa829e0f36edf715ab0ab41f96720edfaabf2e5b
 ```
 
 ## Frozen foundation chain
@@ -115,10 +119,13 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.3.1` is Passive Transition Boundary Audit.
+`GENUS_CORE v0.3.2` is Build Structure Guardrails.
 
-It audits the narrow passive preview layer downstream of BeliefStateSnapshot
-and PassiveMetricSnapshot. The allowed passive v0.3.x artifacts remain
+It adds no runtime capability. It treats code, tests, docs, specs, decisions,
+and quality gates as governed artifacts that must remain bounded, readable,
+reviewable, and auditable.
+
+The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
 `build_passive_transition_preview`, and `create_passive_transition_report` in
 the separate `genus_core.passive_transition` namespace. It does not add
@@ -126,13 +133,13 @@ TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
 persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
 RuntimeShape.
 
-The package version is `0.3.1`, while `SCHEMA_VERSION` remains
+The package version is `0.3.2`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
-Local pytest and CLI smoke checks are expected for the passive transition
-boundary audit state.
+Local pytest and CLI smoke checks are expected for the build structure
+guardrails state.
 
 GitHub Actions initially failed before creating jobs because the CLI smoke
 command used a YAML plain scalar containing `das: larumipsum`. The workflow now
@@ -177,18 +184,23 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.3.1 Passive Transition Boundary Acceptance
+## v0.3.2 Build Structure Guardrails Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.3.1
+Package version is 0.3.2
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md exists
 SAFETY_BOUNDARIES.md exists
 BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
+BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
+PROJECT_STRUCTURE.md exists
+Historical longfiles have explicit max_lines, reason, and planned_split_or_review entries
+Historical longfiles do not exceed their declared ceilings
+New files over normal line-count targets require explicit exception
 GENUS Charter contains LLM proposes. GENUS governs.
 GENUS Charter contains Do not make GENUS powerful before making it bounded.
 Safety Boundaries forbid active MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, Agent, GraphDB, RuntimeShape
@@ -233,6 +245,6 @@ CLI exposes only observe
 ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
 PassiveTransitionReport describes passive preview only
-v0.3.1 passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond passive transition boundary audit in v0.3.1
+v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
+No product scope expansion exists beyond build structure guardrails in v0.3.2
 ```

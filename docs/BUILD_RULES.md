@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.3.1 Passive Transition Boundary Audit
+Status: active for v0.3.2 Build Structure Guardrails
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.
@@ -171,3 +171,73 @@ PassiveTransitionReport
 build_passive_transition_preview()
 create_passive_transition_report()
 ```
+
+## 9. Governed Artifacts
+
+GENUS_CORE build artifacts are governed artifacts.
+
+This applies to:
+
+```text
+runtime code
+tests
+docs
+specs
+decisions
+quality gates
+release notes
+```
+
+Each governed artifact must remain:
+
+```text
+bounded
+readable
+reviewable
+auditable
+```
+
+Doku and tests are not loose supporting material. They shape future builds and
+must be kept as disciplined as runtime code.
+
+## 10. File Growth Guardrails
+
+New work should prefer focused files over silent append-only growth.
+
+Default line-count targets:
+
+```text
+src files: <= 220 lines
+test files: <= 220 lines
+docs files: <= 260 lines
+```
+
+Historical longfiles may remain only when they are listed as explicit
+exceptions in the project-structure guardrail tests.
+
+Every historical exception must record:
+
+```text
+max_lines
+reason
+planned_split_or_review
+```
+
+The exception is not permission to grow indefinitely.
+
+## 11. Codex Split Rule
+
+Codex must not silently append bulk content to oversized files.
+
+If a requested change would push a governed artifact over its target or over a
+declared historical ceiling, Codex must propose one of:
+
+```text
+split into a focused document
+add an explicit exception with reason and planned_split_or_review
+defer bulk content to a planned modularization step
+```
+
+After v0.3.2, new phase-specific gates and large decision blocks should not be
+added to historical monoliths unless the task explicitly updates their
+exception ceiling.

@@ -619,3 +619,24 @@ Impact:
 This decision is spec-only. It adds documentation and tests only. It does not
 add runtime source packages, classes, functions, exports, CLI commands, SQLite
 tables, sentence types, a package version bump, or a `SCHEMA_VERSION` change.
+
+## Decision 0031 - v0.3.2 governs build structure
+
+Decision:
+
+v0.3.2 treats code, tests, docs, specs, decisions, and quality gates as
+governed artifacts with line-count guardrails and explicit historical
+longfile exceptions.
+
+Reason:
+
+GENUS must remain bounded not only at runtime, but also while being built.
+Oversized docs and tests make boundaries harder to audit and invite accidental
+scope drift.
+
+Impact:
+
+This adds build rules, project-structure documentation, and structure tests
+only. It does not add runtime capability, CLI commands, SQLite tables, sentence
+types, schema changes, workers, LLMs, reactions, memory writes, transition
+candidates, constraint decisions, GraphDB, or RuntimeShape.
