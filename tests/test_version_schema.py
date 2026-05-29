@@ -4,11 +4,11 @@ from pathlib import Path
 import genus_core
 
 
-def test_package_version_is_v0_1_7() -> None:
+def test_package_version_is_v0_1_8() -> None:
     pyproject = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
 
-    assert pyproject["project"]["version"] == "0.1.7"
-    assert genus_core.__version__ == "0.1.7"
+    assert pyproject["project"]["version"] == "0.1.8"
+    assert genus_core.__version__ == "0.1.8"
 
 
 def test_schema_version_remains_v0_0_1_foundation() -> None:

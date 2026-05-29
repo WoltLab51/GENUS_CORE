@@ -956,3 +956,36 @@ PhysicsMetric or any metric model appears.
 Worker becomes an object, runtime, execution surface, or capability.
 Ledger entries can be created without a target EvidenceRecord id.
 ```
+
+## 56. v0.1.8 Release Integrity Finalization Gate
+
+`v0.1.8 - Release Integrity Finalization` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+GitHub Actions green on the v0.1.8 commit
+package version is 0.1.8
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+DECISIONS records the Ledger target invariant
+DECISIONS records the CI YAML smoke fix
+v0.1.7 tag remains historical and is not rewritten
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+no product scope expansion
+```
+
+## 57. v0.1.8 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new product capability appears.
+Metric safety rules are implemented in src/genus_core.
+PhysicsMetric or any metric model appears.
+The v0.1.7 tag is rewritten or moved.
+GitHub Actions fails on the v0.1.8 commit.
+```

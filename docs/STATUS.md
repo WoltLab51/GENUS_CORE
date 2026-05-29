@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.1.7 - Foundation Cleanup and Integrity Repair`
+Current baseline: `v0.1.8 - Release Integrity Finalization`
 
-Status: cleanup and integrity repair after v0.1.6 Passive Metric Safety Audit.
+Status: release integrity finalization after v0.1.7 Foundation Cleanup and Integrity Repair.
 
 ## Released baselines
 
@@ -70,6 +70,10 @@ Commit: 28d0b66c74ffbdd2cbf8ab893aa24815314f31d7
 v0.1.6 Passive Metric Safety Audit
 Tag: genus-core-v0.1.6-passive-metric-safety-audit
 Commit: f0bcd1b23212daf1435939576ccc2287663fe35f
+
+v0.1.7 Foundation Cleanup and Integrity Repair
+Tag: genus-core-v0.1.7-foundation-cleanup-integrity-repair
+Commit: f288fd8a78e5fa400c76a909ab07a5233104ce0d
 ```
 
 ## Frozen foundation chain
@@ -87,25 +91,25 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.7` is Foundation Cleanup and Integrity Repair.
+`GENUS_CORE v0.1.8` is Release Integrity Finalization.
 
-It cleans up the released v0.1.6 baseline before passive Physics begins. It
-tightens Ledger lineage target requirements, clarifies passive worker scope
-wording, and records the current GitHub Actions signal. It does not add runtime
-metric classes, metric records, metric functions, metric persistence, sentence
-types, CLI commands, or product behavior.
+It finalizes the green pre-v0.2.0 baseline before passive Physics begins. It
+preserves the v0.1.7 cleanup, records the concrete Ledger target invariant,
+records the GitHub Actions YAML smoke fix, and keeps the v0.1.7 tag historical.
+It does not add runtime metric classes, metric records, metric functions,
+metric persistence, sentence types, CLI commands, or product behavior.
 
-The package version is `0.1.7`, while `SCHEMA_VERSION` remains
+The package version is `0.1.8`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
-Local pytest and CLI smoke checks are green for the cleanup state.
+Local pytest and CLI smoke checks are green for the release integrity state.
 
 GitHub Actions initially failed before creating jobs because the CLI smoke
 command used a YAML plain scalar containing `das: larumipsum`. The workflow now
 uses a block scalar for the smoke command so the colon remains part of the CLI
-argument.
+argument, and the post-fix `main` run completed successfully.
 
 ## Explicitly not active
 
@@ -141,14 +145,15 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.7 Cleanup Acceptance
+## v0.1.8 Release Integrity Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.7
+GitHub Actions is green on the v0.1.8 commit
+Package version is 0.1.8
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
 Pre-Physics Requirements exist
@@ -159,6 +164,7 @@ CI Gate exists
 LedgerEntry requires target_kind and target_id
 New SQLite ledger_entries tables require non-empty target_id
 worker remains only a passive scope label, not a Worker capability
+CI smoke command uses a YAML block scalar
 assessment_status = insufficient_input requires level = none
 assessment_status = not_applicable requires level = none
 assessment_status = assessed may use level = none | low | medium | high
@@ -166,5 +172,5 @@ cost and potential remain excluded from first implementation and first output sh
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.7
+No product scope expansion exists in v0.1.8
 ```

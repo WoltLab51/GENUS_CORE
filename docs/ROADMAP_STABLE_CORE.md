@@ -224,11 +224,18 @@ It tightens Ledger lineage target requirements, clarifies that `worker` remains
 only a passive observation scope label, records the current GitHub Actions
 signal, and keeps `SCHEMA_VERSION` at `genus.foundation.v0.0.1`.
 
+### v0.1.8 - Release Integrity Finalization
+
+Finalizes the green pre-v0.2.0 baseline.
+
+It records the concrete Ledger target invariant and the GitHub Actions YAML
+smoke fix while preserving the v0.1.7 tag as historical.
+
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
-only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, v0.1.6, and v0.1.7 are
-accepted.
+only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, v0.1.6, v0.1.7, and
+v0.1.8 are accepted.
 
 ## Later, Not Yet Active
 

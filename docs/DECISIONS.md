@@ -423,3 +423,41 @@ v0.1.6 may change release metadata, safety audit documentation, roadmap/status
 documentation, and tests proving metric implementation remains absent. It must
 not add metric classes, metric records, metric functions, metric persistence,
 sentence types, CLI commands, domain behavior, or product capability.
+
+## Decision 0022 - v0.1.7 requires concrete Ledger targets
+
+Decision:
+
+Ledger entries for the current foundation lineage require a concrete
+`target_kind` and `target_id`.
+
+Reason:
+
+The only active Ledger event records that an Observation led to creation of an
+EvidenceRecord. A LedgerEntry without an EvidenceRecord target is incomplete
+lineage, not a valid current foundation event.
+
+Impact:
+
+`append_ledger_entry` requires `target_kind` and `target_id`.
+`LedgerEntry` rejects missing or blank targets. New SQLite `ledger_entries`
+tables require non-empty `target_id`. No migration is added for existing local
+SQLite files.
+
+## Decision 0023 - v0.1.8 finalizes CI release integrity
+
+Decision:
+
+The GitHub Actions CLI smoke command uses a YAML block scalar.
+
+Reason:
+
+The smoke text contains `das: larumipsum`. In a YAML plain scalar, the colon can
+be parsed as YAML syntax before any job is created, producing a failed workflow
+with zero jobs. A block scalar preserves the command text as the CLI argument.
+
+Impact:
+
+The CI workflow remains minimal: install, pytest, CLI smoke. v0.1.8 records the
+green post-fix baseline and preserves the v0.1.7 tag as historical rather than
+rewriting it.
