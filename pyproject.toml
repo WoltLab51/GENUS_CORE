@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.2.0"
-description = "GENUS_CORE v0.2.0 Passive Physics Seed"
+version = "0.2.1"
+description = "GENUS_CORE v0.2.1 Passive Physics Boundary Cleanup"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

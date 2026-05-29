@@ -25,7 +25,7 @@ FOUNDATION_FUNCTIONS = {
     "create_observation_report",
 }
 
-METRIC_IMPLEMENTATION_NAMES = {
+FORBIDDEN_ACTIVE_METRIC_IMPLEMENTATION_NAMES = {
     "PhysicsMetric",
     "Pressure",
     "Potential",
@@ -92,10 +92,14 @@ def test_metric_terms_have_required_non_equivalence_boundaries() -> None:
         assert boundary in text
 
 
-def test_metric_implementation_artifacts_remain_absent_from_src() -> None:
+def test_forbidden_active_metric_implementation_artifacts_remain_absent_from_src() -> None:
     source_root = Path(genus_core.__file__).parent
-    forbidden_file_stems = {_snake_case(name) for name in METRIC_IMPLEMENTATION_NAMES}
-    forbidden_names = METRIC_IMPLEMENTATION_NAMES.union(forbidden_file_stems)
+    forbidden_file_stems = {
+        _snake_case(name) for name in FORBIDDEN_ACTIVE_METRIC_IMPLEMENTATION_NAMES
+    }
+    forbidden_names = FORBIDDEN_ACTIVE_METRIC_IMPLEMENTATION_NAMES.union(
+        forbidden_file_stems
+    )
     discovered_names: set[str] = set()
     discovered_imports: set[str] = set()
 

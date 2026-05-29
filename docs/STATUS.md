@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.2.0 - Passive Physics Seed`
+Current baseline: `v0.2.1 - Passive Physics Boundary Cleanup`
 
-Status: first narrow passive Physics implementation after v0.1.10 governance baseline.
+Status: boundary cleanup for the first narrow passive Physics implementation.
 
 ## Released baselines
 
@@ -86,6 +86,10 @@ Commit: 7054a9dd31a864c382f7da4962c7d8f284ccd167
 v0.1.10 GENUS Charter and Safety Boundary
 Tag: genus-core-v0.1.10-genus-charter-safety-boundary
 Commit: 6744752de25105a299d1e36952e966e4bb27bb7d
+
+v0.2.0 Passive Physics Seed
+Tag: genus-core-v0.2.0-passive-physics-seed
+Commit: ea0e8a78876f689643bfc335e817bfe49729506a
 ```
 
 ## Frozen foundation chain
@@ -103,27 +107,28 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.2.0` is Passive Physics Seed.
+`GENUS_CORE v0.2.1` is Passive Physics Boundary Cleanup.
 
-It introduces the first narrow passive Physics layer downstream of
-BeliefStateSnapshot. It adds `PassiveMetricSnapshot`, `PassiveMetricReport`,
-`build_passive_metric_snapshot`, and `create_passive_metric_report` in the
-separate `genus_core.passive_physics` namespace. It does not add runtime metric
-classes such as Pressure or Stability, metric persistence, sentence types, CLI
-commands, decisions, reactions, transitions, workers, LLM calls, or memory
-writes.
+It clarifies the first narrow passive Physics layer downstream of
+BeliefStateSnapshot. The allowed passive v0.2.x artifacts remain
+`PassiveMetricSnapshot`, `PassiveMetricReport`, `build_passive_metric_snapshot`,
+and `create_passive_metric_report` in the separate
+`genus_core.passive_physics` namespace. It does not add runtime metric classes
+such as Pressure or Stability, metric persistence, sentence types, CLI commands,
+decisions, reactions, transitions, workers, LLM calls, or memory writes.
 
-The package version is `0.2.0`, while `SCHEMA_VERSION` remains
+The package version is `0.2.1`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
-Local pytest and CLI smoke checks are expected for the passive Physics state.
+Local pytest and CLI smoke checks are expected for the passive Physics boundary
+state.
 
 GitHub Actions initially failed before creating jobs because the CLI smoke
 command used a YAML plain scalar containing `das: larumipsum`. The workflow now
 uses a block scalar for the smoke command so the colon remains part of the CLI
-argument. v0.2.0 acceptance requires a green run on the v0.2.0 commit.
+argument. v0.2.1 acceptance requires a green run on the v0.2.1 commit.
 
 ## Explicitly not active
 
@@ -159,14 +164,14 @@ RuntimeShape
 `pressure`, `inhibition`, and `stability` are active only as passive
 `metric_name` string values inside `PassiveMetricSnapshot` outputs.
 
-## v0.2.0 Passive Physics Acceptance
+## v0.2.1 Passive Physics Boundary Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.2.0
+Package version is 0.2.1
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md exists
 SAFETY_BOUNDARIES.md exists
@@ -176,6 +181,8 @@ GENUS Charter contains Do not make GENUS powerful before making it bounded.
 Safety Boundaries forbid active MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, Agent, GraphDB, RuntimeShape
 PassiveMetricSnapshot exists only in genus_core.passive_physics
 PassiveMetricReport exists only in genus_core.passive_physics
+build_passive_metric_snapshot exists only in genus_core.passive_physics
+create_passive_metric_report exists only in genus_core.passive_physics
 build_passive_metric_snapshot accepts only BeliefStateSnapshot
 Passive metrics are exactly pressure, inhibition, stability
 cost and potential remain excluded from the first implementation
@@ -200,5 +207,8 @@ cost and potential remain excluded from first implementation and first output sh
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists beyond passive Physics in v0.2.0
+ObservationReport does not measure physics
+PassiveMetricReport describes passive metrics only
+v0.2.x passive Physics is not dynamic physics, simulation, transition, constraint decision, or reaction
+No product scope expansion exists beyond passive Physics in v0.2.1
 ```

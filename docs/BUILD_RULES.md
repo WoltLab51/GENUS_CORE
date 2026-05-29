@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.2.0 Passive Physics Seed
+Status: active for v0.2.1 Passive Physics Boundary Cleanup
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.
@@ -139,7 +139,8 @@ Forbidden misuse
 
 Every new capability must have a test before it is accepted.
 
-In v0.0.1 this means only the Observation Truth Seed capabilities may exist:
+For the foundation namespace, this means only the accepted foundation
+capabilities may exist:
 
 ```text
 observe_event()
@@ -149,4 +150,14 @@ build_belief_state_snapshot()
 create_observation_report()
 save_evidence_record()
 save_ledger_entry()
+```
+
+The separate `genus_core.passive_physics` namespace may expose only the
+accepted passive v0.2.x artifacts:
+
+```text
+PassiveMetricSnapshot
+PassiveMetricReport
+build_passive_metric_snapshot()
+create_passive_metric_report()
 ```

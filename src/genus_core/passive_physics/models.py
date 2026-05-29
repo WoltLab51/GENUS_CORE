@@ -1,4 +1,4 @@
-"""Passive physics models for GENUS_CORE v0.2.0."""
+"""Passive physics models for GENUS_CORE v0.2.x."""
 
 from dataclasses import dataclass, field
 from typing import Any

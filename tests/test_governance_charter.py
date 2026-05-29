@@ -39,7 +39,7 @@ def test_safety_boundaries_keep_current_forbidden_capabilities_out() -> None:
 
     required = (
         "passive foundation plus passive Physics only",
-        "The only new product capability allowed in v0.2.0 is passive Physics.",
+        "The only new product capability allowed in v0.2.x is passive Physics.",
         "MemoryWrite",
         "Reaction",
         "TransitionCandidate",

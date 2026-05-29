@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.2.0` is Passive Physics Seed.
+`GENUS_CORE v0.2.1` is Passive Physics Boundary Cleanup.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,7 +15,7 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release introduces the first narrow passive Physics layer after the passive
+This release clarifies the first narrow passive Physics layer after the passive
 foundation. It preserves the v0.1.10 governance baseline and keeps agents,
 workers, LLM calls, memory writes, reactions, decisions, cognitive maps,
 transition candidates, constraint decisions, runtime cells, organs, and GraphDB
@@ -23,11 +23,15 @@ truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.2.0`
+Package version: `0.2.1`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
 Capability boundary: passive foundation plus passive Physics only
+
+Passive Physics in v0.2.x is a narrow passive metric description layer. It is
+not dynamic physics, simulation, transition physics, constraint decision,
+reaction, recommendation, prioritization, permission, or action.
 
 Governance documents:
 
@@ -85,9 +89,13 @@ The CLI stores EvidenceRecord and LedgerEntry rows in SQLite. By default it uses
 
 ## Stable Foundation Boundary
 
-The report explains what was observed, recorded, and derived. It does not
-decide, approve, execute, react, write memory, create truth, transition,
-constrain, or measure physics.
+`ObservationReport` explains what was observed, recorded, and derived in the
+foundation chain. It does not decide, approve, execute, react, write memory,
+create truth, transition, constrain, or measure physics.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.2.0 is a passive
-Physics step, not a schema expansion.
+`PassiveMetricReport` describes passive metric outputs only. It does not
+decide, approve, execute, recommend, prioritize, permit, transition, constrain,
+react, or write memory.
+
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.2.1 is a passive
+Physics boundary cleanup, not a schema expansion.

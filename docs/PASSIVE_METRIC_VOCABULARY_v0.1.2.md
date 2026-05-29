@@ -3,6 +3,10 @@
 Status: historical vocabulary; activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport
 
 Activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport.
+v0.2.1 clarifies that these passive artifacts are allowed while active metric
+classes, modules, functions, persistence, CLI commands, transitions,
+constraints, reactions, memory writes, workers, LLMs, GraphDB, and RuntimeShape
+remain forbidden.
 
 ## Purpose
 

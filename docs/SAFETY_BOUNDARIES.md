@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.2.0
+Status: active boundary document for GENUS_CORE v0.2.1
 
 ## Purpose
 
@@ -29,11 +29,11 @@ WorldEvent
 -> ObservationReport
 ```
 
-The report may explain what was observed, recorded, and derived. It must not
-decide, approve, execute, react, write memory, create truth, transition, or
-constrain.
+`ObservationReport` may explain what was observed, recorded, and derived. It
+must not decide, approve, execute, react, write memory, create truth,
+transition, constrain, or measure physics.
 
-The only new product capability allowed in v0.2.0 is passive Physics.
+The only new product capability allowed in v0.2.x is passive Physics.
 
 Passive Physics may read only a `BeliefStateSnapshot` and produce:
 
@@ -43,6 +43,9 @@ PassiveMetricReport
 ```
 
 These artifacts are descriptive, side-effect free, ephemeral, and not persisted.
+`PassiveMetricReport` describes passive metrics only. It must not decide,
+recommend, prioritize, permit, execute, transition, constrain, react, write
+memory, or create truth.
 
 ## Capability Admission Rule
 
@@ -59,7 +62,7 @@ STATUS.md reflects the current state.
 Tests prove the capability and its forbidden effects.
 ```
 
-No further product capability is allowed in v0.2.0.
+No further product capability is allowed in v0.2.1.
 
 ## Forbidden in the Current Boundary
 
@@ -101,7 +104,7 @@ Worker capability.
 
 ## Passive Physics Boundary
 
-The active v0.2.0 direction is passive Physics only:
+The active v0.2.x direction is passive Physics only:
 
 ```text
 BeliefStateSnapshot
@@ -113,6 +116,10 @@ BeliefStateSnapshot
 The first implementation must remain descriptive and must not create
 TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, or
 new truth behavior.
+
+This is narrow passive metric description. It is not dynamic physics,
+simulation, transition physics, constraint decision, recommendation,
+prioritization, permission, reaction, or action.
 
 The first implementation uses only:
 
@@ -135,7 +142,7 @@ A new product capability appears beyond passive Physics.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1 without an accepted schema release.
 Observation, Evidence, Belief, Report, Decision, or Action are mixed.
 LLM output is treated as truth.
-Memory is written in v0.1.x or v0.2.0 passive Physics.
+Memory is written in v0.1.x or v0.2.x passive Physics.
 Reaction, TransitionCandidate, or ConstraintDecision appears before its accepted release.
 Worker execution appears before governance exists.
 GraphDB is introduced as truth.

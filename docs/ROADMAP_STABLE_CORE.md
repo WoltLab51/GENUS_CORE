@@ -271,6 +271,17 @@ stability
 `cost` and `potential` remain excluded. v0.2.0 does not introduce transition,
 constraint, reaction, memory, worker, LLM, persistence, or CLI expansion.
 
+### v0.2.1 - Passive Physics Boundary Cleanup
+
+Clarifies the v0.2.0 passive Physics seed without adding new capability.
+
+It distinguishes `ObservationReport` from `PassiveMetricReport`, records that
+v0.2.x is narrow passive metric description rather than dynamic physics or
+simulation, and updates pre-Physics gates so allowed passive v0.2.x artifacts
+do not conflict with the continued ban on active metric classes, functions,
+persistence, CLI expansion, transition, constraint, reaction, memory, workers,
+LLMs, GraphDB, or RuntimeShape.
+
 ## Later, Not Yet Active
 
 Future planning may later introduce passive cognitive physics concepts, but

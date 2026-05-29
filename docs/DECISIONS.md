@@ -524,3 +524,28 @@ The first metric names are only `pressure`, `inhibition`, and `stability`.
 `cost` and `potential` remain excluded. The public foundation functions,
 sentence types, CLI commands, SQLite schema, and `SCHEMA_VERSION` remain
 unchanged.
+
+## Decision 0027 - v0.2.1 clarifies passive Physics boundary language
+
+Decision:
+
+v0.2.1 treats `PassiveMetricSnapshot`, `PassiveMetricReport`,
+`build_passive_metric_snapshot`, and `create_passive_metric_report` as the only
+allowed passive v0.2.x Physics artifacts. Older pre-Physics gates now refer to
+forbidden active metric implementation artifacts rather than all metric
+implementation artifacts.
+
+Reason:
+
+v0.2.0 intentionally activated a narrow passive metric description layer. The
+historical v0.1.x gates still protected against premature active Physics, but
+some wording could be read as conflicting with the accepted passive v0.2.0
+artifacts.
+
+Impact:
+
+v0.2.1 changes documentation, release metadata, and tests only. It does not add
+metric names, dynamic Physics, simulation, scoring, priority, recommendation,
+permission, decision, transition, constraint, reaction, memory write, CLI
+commands, SQLite persistence, worker execution, LLM calls, GraphDB, RuntimeShape,
+or schema changes.

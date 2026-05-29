@@ -638,7 +638,7 @@ metric terms are planned-not-active
 pressure, inhibition, and stability are first passive candidates
 cost and potential are higher-risk and not first implementation
 metric vocabulary is not metric implementation
-metric implementation artifacts remain absent from src/genus_core
+forbidden active metric implementation artifacts remain absent from src/genus_core
 allowed sentence types unchanged
 public foundation functions unchanged
 CLI exposes only observe
@@ -697,7 +697,7 @@ cost and potential remain excluded from first implementation
 allowed read surface is limited
 forbidden effects are documented
 exact metric output shape is deferred to v0.1.5
-metric implementation artifacts remain absent from src/genus_core
+forbidden active metric implementation artifacts remain absent from src/genus_core
 allowed sentence types unchanged
 public foundation functions unchanged
 CLI exposes only observe
@@ -718,7 +718,7 @@ cost and potential remain excluded from first implementation.
 Allowed read surface is limited to BeliefStateSnapshot, source_evidence_ids_json, and safe descriptive foundation payload fields.
 Forbidden effects include Ledger writes, Evidence creation, Belief mutation, Report triggering, TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, prioritization, recommendation, permission, activation, action, and truth creation.
 Exact metric output shape is explicitly deferred to v0.1.5.
-Metric implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
+Forbidden active metric implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
 ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
 CLI exposes only observe.
@@ -813,7 +813,7 @@ assessment_status values are limited to assessed, insufficient_input, not_applic
 none does not mean insufficient input
 explanation is descriptive-only
 source_evidence_ids_json is lineage only
-metric output implementation artifacts remain absent from src/genus_core
+forbidden active metric output implementation artifacts remain absent from src/genus_core
 documentation updated
 no product scope expansion
 ```
@@ -836,7 +836,7 @@ explanation must not recommend, permit, approve, rank, prioritize, trigger, exec
 explanation must not introduce facts not derivable from source_state_id and source_evidence_ids_json.
 source_evidence_ids_json must not imply scoring, weighting, ranking, priority, or confidence.
 Forbidden output fields include score, priority, rank, recommendation, permission, decision, approval, action, execute, candidate, transition, constraint, reaction, memory_write, and truth.
-Metric output implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
+Forbidden active metric output implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
 ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
 CLI exposes only observe.
@@ -877,7 +877,7 @@ Passive Metric Output Shape exists
 CI Gate exists
 status/level consistency rules are documented
 cost and potential remain excluded
-metric implementation artifacts remain absent from src/genus_core
+forbidden active metric implementation artifacts remain absent from src/genus_core
 documentation updated
 no product scope expansion
 ```
@@ -899,7 +899,7 @@ assessment_status = insufficient_input requires level = none.
 assessment_status = not_applicable requires level = none.
 assessment_status = assessed may use level = none | low | medium | high.
 cost and potential remain excluded from first implementation and first output shape.
-Metric implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
+Forbidden active metric implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
 ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
 CLI exposes only observe.
@@ -936,7 +936,7 @@ SCHEMA_VERSION remains genus.foundation.v0.0.1
 LedgerEntry requires target_kind and target_id
 New SQLite ledger_entries tables require non-empty target_id
 worker remains a passive scope label, not a Worker capability
-metric implementation artifacts remain absent from src/genus_core
+forbidden active metric implementation artifacts remain absent from src/genus_core
 allowed sentence types remain unchanged
 public foundation functions remain unchanged
 CLI exposes only observe
@@ -1102,4 +1102,42 @@ Metric outputs contain score, priority, rank, recommendation, permission, decisi
 cost or potential become active first implementation metric names.
 PhysicsMetric, PassiveMetric, Pressure, Inhibition, Stability, Cost, or Potential appears as a class, module, file, or public object.
 TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, GraphDB, or RuntimeShape appears as active capability.
+```
+
+## 64. v0.2.1 Passive Physics Boundary Cleanup Gate
+
+`v0.2.1 - Passive Physics Boundary Cleanup` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.2.1
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+ObservationReport is documented as foundation explanation and not physics measurement
+PassiveMetricReport is documented as passive metric description only
+v0.2.x passive Physics is documented as narrow passive metric description, not dynamic physics or simulation
+PassiveMetricSnapshot, PassiveMetricReport, build_passive_metric_snapshot, and create_passive_metric_report are allowed only in genus_core.passive_physics
+forbidden active metric implementation artifacts remain absent from src/genus_core
+cost and potential remain excluded
+durable truth layer remains EvidenceRecord and LedgerEntry only
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+CI remains install, pytest, CLI smoke
+```
+
+## 65. v0.2.1 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new SQLite table appears.
+A new sentence type appears.
+A new metric name appears beyond pressure, inhibition, or stability.
+cost or potential become active first implementation metric names.
+Metric outputs contain score, priority, rank, recommendation, permission, decision, approval, action, execute, candidate, transition, constraint, reaction, memory_write, or truth.
+PhysicsMetric, PassiveMetric, Pressure, Inhibition, Stability, Cost, Potential, MetricRecord, MetricOutput, PassiveMetricOutput, MetricOutputShape, or calculate_*_metric appears as an active object, module, file, import, public export, or public function.
+TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, RuntimeCell, Organ, Agent, GraphDB, or RuntimeShape appears as active capability.
 ```

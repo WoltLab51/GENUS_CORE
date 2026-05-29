@@ -221,7 +221,7 @@ It is explicitly forbidden in v0.0.1.
 
 ## PassiveMetricSnapshot
 
-An ephemeral v0.2.0 passive Physics artifact derived from a BeliefStateSnapshot.
+An ephemeral v0.2.x passive Physics artifact derived from a BeliefStateSnapshot.
 
 It contains descriptive metric outputs for `pressure`, `inhibition`, and
 `stability`.
@@ -230,18 +230,19 @@ It is not a PhysicsMetric, score, priority, recommendation, permission,
 decision, transition, reaction, memory write, truth claim, or persistence
 record.
 
-Allowed in: v0.2.0
+Allowed in: v0.2.x
 
 ## PassiveMetricReport
 
-An ephemeral v0.2.0 descriptive report explaining a PassiveMetricSnapshot.
+An ephemeral v0.2.x descriptive report explaining a PassiveMetricSnapshot.
 
 It contains `no_action_possible = true` and safe lineage references.
 
-It is not an ObservationReport, decision, approval, action, reaction,
-transition, constraint, memory write, or truth claim.
+It is not an ObservationReport, decision, approval, action, recommendation,
+priority, permission, reaction, transition, constraint, memory write, dynamic
+physics simulation, or truth claim.
 
-Allowed in: v0.2.0
+Allowed in: v0.2.x
 
 ## TransitionCandidate
 

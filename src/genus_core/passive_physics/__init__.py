@@ -1,4 +1,4 @@
-"""Passive physics exports for GENUS_CORE v0.2.0."""
+"""Passive physics exports for GENUS_CORE v0.2.x."""
 
 from genus_core.passive_physics.functions import (
     build_passive_metric_snapshot,
