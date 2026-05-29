@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.3.0 Passive Transition Preview Seed
+Status: active for v0.3.1 Passive Transition Boundary Audit
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.

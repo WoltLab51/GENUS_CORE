@@ -299,6 +299,16 @@ MemoryWrite. It describes only a possible later governed question while keeping
 `target_state`, selected/proposed transition fields, permission, priority,
 recommendation, allow/block, execution, and persistence out of scope.
 
+### v0.3.1 - Passive Transition Boundary Audit
+
+Audits the v0.3.0 passive preview layer without adding capability.
+
+It hardens `PassiveTransitionReport.summary` against active wording and
+neutralizes the memory-tension `possible_future_question`. It does not add new
+preview types, persistence, CLI commands, schema changes, transition
+candidates, constraint decisions, reactions, memory writes, workers, LLMs,
+GraphDB, or RuntimeShape.
+
 ## Later, Not Yet Active
 
 Future planning may later introduce passive cognitive physics concepts, but

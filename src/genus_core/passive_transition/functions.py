@@ -48,7 +48,7 @@ def build_passive_transition_preview(
         )
         possible_future_question = (
             "Could a later governed boundary evaluate whether observed memory "
-            "content belongs in governed memory?"
+            "content raises a governed memory question?"
         )
     else:
         preview_type = "no_visible_transition_tension_preview"

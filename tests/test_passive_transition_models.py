@@ -15,7 +15,7 @@ def _preview() -> PassiveTransitionPreview:
         observed_tension_summary="A passive memory-request tension is visible.",
         possible_future_question=(
             "Could a later governed boundary evaluate whether observed memory "
-            "content belongs in governed memory?"
+            "content raises a governed memory question?"
         ),
     )
 

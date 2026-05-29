@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.3.0
+Status: active boundary document for GENUS_CORE v0.3.1
 
 ## Purpose
 
@@ -177,3 +177,7 @@ standalone output or payload field and must not imply an active transition.
 The runtime `possible_future_question` value must remain descriptive and
 question-like. It must not contain `should`, `must`, `allow`, `block`,
 `execute`, `write`, `approve`, or `recommend`.
+
+`PassiveTransitionReport.summary` must remain descriptive-only. It must not
+imply approval, permission, decision, execution, action taken, memory creation,
+reaction creation, selected transition, selected candidate, or decision made.

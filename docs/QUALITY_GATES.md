@@ -1189,3 +1189,39 @@ target_state, selected_transition, proposed_transition, policy_result, approval,
 possible_future_question contains should, must, allow, block, execute, write, approve, or recommend at runtime.
 TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, RuntimeCell, Organ, Agent, GraphDB, or RuntimeShape appears as active capability.
 ```
+
+## 68. v0.3.1 Passive Transition Boundary Audit Gate
+
+`v0.3.1 - Passive Transition Boundary Audit` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.3.1
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PassiveTransitionReport summary remains descriptive-only
+PassiveTransitionReport summary contains none of approved, allowed, decided, executed, action taken, memory written, memory created, reaction created, transition selected, transition executed, candidate selected, decision made
+memory-tension possible_future_question uses neutral raises-a-governed-memory-question wording
+possible_future_question runtime value still rejects should, must, allow, block, execute, write, approve, and recommend
+preview_type values remain exactly memory_request_transition_tension_preview and no_visible_transition_tension_preview
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+SQLite tables remain evidence_records and ledger_entries
+CI remains install, pytest, CLI smoke
+```
+
+## 69. v0.3.1 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new SQLite table appears.
+A new sentence type appears.
+Public foundation functions change.
+A new preview type appears.
+PassiveTransitionReport summary implies approval, permission, decision, execution, action taken, memory creation, reaction creation, selected transition, selected candidate, or decision made.
+TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, RuntimeCell, Organ, Agent, GraphDB, or RuntimeShape appears as active capability.
+```

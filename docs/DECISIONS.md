@@ -576,3 +576,25 @@ question-like and must not contain `should`, `must`, `allow`, `block`,
 
 v0.3.0 does not change public foundation functions, sentence types, CLI
 commands, SQLite schema, durable truth layer, or `SCHEMA_VERSION`.
+
+## Decision 0029 - v0.3.1 audits passive transition report language
+
+Decision:
+
+v0.3.1 adds no capability. It hardens `PassiveTransitionReport.summary` against
+active wording and neutralizes the memory-tension `possible_future_question`.
+
+Reason:
+
+v0.3.0 correctly keeps transition preview passive, but summary text deserves
+the same explicit descriptive-only guard used for earlier report layers. The
+memory-tension question should say that content raises a governed memory
+question, not that content belongs in governed memory.
+
+Impact:
+
+Public foundation functions, passive transition artifacts, preview types,
+sentence types, CLI commands, SQLite schema, durable truth layer, and
+`SCHEMA_VERSION` remain unchanged. v0.3.1 does not add TransitionCandidate,
+ConstraintDecision, Reaction, MemoryWrite, worker execution, LLM calls, GraphDB,
+RuntimeShape, or product capability.

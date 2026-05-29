@@ -81,7 +81,10 @@ def test_memory_request_metrics_create_passive_tension_preview() -> None:
     assert preview.source_evidence_ids_json == belief.source_evidence_ids_json
     assert preview.no_action_possible is True
     assert preview.no_decision_possible is True
-    assert "?" in preview.possible_future_question
+    assert preview.possible_future_question == (
+        "Could a later governed boundary evaluate whether observed memory "
+        "content raises a governed memory question?"
+    )
 
 
 def test_no_visible_tension_preview_for_neutral_metrics() -> None:
@@ -159,6 +162,32 @@ def test_passive_transition_report_is_descriptive_only() -> None:
         "recommendation",
     ):
         assert field_name not in report.payload_json
+
+
+def test_passive_transition_report_summary_remains_descriptive_only() -> None:
+    belief = _memory_request_belief()
+    metrics = build_passive_metric_snapshot(belief)
+    preview = build_passive_transition_preview(belief, metrics)
+
+    report = create_passive_transition_report(preview)
+    lowered_summary = report.summary.lower()
+
+    assert "passive preview" in lowered_summary
+    for phrase in (
+        "approved",
+        "allowed",
+        "decided",
+        "executed",
+        "action taken",
+        "memory written",
+        "memory created",
+        "reaction created",
+        "transition selected",
+        "transition executed",
+        "candidate selected",
+        "decision made",
+    ):
+        assert phrase not in lowered_summary
 
 
 def test_passive_transition_adds_no_sqlite_tables(tmp_path) -> None:
