@@ -1,6 +1,6 @@
 # GENUS Charter
 
-Status: active governance charter for GENUS_CORE v0.2.1
+Status: active governance charter for GENUS_CORE v0.3.0
 
 ## Definition
 

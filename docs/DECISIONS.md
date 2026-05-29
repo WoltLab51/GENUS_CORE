@@ -549,3 +549,30 @@ metric names, dynamic Physics, simulation, scoring, priority, recommendation,
 permission, decision, transition, constraint, reaction, memory write, CLI
 commands, SQLite persistence, worker execution, LLM calls, GraphDB, RuntimeShape,
 or schema changes.
+
+## Decision 0028 - v0.3.0 adds passive transition preview
+
+Decision:
+
+v0.3.0 introduces `PassiveTransitionPreview`, `PassiveTransitionReport`,
+`build_passive_transition_preview`, and `create_passive_transition_report` in
+the separate `genus_core.passive_transition` namespace.
+
+Reason:
+
+Passive Physics can describe visible tension, but GENUS still must not create
+transition candidates, decisions, reactions, or memory writes. A passive preview
+layer can describe that a later governed question may exist without selecting,
+recommending, permitting, blocking, or executing anything.
+
+Impact:
+
+`transition` may appear in passive v0.3.0 artifact names, module names,
+function names, docs, and tests only when clearly qualified as passive preview
+or forbidden active capability. It must not appear as a standalone output or
+payload field. The runtime `possible_future_question` field must remain
+question-like and must not contain `should`, `must`, `allow`, `block`,
+`execute`, `write`, `approve`, or `recommend`.
+
+v0.3.0 does not change public foundation functions, sentence types, CLI
+commands, SQLite schema, durable truth layer, or `SCHEMA_VERSION`.

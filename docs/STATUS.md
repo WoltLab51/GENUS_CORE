@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.2.1 - Passive Physics Boundary Cleanup`
+Current baseline: `v0.3.0 - Passive Transition Preview Seed`
 
-Status: boundary cleanup for the first narrow passive Physics implementation.
+Status: first narrow passive transition preview layer after passive Physics.
 
 ## Released baselines
 
@@ -90,6 +90,10 @@ Commit: 6744752de25105a299d1e36952e966e4bb27bb7d
 v0.2.0 Passive Physics Seed
 Tag: genus-core-v0.2.0-passive-physics-seed
 Commit: ea0e8a78876f689643bfc335e817bfe49729506a
+
+v0.2.1 Passive Physics Boundary Cleanup
+Tag: genus-core-v0.2.1-passive-physics-boundary-cleanup
+Commit: 2caeeabb60f9ce34470519448b4c814634bbd8a9
 ```
 
 ## Frozen foundation chain
@@ -107,28 +111,29 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.2.1` is Passive Physics Boundary Cleanup.
+`GENUS_CORE v0.3.0` is Passive Transition Preview Seed.
 
-It clarifies the first narrow passive Physics layer downstream of
-BeliefStateSnapshot. The allowed passive v0.2.x artifacts remain
-`PassiveMetricSnapshot`, `PassiveMetricReport`, `build_passive_metric_snapshot`,
-and `create_passive_metric_report` in the separate
-`genus_core.passive_physics` namespace. It does not add runtime metric classes
-such as Pressure or Stability, metric persistence, sentence types, CLI commands,
-decisions, reactions, transitions, workers, LLM calls, or memory writes.
+It introduces a narrow passive preview layer downstream of BeliefStateSnapshot
+and PassiveMetricSnapshot. The allowed passive v0.3.0 artifacts are
+`PassiveTransitionPreview`, `PassiveTransitionReport`,
+`build_passive_transition_preview`, and `create_passive_transition_report` in
+the separate `genus_core.passive_transition` namespace. It does not add
+TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
+persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
+RuntimeShape.
 
-The package version is `0.2.1`, while `SCHEMA_VERSION` remains
+The package version is `0.3.0`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
-Local pytest and CLI smoke checks are expected for the passive Physics boundary
-state.
+Local pytest and CLI smoke checks are expected for the passive transition
+preview state.
 
 GitHub Actions initially failed before creating jobs because the CLI smoke
 command used a YAML plain scalar containing `das: larumipsum`. The workflow now
 uses a block scalar for the smoke command so the colon remains part of the CLI
-argument. v0.2.1 acceptance requires a green run on the v0.2.1 commit.
+argument. v0.3.0 acceptance requires a green run on the v0.3.0 commit.
 
 ## Explicitly not active
 
@@ -164,14 +169,18 @@ RuntimeShape
 `pressure`, `inhibition`, and `stability` are active only as passive
 `metric_name` string values inside `PassiveMetricSnapshot` outputs.
 
-## v0.2.1 Passive Physics Boundary Acceptance
+`transition` is active only as part of passive v0.3.0 artifact, module,
+function, docs, and test names when clearly qualified as passive preview. It is
+not an output or payload field and does not imply an active transition.
+
+## v0.3.0 Passive Transition Preview Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.2.1
+Package version is 0.3.0
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md exists
 SAFETY_BOUNDARIES.md exists
@@ -183,10 +192,19 @@ PassiveMetricSnapshot exists only in genus_core.passive_physics
 PassiveMetricReport exists only in genus_core.passive_physics
 build_passive_metric_snapshot exists only in genus_core.passive_physics
 create_passive_metric_report exists only in genus_core.passive_physics
+PassiveTransitionPreview exists only in genus_core.passive_transition
+PassiveTransitionReport exists only in genus_core.passive_transition
+build_passive_transition_preview exists only in genus_core.passive_transition
+create_passive_transition_report exists only in genus_core.passive_transition
 build_passive_metric_snapshot accepts only BeliefStateSnapshot
+build_passive_transition_preview accepts only BeliefStateSnapshot and PassiveMetricSnapshot
 Passive metrics are exactly pressure, inhibition, stability
 cost and potential remain excluded from the first implementation
 Passive metric outputs are not persisted
+Passive transition previews are not persisted
+PassiveTransitionPreview is not TransitionCandidate
+PassiveTransitionReport is not ConstraintDecision
+possible_future_question contains none of should, must, allow, block, execute, write, approve, recommend
 PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
 Pre-Physics Requirements exist
 Passive Metric Vocabulary exists
@@ -209,6 +227,7 @@ Public foundation functions remain exactly observe_event, create_evidence_record
 CLI exposes only observe
 ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
-v0.2.x passive Physics is not dynamic physics, simulation, transition, constraint decision, or reaction
-No product scope expansion exists beyond passive Physics in v0.2.1
+PassiveTransitionReport describes passive preview only
+v0.3.0 passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
+No product scope expansion exists beyond passive transition preview in v0.3.0
 ```

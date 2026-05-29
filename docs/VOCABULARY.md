@@ -244,6 +244,30 @@ physics simulation, or truth claim.
 
 Allowed in: v0.2.x
 
+## PassiveTransitionPreview
+
+An ephemeral v0.3.0 passive preview artifact derived from a BeliefStateSnapshot
+and a PassiveMetricSnapshot.
+
+It describes visible passive tension as a possible later governed question. It
+contains `no_action_possible = true` and `no_decision_possible = true`.
+
+It is not TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite,
+recommendation, permission, priority, target state, selected transition,
+proposed transition, action, truth claim, or persistence record.
+
+Allowed in: v0.3.0
+
+## PassiveTransitionReport
+
+An ephemeral v0.3.0 descriptive report explaining a PassiveTransitionPreview.
+
+It is not ConstraintDecision, approval, permission, recommendation, priority,
+Reaction, MemoryWrite, selected transition, proposed transition, target state,
+action, or truth claim.
+
+Allowed in: v0.3.0
+
 ## TransitionCandidate
 
 A future concept for possible state change.

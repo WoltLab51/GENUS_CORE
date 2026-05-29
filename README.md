@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.2.1` is Passive Physics Boundary Cleanup.
+`GENUS_CORE v0.3.0` is Passive Transition Preview Seed.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,23 +15,28 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release clarifies the first narrow passive Physics layer after the passive
-foundation. It preserves the v0.1.10 governance baseline and keeps agents,
-workers, LLM calls, memory writes, reactions, decisions, cognitive maps,
-transition candidates, constraint decisions, runtime cells, organs, and GraphDB
-truth out of scope.
+This release introduces a narrow passive preview layer after passive Physics.
+It preserves the v0.1.10 governance baseline and keeps agents, workers, LLM
+calls, memory writes, reactions, decisions, cognitive maps, transition
+candidates, constraint decisions, runtime cells, organs, and GraphDB truth out
+of scope.
 
 ## Version and Boundary
 
-Package version: `0.2.1`
+Package version: `0.3.0`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
-Capability boundary: passive foundation plus passive Physics only
+Capability boundary: passive foundation plus passive Physics plus passive
+transition preview only
 
 Passive Physics in v0.2.x is a narrow passive metric description layer. It is
 not dynamic physics, simulation, transition physics, constraint decision,
 reaction, recommendation, prioritization, permission, or action.
+
+Passive Transition Preview in v0.3.0 is a narrow descriptive question layer. It
+is not a `TransitionCandidate`, `ConstraintDecision`, recommendation,
+permission, priority, approval, reaction, memory write, or action.
 
 Governance documents:
 
@@ -51,6 +56,8 @@ Ephemeral derivation:
 - ObservationReport
 - PassiveMetricSnapshot
 - PassiveMetricReport
+- PassiveTransitionPreview
+- PassiveTransitionReport
 
 ## Install
 
@@ -97,5 +104,9 @@ create truth, transition, constrain, or measure physics.
 decide, approve, execute, recommend, prioritize, permit, transition, constrain,
 react, or write memory.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.2.1 is a passive
-Physics boundary cleanup, not a schema expansion.
+`PassiveTransitionReport` describes a passive preview question only. It does
+not decide, approve, execute, recommend, prioritize, permit, select a target
+state, create a candidate, constrain, react, or write memory.
+
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.3.0 is a passive preview
+step, not a schema expansion.

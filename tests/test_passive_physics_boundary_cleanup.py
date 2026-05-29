@@ -9,6 +9,7 @@ import genus_core
 import genus_core.cli as cli
 import genus_core.functions as foundation_functions
 import genus_core.passive_physics as passive_physics
+import genus_core.passive_transition as passive_transition
 from genus_core.language import ALLOWED_SENTENCE_TYPES
 from genus_core.truth import connect
 
@@ -18,6 +19,12 @@ ALLOWED_PASSIVE_PHYSICS_ARTIFACTS = {
     "PassiveMetricReport",
     "build_passive_metric_snapshot",
     "create_passive_metric_report",
+}
+ALLOWED_PASSIVE_TRANSITION_PREVIEW_ARTIFACTS = {
+    "PassiveTransitionPreview",
+    "PassiveTransitionReport",
+    "build_passive_transition_preview",
+    "create_passive_transition_report",
 }
 
 FORBIDDEN_ACTIVE_ARTIFACTS = {
@@ -112,9 +119,21 @@ def test_allowed_passive_physics_artifacts_are_explicitly_exported() -> None:
         assert hasattr(passive_physics, name)
 
 
+def test_allowed_passive_transition_preview_artifacts_are_explicitly_exported() -> None:
+    assert ALLOWED_PASSIVE_TRANSITION_PREVIEW_ARTIFACTS.issubset(
+        set(passive_transition.__all__)
+    )
+
+    for name in ALLOWED_PASSIVE_TRANSITION_PREVIEW_ARTIFACTS:
+        assert hasattr(passive_transition, name)
+
+
 def test_allowed_passive_physics_artifacts_do_not_expand_foundation_api() -> None:
     assert set(foundation_functions.__all__) == FOUNDATION_FUNCTIONS
     assert ALLOWED_PASSIVE_PHYSICS_ARTIFACTS.isdisjoint(foundation_functions.__all__)
+    assert ALLOWED_PASSIVE_TRANSITION_PREVIEW_ARTIFACTS.isdisjoint(
+        foundation_functions.__all__
+    )
 
 
 def test_forbidden_active_artifacts_remain_absent_from_src() -> None:

@@ -282,6 +282,23 @@ do not conflict with the continued ban on active metric classes, functions,
 persistence, CLI expansion, transition, constraint, reaction, memory, workers,
 LLMs, GraphDB, or RuntimeShape.
 
+### v0.3.0 - Passive Transition Preview Seed
+
+Adds the first passive preview layer after passive Physics:
+
+```text
+BeliefStateSnapshot
++ PassiveMetricSnapshot
+-> PassiveTransitionPreview
+-> PassiveTransitionReport
+-> no action
+```
+
+This is not `TransitionCandidate`, `ConstraintDecision`, `Reaction`, or
+MemoryWrite. It describes only a possible later governed question while keeping
+`target_state`, selected/proposed transition fields, permission, priority,
+recommendation, allow/block, execution, and persistence out of scope.
+
 ## Later, Not Yet Active
 
 Future planning may later introduce passive cognitive physics concepts, but

@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.2.1 Passive Physics Boundary Cleanup
+Status: active for v0.3.0 Passive Transition Preview Seed
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.
@@ -160,4 +160,14 @@ PassiveMetricSnapshot
 PassiveMetricReport
 build_passive_metric_snapshot()
 create_passive_metric_report()
+```
+
+The separate `genus_core.passive_transition` namespace may expose only the
+accepted passive v0.3.0 preview artifacts:
+
+```text
+PassiveTransitionPreview
+PassiveTransitionReport
+build_passive_transition_preview()
+create_passive_transition_report()
 ```

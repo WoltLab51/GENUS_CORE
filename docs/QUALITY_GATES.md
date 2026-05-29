@@ -1141,3 +1141,51 @@ Metric outputs contain score, priority, rank, recommendation, permission, decisi
 PhysicsMetric, PassiveMetric, Pressure, Inhibition, Stability, Cost, Potential, MetricRecord, MetricOutput, PassiveMetricOutput, MetricOutputShape, or calculate_*_metric appears as an active object, module, file, import, public export, or public function.
 TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, RuntimeCell, Organ, Agent, GraphDB, or RuntimeShape appears as active capability.
 ```
+
+## 66. v0.3.0 Passive Transition Preview Seed Gate
+
+`v0.3.0 - Passive Transition Preview Seed` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.3.0
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PassiveTransitionPreview exists only in genus_core.passive_transition
+PassiveTransitionReport exists only in genus_core.passive_transition
+build_passive_transition_preview accepts only BeliefStateSnapshot and PassiveMetricSnapshot
+create_passive_transition_report accepts only PassiveTransitionPreview
+PassiveMetricSnapshot source_state_id must match BeliefStateSnapshot
+Passive transition previews preserve source_evidence_ids_json
+preview_type values are exactly memory_request_transition_tension_preview and no_visible_transition_tension_preview
+no_action_possible is always true
+no_decision_possible is always true
+possible_future_question is question-like
+possible_future_question runtime value rejects should, must, allow, block, execute, write, approve, and recommend
+the word transition appears in output only as part of passive v0.3.0 preview artifact names or preview_type values
+transition is not a standalone output or payload field
+PassiveTransitionReport contains no decision, action, constraint, candidate, reaction, memory_write, truth, permission, recommendation, target_state, selected_transition, or proposed_transition fields
+Passive transition previews are not persisted
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+CI remains install, pytest, CLI smoke
+```
+
+## 67. v0.3.0 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new SQLite table appears.
+A new sentence type appears.
+Public foundation functions change.
+PassiveTransitionPreview becomes TransitionCandidate.
+PassiveTransitionReport becomes ConstraintDecision.
+transition appears as a standalone output or payload field.
+target_state, selected_transition, proposed_transition, policy_result, approval, permission, recommendation, priority, score, rank, allow, block, execute, activation, decision, action, reaction, memory_write, or truth appears as an allowed passive transition preview/report field.
+possible_future_question contains should, must, allow, block, execute, write, approve, or recommend at runtime.
+TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, RuntimeCell, Organ, Agent, GraphDB, or RuntimeShape appears as active capability.
+```

@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.2.1
+Status: active boundary document for GENUS_CORE v0.3.0
 
 ## Purpose
 
@@ -15,7 +15,7 @@ growth.
 The current active boundary is:
 
 ```text
-passive foundation plus passive Physics only
+passive foundation plus passive Physics plus passive transition preview only
 ```
 
 The active foundation chain remains:
@@ -62,7 +62,10 @@ STATUS.md reflects the current state.
 Tests prove the capability and its forbidden effects.
 ```
 
-No further product capability is allowed in v0.2.1.
+The only new product capability allowed in v0.3.0 is passive transition
+preview.
+
+No further product capability is allowed in v0.3.0.
 
 ## Forbidden in the Current Boundary
 
@@ -150,3 +153,27 @@ RuntimeShape activates dynamically.
 Self-mutation occurs without proposal, test, approval, rollback, and fossil.
 Terms imply more power than the code actually controls.
 ```
+
+## Passive Transition Preview Boundary
+
+The active v0.3.0 direction is passive preview only:
+
+```text
+BeliefStateSnapshot
++ PassiveMetricSnapshot
+-> PassiveTransitionPreview
+-> PassiveTransitionReport
+-> no action
+```
+
+`PassiveTransitionPreview` is not `TransitionCandidate`.
+`PassiveTransitionReport` is not `ConstraintDecision`.
+
+The word `transition` may appear in passive v0.3.0 artifact names, module
+names, function names, docs, and tests only when it is clearly qualified as
+passive preview or a forbidden active capability. It must not appear as a
+standalone output or payload field and must not imply an active transition.
+
+The runtime `possible_future_question` value must remain descriptive and
+question-like. It must not contain `should`, `must`, `allow`, `block`,
+`execute`, `write`, `approve`, or `recommend`.
