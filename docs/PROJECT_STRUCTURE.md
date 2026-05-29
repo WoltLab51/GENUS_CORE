@@ -1,6 +1,6 @@
 # GENUS_CORE Project Structure
 
-Status: active for v0.3.3 Quality Gates Modularization
+Status: active for v0.3.4 Artifact Contract Alignment
 
 GENUS_CORE treats code, tests, docs, specs, decisions, and quality gates as
 governed artifacts.
@@ -24,6 +24,12 @@ the current system must not do.
 
 Defines how Codex and future builders must shape changes. It governs function
 granularity, side effects, file growth, split rules, and documentation hygiene.
+
+`ARTIFACT_CONTRACTS.md`
+
+Defines how GENUS artifacts compose through IDs, source lineage, evidence
+lineage, snapshot/preview/report roles, durable/ephemeral boundaries, and report
+limits.
 
 `QUALITY_GATES.md`
 
@@ -61,7 +67,7 @@ Summarize release-specific changes. They should not redefine architecture.
 
 ## Historical Longfiles
 
-The following files are accepted historical longfiles for v0.3.3:
+The following files are accepted historical longfiles for v0.3.4:
 
 ```text
 docs/DECISIONS.md

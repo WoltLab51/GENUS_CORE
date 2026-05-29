@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates Planned
 
-Status: active for v0.3.3 Quality Gates Modularization
+Status: active for v0.3.4 Artifact Contract Alignment
 
 ## 70. Planned v0.4.0 Passive Boundary Relevance Spec Gate
 

@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.3.3 - Quality Gates Modularization`
+Current baseline: `v0.3.4 - Artifact Contract Alignment`
 
-Status: modular quality-gates governance baseline after v0.3.2.
+Status: artifact-contract governance baseline after v0.3.3.
 
 ## Released baselines
 
@@ -119,11 +119,11 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.3.3` is Quality Gates Modularization.
+`GENUS_CORE v0.3.4` is Artifact Contract Alignment.
 
-It adds no runtime capability. It turns `docs/QUALITY_GATES.md` into an index
-and moves historical gate content into modular files under
-`docs/quality_gates/`.
+It adds no runtime capability. It documents shared artifact contracts for IDs,
+lineage, snapshot/preview/report roles, durable/ephemeral boundaries, report
+limits, compatibility, and watched evaluation wording.
 
 The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
@@ -133,8 +133,7 @@ TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
 persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
 RuntimeShape.
 
-The package version is `0.3.3`, while `SCHEMA_VERSION` remains
-`genus.foundation.v0.0.1`.
+Package version is `0.3.4`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
@@ -184,17 +183,20 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.3.3 Quality Gates Modularization Acceptance
+## v0.3.4 Artifact Contract Alignment Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.3.3
+Package version is 0.3.4
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md exists
 SAFETY_BOUNDARIES.md exists
+ARTIFACT_CONTRACTS.md exists
+ARTIFACT_CONTRACTS.md says contracts do not require identical fields
+ARTIFACT_CONTRACTS.md says reports do not create new lineage
 BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
 BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
 PROJECT_STRUCTURE.md exists
@@ -254,5 +256,5 @@ ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
 PassiveTransitionReport describes passive preview only
 v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond quality gates modularization in v0.3.3
+No product scope expansion exists beyond artifact contract alignment in v0.3.4
 ```

@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates
 
-Status: active for v0.3.3 Quality Gates Modularization
+Status: active for v0.3.4 Artifact Contract Alignment
 
 ## 1. Purpose
 
@@ -19,6 +19,7 @@ pytest green
 CLI smoke test green
 all new terms documented
 all new invariants tested
+artifact contracts preserved
 STATUS.md updated
 DECISIONS.md updated when architecture changed
 SAFETY_BOUNDARIES.md updated when power changed

@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.3.1
+Status: active boundary document for GENUS_CORE v0.3.4
 
 ## Purpose
 
@@ -9,6 +9,10 @@ This document defines the operational build boundaries for GENUS_CORE.
 It exists so that new power cannot enter the repository through ambiguous
 language, convenience helpers, hidden side effects, or untested capability
 growth.
+
+Artifact composition must also respect `ARTIFACT_CONTRACTS.md`. Shared artifact
+contracts preserve IDs, lineage, report limits, and durable/ephemeral boundaries
+without forcing every artifact to use identical fields.
 
 ## Current Boundary
 
@@ -202,3 +206,10 @@ passive_preview_boundary
 `observed_boundary_relevance` must remain descriptive and non-numeric. It must
 not imply score, rank, priority, severity, weight, recommendation, or
 permission.
+
+## Watched Wording
+
+`evaluate` and `evaluation` are watched terms. They may drift toward permission,
+policy, approval, rejection, allow/block, or decision semantics. Future use is
+allowed only when an accepted spec explicitly qualifies it as descriptive
+relevance mapping.

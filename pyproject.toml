@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.3.3"
-description = "GENUS_CORE v0.3.3 Quality Gates Modularization"
+version = "0.3.4"
+description = "GENUS_CORE v0.3.4 Artifact Contract Alignment"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

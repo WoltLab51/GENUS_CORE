@@ -324,11 +324,19 @@ Modularizes `QUALITY_GATES.md` without runtime capability.
 It turns `QUALITY_GATES.md` into an index and moves historical gate content
 into `docs/quality_gates/` by version series.
 
+### v0.3.4 - Artifact Contract Alignment
+
+Documents shared artifact contracts without runtime capability.
+
+It defines ID, source-lineage, evidence-lineage, snapshot/preview/report,
+durable/ephemeral, report-boundary, compatibility, and watched-wording rules in
+`ARTIFACT_CONTRACTS.md`.
+
 ### Planned v0.4.0 - Passive Boundary Relevance Spec
 
 Spec-only planning for a later passive boundary relevance description.
 
-This is not an implementation and does not change the active v0.3.3 baseline.
+This is not an implementation and does not change the active v0.3.4 baseline.
 It defines how a later `PassiveBoundaryRelevancePreview` and
 `PassiveBoundaryRelevanceReport` may describe relevant boundary areas without
 evaluating boundaries, granting permission, producing policy results,

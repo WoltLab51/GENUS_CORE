@@ -662,3 +662,24 @@ Impact:
 now. No runtime source package, class, function, CLI command, SQLite table,
 sentence type, schema version, worker, LLM, reaction, memory write, transition
 candidate, constraint decision, GraphDB, or RuntimeShape is introduced.
+
+## Decision 0033 - v0.3.4 aligns artifact contracts
+
+Decision:
+
+v0.3.4 adds `ARTIFACT_CONTRACTS.md` as the shared contract document for active
+GENUS artifacts.
+
+Reason:
+
+GENUS artifacts should be similar where compatibility matters and different
+where their role requires it. ID, source lineage, evidence lineage,
+snapshot/preview/report roles, durable/ephemeral boundaries, and report limits
+need one visible contract before v0.4.0 planning adds another passive layer.
+
+Impact:
+
+This is a governance and test release only. It does not change runtime
+behavior, package schema, SQLite tables, CLI commands, sentence types,
+persistence, workers, LLMs, reactions, memory writes, transition candidates,
+constraint decisions, GraphDB, or RuntimeShape.

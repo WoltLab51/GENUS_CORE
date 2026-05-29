@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.3.3` is Quality Gates Modularization.
+`GENUS_CORE v0.3.4` is Artifact Contract Alignment.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,15 +15,16 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release modularizes quality gates without adding runtime capability. It
-keeps code, tests, docs, specs, decisions, and quality gates governed while
+This release documents shared artifact contracts without adding runtime
+capability. It keeps code, tests, docs, specs, decisions, quality gates, and
+artifact lineage governed while
 keeping agents, workers, LLM calls, memory writes, reactions, decisions,
 cognitive maps, transition candidates, constraint decisions, runtime cells,
 organs, and GraphDB truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.3.3`
+Package version: `0.3.4`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
@@ -43,6 +44,9 @@ v0.3.2 adds no runtime capability; it adds build-structure guardrails for
 governed artifacts.
 v0.3.3 adds no runtime capability; it turns `QUALITY_GATES.md` into an index
 and moves historical gate content into `docs/quality_gates/`.
+v0.3.4 adds no runtime capability; it documents ID, source-lineage,
+evidence-lineage, snapshot/preview/report, durable/ephemeral, and report
+boundary contracts in `docs/ARTIFACT_CONTRACTS.md`.
 
 Planned v0.4.0 work is spec-only: Passive Boundary Relevance may describe how a
 later passive boundary relevance description is allowed to look. It must not
@@ -53,6 +57,7 @@ Governance documents:
 
 - `docs/GENUS_CHARTER.md`
 - `docs/SAFETY_BOUNDARIES.md`
+- `docs/ARTIFACT_CONTRACTS.md`
 
 Durable truth layer:
 
@@ -119,5 +124,5 @@ react, or write memory.
 not decide, approve, execute, recommend, prioritize, permit, select a target
 state, create a candidate, constrain, react, or write memory.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.3.1 is a passive preview
-boundary audit, not a schema expansion.
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.3.4 is artifact
+contract alignment, not a schema expansion.

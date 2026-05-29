@@ -1,9 +1,9 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.3.3 Quality Gates Modularization
+Status: active for v0.3.4 Artifact Contract Alignment
 
 These rules implement the repository-level governance defined in
-`GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.
+`GENUS_CHARTER.md`, `SAFETY_BOUNDARIES.md`, and `ARTIFACT_CONTRACTS.md`.
 
 ## 1. Function-first, not Monolith
 
@@ -242,3 +242,9 @@ After v0.3.3, new phase-specific gates should be added to the matching file in
 `docs/quality_gates/` or to a new focused gate file. Large decision blocks
 should not be added to historical monoliths unless the task explicitly updates
 their exception ceiling.
+
+## 12. Artifact Contract Rule
+
+Runtime artifacts, tests, docs, specs, reports, snapshots, and previews must
+respect `docs/ARTIFACT_CONTRACTS.md`. Shared contracts define compatibility,
+not identical field shape.
