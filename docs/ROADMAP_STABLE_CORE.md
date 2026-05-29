@@ -240,11 +240,18 @@ It renames ephemeral Belief and Report memory-request payload fields from
 and `observed_memory_content`, clarifies package/schema/capability boundaries,
 and hardens the CI workflow test for the YAML block scalar CLI smoke command.
 
+### v0.1.10 - GENUS Charter and Safety Boundary
+
+Anchors the GENUS vision as repository governance before passive Physics begins.
+
+It adds the GENUS charter, operational safety boundaries, and tests proving the
+core build directives are present. It adds no runtime capability.
+
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
 only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, v0.1.6, v0.1.7, and
-v0.1.8, and v0.1.9 are accepted.
+v0.1.8, v0.1.9, and v0.1.10 are accepted.
 
 ## Later, Not Yet Active
 

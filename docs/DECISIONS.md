@@ -482,3 +482,23 @@ v0.1.9 changes active ephemeral payload names, report wording, documentation,
 and tests. It does not change `SCHEMA_VERSION`, add compatibility aliases, add
 persistence tables, introduce passive Physics, expand the CLI, or add product
 capability.
+
+## Decision 0025 - v0.1.10 anchors the GENUS charter and safety boundary
+
+Decision:
+
+v0.1.10 adds `GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md` as active repository
+governance documents.
+
+Reason:
+
+The passive foundation is technically bounded, but the larger GENUS vision must
+be discoverable and test-protected before v0.2.0 begins. Future builds need a
+single charter for purpose and a single safety boundary for admissible power.
+
+Impact:
+
+v0.1.10 changes documentation, release metadata, and governance tests only. It
+does not change `SCHEMA_VERSION`, public foundation functions, CLI commands,
+SQLite schema, persistence behavior, passive Physics implementation, memory,
+reaction, transition, worker, LLM, or product capability.

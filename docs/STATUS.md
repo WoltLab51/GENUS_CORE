@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.1.9 - Boundary Naming Cleanup`
+Current baseline: `v0.1.10 - GENUS Charter and Safety Boundary`
 
-Status: passive boundary naming cleanup after v0.1.8 Release Integrity Finalization.
+Status: governance charter and safety boundary anchoring after v0.1.9 Boundary Naming Cleanup.
 
 ## Released baselines
 
@@ -78,6 +78,10 @@ Commit: f288fd8a78e5fa400c76a909ab07a5233104ce0d
 v0.1.8 Release Integrity Finalization
 Tag: genus-core-v0.1.8-release-integrity-finalization
 Commit: e16b89d5e7ed81f8b4305ceee0bcaf2b3c235443
+
+v0.1.9 Boundary Naming Cleanup
+Tag: genus-core-v0.1.9-boundary-naming-cleanup
+Commit: 7054a9dd31a864c382f7da4962c7d8f284ccd167
 ```
 
 ## Frozen foundation chain
@@ -95,26 +99,25 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.9` is Boundary Naming Cleanup.
+`GENUS_CORE v0.1.10` is GENUS Charter and Safety Boundary.
 
-It sharpens passive terminology before passive Physics begins. It renames
-ephemeral Belief/Report payload fields from action-like `pending`/`candidate`
-wording to observation-only `observed` wording, hardens the CI workflow test for
-the YAML block scalar smoke command, and keeps the v0.1.8 tag historical. It
-does not add runtime metric classes, metric records, metric functions, metric
-persistence, sentence types, CLI commands, or product behavior.
+It anchors the GENUS charter and operational safety boundaries before passive
+Physics begins. It adds repository-level governance documents and tests proving
+they exist and contain the core build directives. It does not add runtime metric
+classes, metric records, metric functions, metric persistence, sentence types,
+CLI commands, or product behavior.
 
-The package version is `0.1.9`, while `SCHEMA_VERSION` remains
+The package version is `0.1.10`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
-Local pytest and CLI smoke checks are green for the release integrity state.
+Local pytest and CLI smoke checks are expected for the governance boundary state.
 
 GitHub Actions initially failed before creating jobs because the CLI smoke
 command used a YAML plain scalar containing `das: larumipsum`. The workflow now
 uses a block scalar for the smoke command so the colon remains part of the CLI
-argument, and the post-fix `main` run completed successfully.
+argument. v0.1.10 acceptance requires a green run on the v0.1.10 commit.
 
 ## Explicitly not active
 
@@ -150,15 +153,21 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.9 Boundary Naming Acceptance
+## v0.1.10 Governance Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.9
+Package version is 0.1.10
 SCHEMA_VERSION remains genus.foundation.v0.0.1
+GENUS_CHARTER.md exists
+SAFETY_BOUNDARIES.md exists
+BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
+GENUS Charter contains LLM proposes. GENUS governs.
+GENUS Charter contains Do not make GENUS powerful before making it bounded.
+Safety Boundaries forbid active MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, Agent, GraphDB, RuntimeShape
 PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
 Pre-Physics Requirements exist
 Passive Metric Vocabulary exists
@@ -179,5 +188,5 @@ cost and potential remain excluded from first implementation and first output sh
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.9
+No product scope expansion exists in v0.1.10
 ```

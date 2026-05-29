@@ -1024,3 +1024,40 @@ pending_memory_request or candidate_content appears in active Belief or Report p
 Report wording implies a queue, execution, memory write, decision, reaction, transition, or physics.
 The CI smoke command can move outside the YAML block scalar without a failing test.
 ```
+
+## 60. v0.1.10 GENUS Charter and Safety Boundary Gate
+
+`v0.1.10 - GENUS Charter and Safety Boundary` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.10
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+GENUS_CHARTER.md exists
+SAFETY_BOUNDARIES.md exists
+BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
+GENUS Charter contains LLM proposes. GENUS governs.
+GENUS Charter contains Do not make GENUS powerful before making it bounded.
+Safety Boundaries forbid active MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, Agent, GraphDB, and RuntimeShape
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+no product scope expansion
+```
+
+## 61. v0.1.10 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new product capability appears.
+Passive Physics is implemented.
+Metric models, metric records, metric functions, metric persistence, or metric sentence types appear.
+MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, Agent, GraphDB, or RuntimeShape appears as active runtime capability.
+GENUS_CHARTER.md is missing.
+SAFETY_BOUNDARIES.md is missing.
+BUILD_RULES.md no longer references both governance documents.
+```

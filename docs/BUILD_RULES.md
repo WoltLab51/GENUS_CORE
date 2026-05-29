@@ -1,6 +1,9 @@
 # GENUS_CORE Build Rules
 
-Status: draft for foundation freeze
+Status: active for v0.1.10 GENUS Charter and Safety Boundary
+
+These rules implement the repository-level governance defined in
+`GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.
 
 ## 1. Function-first, not Monolith
 
@@ -110,6 +113,7 @@ bypass documentation rules
 A new capability or action can only be introduced if:
 
 ```text
+GENUS_CHARTER.md allows the direction.
 SAFETY_BOUNDARIES.md defines it.
 QUALITY_GATES.md defines acceptance.
 Tests cover it.
