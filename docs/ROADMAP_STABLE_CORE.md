@@ -204,9 +204,17 @@ mean insufficient input.
 
 ### v0.1.6 - Passive Metric Safety Audit
 
-Planned next step: audit requirements, vocabulary, acceptance criteria, output
-shape, CI, forbidden-object absence, and non-agentic metric boundaries before
-the first passive Physics implementation.
+Audits requirements, vocabulary, acceptance criteria, output shape, CI,
+forbidden-object absence, and non-agentic metric boundaries before the first
+passive Physics implementation.
+
+The audit requires:
+
+```text
+assessment_status = insufficient_input -> level = none
+assessment_status = not_applicable -> level = none
+assessment_status = assessed -> level = none | low | medium | high
+```
 
 ### v0.2.0 - Passive Physics Seed
 

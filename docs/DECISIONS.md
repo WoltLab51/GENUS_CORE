@@ -401,3 +401,25 @@ v0.1.5 may change release metadata, output-shape documentation, roadmap/status
 documentation, and tests proving metric implementation remains absent. It must
 not add metric classes, metric records, metric functions, metric persistence,
 sentence types, CLI commands, domain behavior, or product capability.
+
+## Decision 0021 - v0.1.6 audits passive metric safety before implementation
+
+Decision:
+
+v0.1.6 performs a passive metric safety audit before the first passive Physics
+implementation.
+
+Reason:
+
+Requirements, vocabulary, acceptance criteria, output shape, and CI now exist,
+but GENUS_CORE must still prove that these documents agree on non-agentic
+metric boundaries. The audit also closes the status/level consistency gap so
+`insufficient_input` and `not_applicable` cannot later pair with non-`none`
+levels.
+
+Impact:
+
+v0.1.6 may change release metadata, safety audit documentation, roadmap/status
+documentation, and tests proving metric implementation remains absent. It must
+not add metric classes, metric records, metric functions, metric persistence,
+sentence types, CLI commands, domain behavior, or product capability.

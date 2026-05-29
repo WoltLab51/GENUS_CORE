@@ -859,3 +859,67 @@ Domain function behavior changes.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 Docs describe passive metrics as active in v0.1.5.
 ```
+
+## 51. v0.1.6 Passive Metric Safety Audit Gate
+
+`v0.1.6 - Passive Metric Safety Audit` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.6
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
+Pre-Physics Requirements exist
+Passive Metric Vocabulary exists
+Passive Metric Acceptance Criteria exist
+Passive Metric Output Shape exists
+CI Gate exists
+status/level consistency rules are documented
+cost and potential remain excluded
+metric implementation artifacts remain absent from src/genus_core
+documentation updated
+no product scope expansion
+```
+
+## 52. v0.1.6 Technical Gate
+
+The following must be tested:
+
+```text
+Package version is 0.1.6.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists.
+PRE_PHYSICS_REQUIREMENTS_v0.1.1.md exists.
+PASSIVE_METRIC_VOCABULARY_v0.1.2.md exists.
+PASSIVE_METRIC_ACCEPTANCE_CRITERIA_v0.1.3.md exists.
+PASSIVE_METRIC_OUTPUT_SHAPE_v0.1.5.md exists.
+.github/workflows/ci.yml exists.
+assessment_status = insufficient_input requires level = none.
+assessment_status = not_applicable requires level = none.
+assessment_status = assessed may use level = none | low | medium | high.
+cost and potential remain excluded from first implementation and first output shape.
+Metric implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
+ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
+Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
+CLI exposes only observe.
+CI workflow remains minimal: install, pytest, CLI smoke only.
+Existing v0.1.5 tests remain green.
+```
+
+## 53. v0.1.6 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Metric safety rules are implemented in src/genus_core.
+PhysicsMetric or any metric model appears.
+A metric function, metric record, metric persistence, or metric sentence type appears.
+cost or potential are admitted into first implementation or first output shape.
+A new CLI command appears.
+A new product capability appears.
+Domain function behavior changes.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+Docs describe passive metrics as active in v0.1.6.
+CI expands beyond install, pytest, and CLI smoke.
+```

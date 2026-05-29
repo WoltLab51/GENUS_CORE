@@ -1,9 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.1.5 - Passive Metric Output Shape`
+Current target: `v0.1.6 - Passive Metric Safety Audit`
 
-Status: docs/tests-only output shape step after v0.1.4 Release Integrity & CI
-Gate.
+Status: docs/tests-only safety audit after v0.1.5 Passive Metric Output Shape.
 
 ## Released baselines
 
@@ -63,6 +62,10 @@ Commit: 38e0aa8569dce2d7463ff0db972cf6c77f2c7f18
 v0.1.4 Release Integrity & CI Gate
 Tag: genus-core-v0.1.4-release-integrity-ci-gate
 Commit: 43720b9005b134a96a0876981274b42b0ee39f42
+
+v0.1.5 Passive Metric Output Shape
+Tag: genus-core-v0.1.5-passive-metric-output-shape
+Commit: 28d0b66c74ffbdd2cbf8ab893aa24815314f31d7
 ```
 
 ## Frozen foundation chain
@@ -80,14 +83,13 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.5` is Passive Metric Output Shape.
+`GENUS_CORE v0.1.6` is Passive Metric Safety Audit.
 
-It defines a planned-not-active future passive metric output shape in docs and
-tests only. It does not add runtime metric classes, metric records, metric
-functions, metric persistence, sentence types, CLI commands, or product
-behavior.
+It audits the pre-Physics metric preparation line in docs and tests only. It
+does not add runtime metric classes, metric records, metric functions, metric
+persistence, sentence types, CLI commands, or product behavior.
 
-The package version is `0.1.5`, while `SCHEMA_VERSION` remains
+The package version is `0.1.6`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -124,27 +126,27 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.5 Output Shape Acceptance
+## v0.1.6 Safety Audit Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.5
+Package version is 0.1.6
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-PASSIVE_METRIC_OUTPUT_SHAPE_v0.1.5.md exists
-metric_name values are limited to pressure, inhibition, stability
-cost and potential remain excluded from first output shape
-level values are limited to none, low, medium, high
-assessment_status values are limited to assessed, insufficient_input, not_applicable
-level = none does not mean insufficient input
-explanation is descriptive-only
-explanation does not recommend, permit, approve, rank, prioritize, trigger, execute, transition, react, or write memory
-source_evidence_ids_json is lineage only
-source_evidence_ids_json does not imply scoring, weighting, ranking, priority, or confidence
+PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
+Pre-Physics Requirements exist
+Passive Metric Vocabulary exists
+Passive Metric Acceptance Criteria exist
+Passive Metric Output Shape exists
+CI Gate exists
+assessment_status = insufficient_input requires level = none
+assessment_status = not_applicable requires level = none
+assessment_status = assessed may use level = none | low | medium | high
+cost and potential remain excluded from first implementation and first output shape
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.5
+No product scope expansion exists in v0.1.6
 ```

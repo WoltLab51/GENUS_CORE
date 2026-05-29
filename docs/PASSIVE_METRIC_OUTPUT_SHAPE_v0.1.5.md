@@ -84,6 +84,21 @@ support assessment.
 `assessment_status = not_applicable` means the metric does not apply to that
 foundation state.
 
+## Status And Level Consistency
+
+`assessment_status = insufficient_input` requires `level = none`.
+
+`assessment_status = not_applicable` requires `level = none`.
+
+`assessment_status = assessed` may use `level = none`, `level = low`,
+`level = medium`, or `level = high`.
+
+```text
+assessment_status = insufficient_input requires level = none
+assessment_status = not_applicable requires level = none
+assessment_status = assessed may use level = none | low | medium | high
+```
+
 ## Explanation Boundary
 
 `explanation` is descriptive-only.
