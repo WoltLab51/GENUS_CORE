@@ -681,3 +681,62 @@ Domain function behavior changes.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 Docs describe passive metrics as active in v0.1.2.
 ```
+
+## 42. v0.1.3 Passive Metric Acceptance Criteria Gate
+
+`v0.1.3 - Passive Metric Acceptance Criteria` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.3
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PASSIVE_METRIC_ACCEPTANCE_CRITERIA_v0.1.3.md exists
+pressure, inhibition, and stability are first future implementation candidates
+cost and potential remain excluded from first implementation
+allowed read surface is limited
+forbidden effects are documented
+exact metric output shape is deferred to v0.1.4
+metric implementation artifacts remain absent from src/genus_core
+allowed sentence types unchanged
+public foundation functions unchanged
+CLI exposes only observe
+documentation updated
+no product scope expansion
+```
+
+## 43. v0.1.3 Technical Gate
+
+The following must be tested:
+
+```text
+Package version is 0.1.3.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+PASSIVE_METRIC_ACCEPTANCE_CRITERIA_v0.1.3.md exists.
+pressure, inhibition, and stability are accepted future first candidates.
+cost and potential remain excluded from first implementation.
+Allowed read surface is limited to BeliefStateSnapshot, source_evidence_ids_json, and safe descriptive foundation payload fields.
+Forbidden effects include Ledger writes, Evidence creation, Belief mutation, Report triggering, TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, prioritization, recommendation, permission, activation, action, and truth creation.
+Exact metric output shape is explicitly deferred to v0.1.4.
+Metric implementation artifacts remain absent from src/genus_core as class names, module names, file stems, imports, public exports, and public function references.
+ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
+Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
+CLI exposes only observe.
+Existing v0.1.2 tests remain green.
+```
+
+## 44. v0.1.3 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Metric output shape is implemented or frozen.
+PhysicsMetric or any metric model appears.
+A metric function, metric record, metric persistence, or metric sentence type appears.
+A new CLI command appears.
+A new product capability appears.
+Domain function behavior changes.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+Docs describe passive metrics as active in v0.1.3.
+cost or potential are admitted into first implementation.
+```

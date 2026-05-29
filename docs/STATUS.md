@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.1.2 - Passive Metric Vocabulary`
+Current target: `v0.1.3 - Passive Metric Acceptance Criteria`
 
-Status: vocabulary-only step after v0.1.1 Pre-Physics Requirements
+Status: acceptance-criteria-only step after v0.1.2 Passive Metric Vocabulary
 
 ## Released baselines
 
@@ -50,6 +50,10 @@ Commit: 57aa74f9e841befa521c9cff23c996e50ec36d47
 v0.1.1 Pre-Physics Requirements
 Tag: genus-core-v0.1.1-pre-physics-requirements
 Commit: f32aa894f34efbdc4fb007a709f4961a6f4e9731
+
+v0.1.2 Passive Metric Vocabulary
+Tag: genus-core-v0.1.2-passive-metric-vocabulary
+Commit: 96d9176e3020cea8c20a2fd8e7d835292fb60160
 ```
 
 ## Frozen foundation chain
@@ -67,15 +71,15 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.2` is Passive Metric Vocabulary.
+`GENUS_CORE v0.1.3` is Passive Metric Acceptance Criteria.
 
 It adds no active Physics, metric model, metric record, metric function, metric
-persistence, metric constants in `src`, memory, action, decision, approval,
+output shape, metric persistence, memory, action, decision, approval,
 constraint, transition, reaction, domain function behavior, public domain
 function, CLI command, sentence type, or schema version. It only defines
-planned-not-active metric vocabulary in docs and tests.
+acceptance criteria for future passive metrics in docs and tests.
 
-The package version is `0.1.2`, while `SCHEMA_VERSION` remains
+The package version is `0.1.3`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -107,23 +111,25 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.2 Vocabulary Acceptance
+## v0.1.3 Acceptance Criteria Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.2
+Package version is 0.1.3
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-PASSIVE_METRIC_VOCABULARY_v0.1.2.md exists
-pressure, inhibition, stability, cost, and potential are planned-not-active terms
-Metric Vocabulary is not Metric Implementation
-Metric Term is not Decision, Priority, Transition, Action, Permission, Recommendation, Activation, or MemoryWrite
-Metric vocabulary exists only in docs and tests
-No metric constants, enums, registries, allowed lists, classes, modules, files, imports, public exports, or public function references exist in src/genus_core
+PASSIVE_METRIC_ACCEPTANCE_CRITERIA_v0.1.3.md exists
+pressure, inhibition, and stability are first future implementation candidates
+cost and potential remain excluded from first implementation
+Allowed read surface is limited to BeliefStateSnapshot, source_evidence_ids_json, and safe descriptive foundation payload fields
+Output category is passive descriptive label plus explanation only
+Exact output shape is deferred to v0.1.4
+Forbidden effects include Ledger writes, Evidence creation, Belief mutation, Report triggering, TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, prioritization, recommendation, permission, activation, action, and truth creation
+No metric implementation artifacts exist in src/genus_core
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.2
+No product scope expansion exists in v0.1.3
 ```

@@ -335,3 +335,26 @@ documentation, and tests proving metric implementation remains absent. Metric
 vocabulary may exist only in docs and tests. No metric constants, enums,
 registries, allowed lists, classes, modules, files, imports, public exports, or
 public function references may be added to `src/genus_core`.
+
+## Decision 0018 - v0.1.3 defines passive metric acceptance criteria only
+
+Decision:
+
+v0.1.3 defines acceptance criteria for future passive metrics without
+implementing metrics.
+
+Reason:
+
+Before any passive Physics implementation exists, GENUS_CORE must define what
+future metrics may read, what they may output at a high level, which concepts
+are first candidates, which concepts remain excluded, and which effects are
+forbidden. This prevents metrics from becoming hidden priority, transition,
+permission, action, or truth surfaces.
+
+Impact:
+
+v0.1.3 may change release metadata, acceptance criteria documentation,
+roadmap/status documentation, and tests proving metric implementation remains
+absent. It must not add metric output schemas, metric models, metric records,
+metric functions, metric persistence, sentence types, CLI commands, domain
+behavior, or product capability.

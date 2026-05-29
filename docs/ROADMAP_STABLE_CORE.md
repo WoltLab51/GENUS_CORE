@@ -148,13 +148,35 @@ potential
 
 ### v0.1.3 - Passive Metric Acceptance Criteria
 
-Planned next step: define accepted inputs, outputs, forbidden effects, and
-quality gates for a future passive Physics seed without implementing metrics.
+Defines accepted inputs, output category, forbidden effects, and quality gates
+for a future passive Physics seed without implementing metrics.
+
+First future implementation candidates remain:
+
+```text
+pressure
+inhibition
+stability
+```
+
+Still excluded from first implementation:
+
+```text
+cost
+potential
+```
+
+The exact metric output shape is deferred to v0.1.4.
+
+### v0.1.4 - Passive Metric Output Shape
+
+Planned next step: define the exact passive metric output shape without
+implementing metrics.
 
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
-only after v0.1.1, v0.1.2, and v0.1.3 are accepted.
+only after v0.1.1, v0.1.2, v0.1.3, and v0.1.4 are accepted.
 
 ## Later, Not Yet Active
 
