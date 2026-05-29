@@ -314,3 +314,24 @@ v0.1.1 may change release metadata, requirements documentation, roadmap/status
 documentation, vocabulary entries marked as planned, and tests proving Physics
 remains absent. It must not add `PhysicsMetric`, metric records, metric
 functions, sentence types, CLI commands, domain behavior, or product capability.
+
+## Decision 0017 - v0.1.2 defines passive metric vocabulary only
+
+Decision:
+
+v0.1.2 defines planned passive metric vocabulary without implementing metrics.
+
+Reason:
+
+Metric terms such as pressure, inhibition, stability, cost, and potential can
+drift into priority, recommendation, transition, permission, activation, or
+action semantics if they are introduced casually. GENUS_CORE must name these
+terms precisely before any metric implementation exists.
+
+Impact:
+
+v0.1.2 may change release metadata, vocabulary documentation, roadmap/status
+documentation, and tests proving metric implementation remains absent. Metric
+vocabulary may exist only in docs and tests. No metric constants, enums,
+registries, allowed lists, classes, modules, files, imports, public exports, or
+public function references may be added to `src/genus_core`.

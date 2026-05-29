@@ -378,41 +378,48 @@ A planned future concept for describing a derived state without decision,
 priority, execution, reaction, memory write, transition, constraint, or truth
 creation.
 
-It is planned, not active in v0.1.1.
+It is planned-not-active in v0.1.2.
 
 ## pressure
 
 A planned future passive metric concept for describing accumulated demand or
 tension in an internal state.
 
-It is not active in v0.1.1 and is not a decision, priority, action, transition,
-constraint, or truth claim.
+It is planned-not-active in v0.1.2 and is not a decision, priority, action,
+permission, recommendation, activation, transition, constraint, truth claim, or
+memory write.
 
 ## inhibition
 
 A planned future passive metric concept for describing resistance or blocking
 signals in an internal state.
 
-It is not active in v0.1.1 and is not ConstraintDecision, action, reaction,
-transition, or policy.
+It is planned-not-active in v0.1.2 and is not ConstraintDecision, action,
+reaction, permission, recommendation, activation, transition, policy, truth
+claim, or memory write.
 
 ## stability
 
 A planned future passive metric concept for describing whether an internal state
 appears steady or fragile.
 
-It is not active in v0.1.1 and is not approval, decision, action, or truth.
+It is planned-not-active in v0.1.2 and is not approval, decision, action,
+permission, recommendation, activation, truth, or memory write.
 
 ## cost
 
 A higher-risk planned future passive metric concept.
 
-It is not active in v0.1.1. Because cost can drift toward prioritization and
-decision matrices, it requires later acceptance before implementation.
+It is planned-not-active in v0.1.2. Because cost can drift toward prioritization
+and decision matrices, it requires later acceptance before implementation. It is
+not a scheduler, optimizer, budget allocator, permission, recommendation,
+activation, action, truth claim, or memory write.
 
 ## potential
 
 A higher-risk planned future passive metric concept.
 
-It is not active in v0.1.1. Because potential can drift toward transition
-selection, it requires later acceptance before implementation.
+It is planned-not-active in v0.1.2. Because potential can drift toward
+transition selection, it requires later acceptance before implementation. It is
+not TransitionCandidate, recommendation, permission, execution plan, activation,
+decision, action, truth claim, or memory write.

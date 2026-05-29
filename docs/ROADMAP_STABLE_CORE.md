@@ -128,13 +128,33 @@ Higher-risk planned concepts are `cost` and `potential`.
 
 ### v0.1.2 - Passive Metric Vocabulary
 
-Planned next step: define the passive metric vocabulary more precisely while
-still keeping metric implementation inactive.
+Defines planned-not-active passive metric vocabulary while keeping metric
+implementation inactive.
+
+First passive candidates:
+
+```text
+pressure
+inhibition
+stability
+```
+
+Higher-risk planned terms:
+
+```text
+cost
+potential
+```
+
+### v0.1.3 - Passive Metric Acceptance Criteria
+
+Planned next step: define accepted inputs, outputs, forbidden effects, and
+quality gates for a future passive Physics seed without implementing metrics.
 
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
-only after v0.1.1 and v0.1.2 requirements are accepted.
+only after v0.1.1, v0.1.2, and v0.1.3 are accepted.
 
 ## Later, Not Yet Active
 

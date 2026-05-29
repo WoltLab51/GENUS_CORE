@@ -1,6 +1,6 @@
 # GENUS_CORE
 
-`GENUS_CORE v0.1.1` is Pre-Physics Requirements.
+`GENUS_CORE v0.1.2` is Passive Metric Vocabulary.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -13,10 +13,10 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release adds requirements for future passive Physics work only. It does not
-implement agents, workers, LLM calls, memory writes, reactions, decisions,
-physics metrics, cognitive maps, transition candidates, constraint decisions,
-runtime cells, organs, or GraphDB truth.
+This release defines planned-not-active passive metric vocabulary only. It does
+not implement agents, workers, LLM calls, memory writes, reactions, decisions,
+physics metrics, metric functions, cognitive maps, transition candidates,
+constraint decisions, runtime cells, organs, or GraphDB truth.
 
 ## Install
 
@@ -59,5 +59,5 @@ The report explains what was observed, recorded, and derived. It does not
 decide, approve, execute, react, write memory, create truth, transition,
 constrain, or measure physics.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.1.1 is a requirements
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.1.2 is a vocabulary
 release, not a schema expansion.

@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current target: `v0.1.1 - Pre-Physics Requirements`
+Current target: `v0.1.2 - Passive Metric Vocabulary`
 
-Status: requirements-only step after the v0.1.0 Full Epistemic Core Freeze
+Status: vocabulary-only step after v0.1.1 Pre-Physics Requirements
 
 ## Released baselines
 
@@ -46,6 +46,10 @@ Commit: adc53da7ad645a034bfa07ade2f4a3a8cac1b4ac
 v0.1.0 Full Epistemic Core Freeze
 Tag: genus-core-v0.1.0-full-epistemic-core-freeze
 Commit: 57aa74f9e841befa521c9cff23c996e50ec36d47
+
+v0.1.1 Pre-Physics Requirements
+Tag: genus-core-v0.1.1-pre-physics-requirements
+Commit: f32aa894f34efbdc4fb007a709f4961a6f4e9731
 ```
 
 ## Frozen foundation chain
@@ -63,14 +67,15 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.1` is Pre-Physics Requirements.
+`GENUS_CORE v0.1.2` is Passive Metric Vocabulary.
 
-It adds no active Physics, metric model, metric record, metric function, memory,
-action, decision, approval, constraint, transition, reaction, domain function
-behavior, public domain function, CLI command, or schema version. It only
-documents requirements and tests that future Physics remains unimplemented.
+It adds no active Physics, metric model, metric record, metric function, metric
+persistence, metric constants in `src`, memory, action, decision, approval,
+constraint, transition, reaction, domain function behavior, public domain
+function, CLI command, sentence type, or schema version. It only defines
+planned-not-active metric vocabulary in docs and tests.
 
-The package version is `0.1.1`, while `SCHEMA_VERSION` remains
+The package version is `0.1.2`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
@@ -102,22 +107,23 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.1 Requirements Acceptance
+## v0.1.2 Vocabulary Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.1
+Package version is 0.1.2
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-PRE_PHYSICS_REQUIREMENTS_v0.1.1.md exists
-Future passive measures are defined as non-decision, non-action, non-memory, non-transition, non-constraint, non-truth surfaces
-Foundation chain remains unchanged
-Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
+PASSIVE_METRIC_VOCABULARY_v0.1.2.md exists
+pressure, inhibition, stability, cost, and potential are planned-not-active terms
+Metric Vocabulary is not Metric Implementation
+Metric Term is not Decision, Priority, Transition, Action, Permission, Recommendation, Activation, or MemoryWrite
+Metric vocabulary exists only in docs and tests
+No metric constants, enums, registries, allowed lists, classes, modules, files, imports, public exports, or public function references exist in src/genus_core
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
+Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-PhysicsMetric, Pressure, Potential, Cost, Inhibition, and Stability do not exist in src/genus_core
-Forbidden v0.1+ artifacts do not exist
-No product scope expansion exists in v0.1.1
+No product scope expansion exists in v0.1.2
 ```

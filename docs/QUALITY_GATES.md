@@ -623,3 +623,61 @@ Domain function behavior changes.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 Docs describe Physics as active in v0.1.1.
 ```
+
+## 39. v0.1.2 Passive Metric Vocabulary Gate
+
+`v0.1.2 - Passive Metric Vocabulary` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.2
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PASSIVE_METRIC_VOCABULARY_v0.1.2.md exists
+metric terms are planned-not-active
+pressure, inhibition, and stability are first passive candidates
+cost and potential are higher-risk and not first implementation
+metric vocabulary is not metric implementation
+metric implementation artifacts remain absent from src/genus_core
+allowed sentence types unchanged
+public foundation functions unchanged
+CLI exposes only observe
+documentation updated
+no product scope expansion
+```
+
+## 40. v0.1.2 Technical Gate
+
+The following must be tested:
+
+```text
+Package version is 0.1.2.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+PASSIVE_METRIC_VOCABULARY_v0.1.2.md exists.
+pressure, inhibition, stability, cost, and potential are defined as planned-not-active.
+pressure, inhibition, and stability are marked first passive candidates.
+cost and potential are marked higher-risk and not first implementation.
+Metric terms are explicitly not decisions, priorities, transitions, actions, permissions, recommendations, activations, or memory writes.
+Implementation scan targets class names, module names, file stems, imports, public exports, and public function references in src/genus_core.
+Metric terms may appear in docs and tests without failing the implementation scan.
+PhysicsMetric, Pressure, Potential, Cost, Inhibition, Stability, calculate_pressure_metric, and related implementation names remain absent from src/genus_core.
+ALLOWED_SENTENCE_TYPES remains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
+Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
+CLI exposes only observe.
+Existing v0.1.1 tests remain green.
+```
+
+## 41. v0.1.2 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Metric vocabulary is placed in src/genus_core as constants, enums, registries, allowed lists, classes, modules, imports, public exports, or public function references.
+PhysicsMetric or any metric model appears.
+A metric function, metric record, metric persistence, or metric sentence type appears.
+A new CLI command appears.
+A new product capability appears.
+Domain function behavior changes.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+Docs describe passive metrics as active in v0.1.2.
+```
