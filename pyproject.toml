@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.1.10"
-description = "GENUS_CORE v0.1.10 GENUS Charter and Safety Boundary"
+version = "0.2.0"
+description = "GENUS_CORE v0.2.0 Passive Physics Seed"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

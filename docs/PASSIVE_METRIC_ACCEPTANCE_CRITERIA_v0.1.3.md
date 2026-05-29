@@ -1,6 +1,8 @@
 # GENUS_CORE Passive Metric Acceptance Criteria v0.1.3
 
-Status: acceptance criteria only, not implementation
+Status: historical acceptance criteria; activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport
+
+Activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport.
 
 ## Purpose
 

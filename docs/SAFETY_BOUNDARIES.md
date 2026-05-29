@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.1.10
+Status: active boundary document for GENUS_CORE v0.2.0
 
 ## Purpose
 
@@ -15,7 +15,7 @@ growth.
 The current active boundary is:
 
 ```text
-passive foundation only
+passive foundation plus passive Physics only
 ```
 
 The active foundation chain remains:
@@ -30,8 +30,19 @@ WorldEvent
 ```
 
 The report may explain what was observed, recorded, and derived. It must not
-decide, approve, execute, react, write memory, create truth, transition,
-constrain, or measure physics.
+decide, approve, execute, react, write memory, create truth, transition, or
+constrain.
+
+The only new product capability allowed in v0.2.0 is passive Physics.
+
+Passive Physics may read only a `BeliefStateSnapshot` and produce:
+
+```text
+PassiveMetricSnapshot
+PassiveMetricReport
+```
+
+These artifacts are descriptive, side-effect free, ephemeral, and not persisted.
 
 ## Capability Admission Rule
 
@@ -48,7 +59,7 @@ STATUS.md reflects the current state.
 Tests prove the capability and its forbidden effects.
 ```
 
-No new product capability is allowed in v0.1.10.
+No further product capability is allowed in v0.2.0.
 
 ## Forbidden in the Current Boundary
 
@@ -58,11 +69,8 @@ functions, persistence tables, CLI commands, or hidden effects:
 ```text
 PhysicsMetric
 PassiveMetric
-Pressure
 Potential
 Cost
-Inhibition
-Stability
 CognitiveStateMap
 TransitionCandidate
 ConstraintDecision
@@ -83,14 +91,17 @@ GraphDB
 RuntimeShape
 ```
 
+`pressure`, `inhibition`, and `stability` are allowed only as passive
+`metric_name` string values inside `PassiveMetricSnapshot` outputs. They must
+not become classes, modules, commands, persistence tables, policies,
+priorities, recommendations, permissions, or action triggers.
+
 `worker` remains allowed only as a passive Observation scope label. It is not a
 Worker capability.
 
-## Passive Physics Preview
+## Passive Physics Boundary
 
-v0.2.0 may begin only after v0.1.10 is accepted.
-
-The next allowed direction is passive Physics only:
+The active v0.2.0 direction is passive Physics only:
 
 ```text
 BeliefStateSnapshot
@@ -103,9 +114,16 @@ The first implementation must remain descriptive and must not create
 TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, or
 new truth behavior.
 
-`pressure`, `inhibition`, and `stability` are the preferred first passive
-metric concepts. `cost` and `potential` remain excluded from the first
-implementation unless a later accepted decision changes that boundary.
+The first implementation uses only:
+
+```text
+metric_name = pressure
+metric_name = inhibition
+metric_name = stability
+```
+
+`cost` and `potential` remain excluded from the first implementation unless a
+later accepted decision changes that boundary.
 
 ## Stop Conditions
 
@@ -113,7 +131,7 @@ Stop development if any of these occur:
 
 ```text
 A new CLI command appears.
-A new product capability appears.
+A new product capability appears beyond passive Physics.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1 without an accepted schema release.
 Observation, Evidence, Belief, Report, Decision, or Action are mixed.
 LLM output is treated as truth.

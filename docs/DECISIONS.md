@@ -502,3 +502,25 @@ v0.1.10 changes documentation, release metadata, and governance tests only. It
 does not change `SCHEMA_VERSION`, public foundation functions, CLI commands,
 SQLite schema, persistence behavior, passive Physics implementation, memory,
 reaction, transition, worker, LLM, or product capability.
+
+## Decision 0026 - v0.2.0 activates passive Physics narrowly
+
+Decision:
+
+v0.2.0 introduces `PassiveMetricSnapshot`, `PassiveMetricReport`,
+`build_passive_metric_snapshot`, and `create_passive_metric_report` in the
+separate `genus_core.passive_physics` namespace.
+
+Reason:
+
+The passive foundation, metric requirements, output shape, safety audit, and
+GENUS charter are accepted. GENUS_CORE can now add a first descriptive Physics
+layer downstream of `BeliefStateSnapshot` without introducing action,
+transition, decision, memory, worker execution, LLM calls, or persistence.
+
+Impact:
+
+The first metric names are only `pressure`, `inhibition`, and `stability`.
+`cost` and `potential` remain excluded. The public foundation functions,
+sentence types, CLI commands, SQLite schema, and `SCHEMA_VERSION` remain
+unchanged.

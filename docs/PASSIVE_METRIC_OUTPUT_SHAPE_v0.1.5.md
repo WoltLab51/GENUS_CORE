@@ -1,6 +1,8 @@
 # GENUS_CORE Passive Metric Output Shape v0.1.5
 
-Status: output shape only, not implementation
+Status: historical output shape; activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport
+
+Activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport.
 
 ## Purpose
 

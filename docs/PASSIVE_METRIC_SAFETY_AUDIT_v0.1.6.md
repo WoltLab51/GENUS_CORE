@@ -1,6 +1,8 @@
 # GENUS_CORE Passive Metric Safety Audit v0.1.6
 
-Status: safety audit only, not implementation
+Status: historical safety audit; activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport
+
+Activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport.
 
 ## Purpose
 

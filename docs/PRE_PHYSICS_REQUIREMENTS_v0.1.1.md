@@ -1,6 +1,8 @@
 # GENUS_CORE Pre-Physics Requirements v0.1.1
 
-Status: requirements only, not implementation
+Status: historical requirements; activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport
+
+Activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport.
 
 ## Purpose
 

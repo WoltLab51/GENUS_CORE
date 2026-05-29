@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.1.10 GENUS Charter and Safety Boundary
+Status: active for v0.2.0 Passive Physics Seed
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.

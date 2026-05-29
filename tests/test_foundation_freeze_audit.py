@@ -70,7 +70,7 @@ def _snake_case(name: str) -> str:
 
 
 def test_current_version_and_foundation_schema_are_frozen() -> None:
-    assert genus_core.__version__ == "0.1.10"
+    assert genus_core.__version__ == "0.2.0"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"
 
 

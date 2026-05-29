@@ -1,6 +1,8 @@
 # GENUS_CORE Passive Metric Vocabulary v0.1.2
 
-Status: vocabulary only, planned-not-active
+Status: historical vocabulary; activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport
+
+Activated narrowly in v0.2.0 as PassiveMetricSnapshot/PassiveMetricReport.
 
 ## Purpose
 

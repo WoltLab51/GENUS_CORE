@@ -249,9 +249,27 @@ core build directives are present. It adds no runtime capability.
 
 ### v0.2.0 - Passive Physics Seed
 
-Planned later step: first implementation of accepted passive Physics concepts,
-only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, v0.1.6, v0.1.7, and
-v0.1.8, v0.1.9, and v0.1.10 are accepted.
+First implementation of accepted passive Physics concepts after v0.1.10.
+
+The active chain extends only to:
+
+```text
+BeliefStateSnapshot
+-> PassiveMetricSnapshot
+-> PassiveMetricReport
+-> no action
+```
+
+The first active metric names are limited to:
+
+```text
+pressure
+inhibition
+stability
+```
+
+`cost` and `potential` remain excluded. v0.2.0 does not introduce transition,
+constraint, reaction, memory, worker, LLM, persistence, or CLI expansion.
 
 ## Later, Not Yet Active
 

@@ -1061,3 +1061,45 @@ GENUS_CHARTER.md is missing.
 SAFETY_BOUNDARIES.md is missing.
 BUILD_RULES.md no longer references both governance documents.
 ```
+
+## 62. v0.2.0 Passive Physics Seed Gate
+
+`v0.2.0 - Passive Physics Seed` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.2.0
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+PassiveMetricSnapshot exists only in genus_core.passive_physics
+PassiveMetricReport exists only in genus_core.passive_physics
+build_passive_metric_snapshot accepts only BeliefStateSnapshot
+create_passive_metric_report accepts only PassiveMetricSnapshot
+metric_name values are exactly pressure, inhibition, stability
+cost and potential are rejected
+level values are exactly none, low, medium, high
+assessment_status values are exactly assessed, insufficient_input, not_applicable
+assessment_status = insufficient_input requires level = none
+assessment_status = not_applicable requires level = none
+PassiveMetricReport contains no decision, action, reaction, transition, constraint, memory_write, or truth fields
+Passive metric outputs are not persisted
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+CI remains install, pytest, CLI smoke
+```
+
+## 63. v0.2.0 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new SQLite table appears.
+A new sentence type appears.
+Metric outputs contain score, priority, rank, recommendation, permission, decision, approval, action, execute, candidate, transition, constraint, reaction, memory_write, or truth.
+cost or potential become active first implementation metric names.
+PhysicsMetric, PassiveMetric, Pressure, Inhibition, Stability, Cost, or Potential appears as a class, module, file, or public object.
+TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, Worker, LLM, GraphDB, or RuntimeShape appears as active capability.
+```

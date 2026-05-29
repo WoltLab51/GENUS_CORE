@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.1.10 - GENUS Charter and Safety Boundary`
+Current baseline: `v0.2.0 - Passive Physics Seed`
 
-Status: governance charter and safety boundary anchoring after v0.1.9 Boundary Naming Cleanup.
+Status: first narrow passive Physics implementation after v0.1.10 governance baseline.
 
 ## Released baselines
 
@@ -82,6 +82,10 @@ Commit: e16b89d5e7ed81f8b4305ceee0bcaf2b3c235443
 v0.1.9 Boundary Naming Cleanup
 Tag: genus-core-v0.1.9-boundary-naming-cleanup
 Commit: 7054a9dd31a864c382f7da4962c7d8f284ccd167
+
+v0.1.10 GENUS Charter and Safety Boundary
+Tag: genus-core-v0.1.10-genus-charter-safety-boundary
+Commit: 6744752de25105a299d1e36952e966e4bb27bb7d
 ```
 
 ## Frozen foundation chain
@@ -99,35 +103,34 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.10` is GENUS Charter and Safety Boundary.
+`GENUS_CORE v0.2.0` is Passive Physics Seed.
 
-It anchors the GENUS charter and operational safety boundaries before passive
-Physics begins. It adds repository-level governance documents and tests proving
-they exist and contain the core build directives. It does not add runtime metric
-classes, metric records, metric functions, metric persistence, sentence types,
-CLI commands, or product behavior.
+It introduces the first narrow passive Physics layer downstream of
+BeliefStateSnapshot. It adds `PassiveMetricSnapshot`, `PassiveMetricReport`,
+`build_passive_metric_snapshot`, and `create_passive_metric_report` in the
+separate `genus_core.passive_physics` namespace. It does not add runtime metric
+classes such as Pressure or Stability, metric persistence, sentence types, CLI
+commands, decisions, reactions, transitions, workers, LLM calls, or memory
+writes.
 
-The package version is `0.1.10`, while `SCHEMA_VERSION` remains
+The package version is `0.2.0`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
-Local pytest and CLI smoke checks are expected for the governance boundary state.
+Local pytest and CLI smoke checks are expected for the passive Physics state.
 
 GitHub Actions initially failed before creating jobs because the CLI smoke
 command used a YAML plain scalar containing `das: larumipsum`. The workflow now
 uses a block scalar for the smoke command so the colon remains part of the CLI
-argument. v0.1.10 acceptance requires a green run on the v0.1.10 commit.
+argument. v0.2.0 acceptance requires a green run on the v0.2.0 commit.
 
 ## Explicitly not active
 
 ```text
 PhysicsMetric
-Pressure
 Potential
 Cost
-Inhibition
-Stability
 MetricRecord
 PassiveMetric
 MetricOutput
@@ -153,14 +156,17 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.10 Governance Acceptance
+`pressure`, `inhibition`, and `stability` are active only as passive
+`metric_name` string values inside `PassiveMetricSnapshot` outputs.
+
+## v0.2.0 Passive Physics Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.1.10
+Package version is 0.2.0
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md exists
 SAFETY_BOUNDARIES.md exists
@@ -168,6 +174,12 @@ BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
 GENUS Charter contains LLM proposes. GENUS governs.
 GENUS Charter contains Do not make GENUS powerful before making it bounded.
 Safety Boundaries forbid active MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, Agent, GraphDB, RuntimeShape
+PassiveMetricSnapshot exists only in genus_core.passive_physics
+PassiveMetricReport exists only in genus_core.passive_physics
+build_passive_metric_snapshot accepts only BeliefStateSnapshot
+Passive metrics are exactly pressure, inhibition, stability
+cost and potential remain excluded from the first implementation
+Passive metric outputs are not persisted
 PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
 Pre-Physics Requirements exist
 Passive Metric Vocabulary exists
@@ -188,5 +200,5 @@ cost and potential remain excluded from first implementation and first output sh
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.10
+No product scope expansion exists beyond passive Physics in v0.2.0
 ```
