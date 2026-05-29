@@ -272,3 +272,23 @@ v0.0.9 may change documentation, release metadata, and audit tests. It must not
 change domain function behavior, add public functions, add CLI commands, or
 introduce Physics, Map, Transition, Constraint, Reaction, Memory, Worker, Cell,
 Organ, Agent, LLM, RuntimeShape, GraphDB, or other v0.1+ concepts.
+
+## Decision 0015 - v0.1.0 freezes the passive epistemic core
+
+Decision:
+
+v0.1.0 freezes the full passive epistemic core as the first stable GENUS_CORE
+foundation baseline.
+
+Reason:
+
+The v0.0.x series has hardened every boundary in the current epistemic chain.
+Before any Physics, Map, Transition, Constraint, Reaction, Memory, Worker, Cell,
+Organ, Agent, LLM, RuntimeShape, or GraphDB concept is introduced, the
+foundation must be marked stable and conserved.
+
+Impact:
+
+v0.1.0 may change release metadata, README/status documentation, release notes,
+and freeze tests. It must not change domain function behavior, add public
+functions, add CLI commands, change `SCHEMA_VERSION`, or expand product scope.

@@ -526,3 +526,51 @@ A forbidden v0.1+ artifact appears as class, module, file, import, public export
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 Roadmap reintroduces Physics before v0.1.0 foundation freeze.
 ```
+
+## 33. v0.1.0 Full Epistemic Core Freeze Gate
+
+`v0.1.0 - Full Epistemic Core Freeze` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.0
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+foundation chain unchanged
+public foundation functions unchanged
+allowed sentence types unchanged
+README states the stable foundation boundary
+STATUS has one clear v0.1.0 freeze acceptance state
+release notes present
+forbidden objects absent
+no product scope expansion
+```
+
+## 34. v0.1.0 Technical Gate
+
+The following must be tested:
+
+```text
+Package version is 0.1.0.
+SCHEMA_VERSION remains genus.foundation.v0.0.1.
+ALLOWED_SENTENCE_TYPES contains exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT.
+Public foundation functions are exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report.
+The active chain remains WorldEvent -> Observation -> EvidenceRecord -> LedgerEntry -> BeliefStateSnapshot -> ObservationReport.
+CLI exposes only the existing observe command.
+Forbidden future artifacts remain absent from modules, classes, files, imports, public exports, and public function references.
+Existing v0.0.9 tests remain green.
+```
+
+## 35. v0.1.0 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+Domain function behavior changes.
+A public domain function is added, removed, or repurposed.
+A new CLI command appears.
+A new product capability appears.
+A forbidden future artifact appears as class, module, file, import, public export, or public function reference.
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+README, STATUS, release notes, or roadmap describe Physics as active in v0.1.0.
+```

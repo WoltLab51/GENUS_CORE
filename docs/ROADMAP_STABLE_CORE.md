@@ -1,6 +1,6 @@
 # GENUS_CORE Roadmap to Stable Core
 
-Status: aligned after v0.0.9 foundation audit
+Status: aligned after v0.1.0 foundation freeze
 
 ## Stable Core Direction
 
@@ -15,10 +15,10 @@ WorldEvent
 -> ObservationReport
 ```
 
-Only after that foundation is audited and frozen may later cognitive physics
-concepts be planned.
+Only after that foundation is frozen may later cognitive physics concepts be
+planned.
 
-## Completed v0.0.x Foundation Path
+## Completed Foundation Path
 
 ### v0.0.1 - Observation Truth Seed
 
@@ -96,8 +96,6 @@ forbidden objects, version/schema invariants, and roadmap alignment.
 
 It adds no new GENUS capability.
 
-## Next Planned Foundation Step
-
 ### v0.1.0 - Full Epistemic Core Freeze
 
 Scope:
@@ -117,7 +115,7 @@ Goal:
 The complete passive epistemic foundation is frozen as the base for future work.
 ```
 
-v0.1.0 should not introduce Physics, Map, Transition, Constraint, Reaction,
+v0.1.0 does not introduce Physics, Map, Transition, Constraint, Reaction,
 MemoryWrite, Worker, Cell, Organ, Agent, LLM, RuntimeShape, or GraphDB.
 
 ## Later, Not Yet Active

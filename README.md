@@ -1,8 +1,8 @@
 # GENUS_CORE
 
-`GENUS_CORE v0.0.1` is the Observation Truth Seed.
+`GENUS_CORE v0.1.0` is the Full Epistemic Core Freeze.
 
-It implements only this epistemic chain:
+It freezes the passive foundation chain:
 
 ```text
 WorldEvent
@@ -13,9 +13,9 @@ WorldEvent
 -> ObservationReport
 ```
 
-This version does not implement agents, workers, LLM calls, memory writes,
-reactions, decisions, physics metrics, transition candidates, or constraint
-decisions.
+This release does not implement agents, workers, LLM calls, memory writes,
+reactions, decisions, physics metrics, cognitive maps, transition candidates,
+constraint decisions, runtime cells, organs, or GraphDB truth.
 
 ## Install
 
@@ -40,6 +40,7 @@ python -m genus_core.cli observe "merk dir das: larumipsum"
 Expected output includes:
 
 ```text
+WorldEvent created
 Observation created
 EvidenceRecord created
 LedgerEntry appended
@@ -51,7 +52,11 @@ No action possible in v0.0.1
 The CLI stores EvidenceRecord and LedgerEntry rows in SQLite. By default it uses
 `.genus_core_truth.sqlite3`, which is ignored by Git.
 
-## v0.0.1 Boundary
+## Stable Foundation Boundary
 
-The report explains what was observed and derived. It does not decide, approve,
-execute, react, or write memory.
+The report explains what was observed, recorded, and derived. It does not
+decide, approve, execute, react, write memory, create truth, transition,
+constrain, or measure physics.
+
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.1.0 is a release freeze,
+not a schema expansion.
