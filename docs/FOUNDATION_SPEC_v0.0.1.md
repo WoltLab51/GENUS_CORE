@@ -142,7 +142,7 @@ schema_version
   "scope": "memory",
   "confidence": "high",
   "payload_json": {
-    "candidate_content": "larumipsum"
+    "observed_memory_content": "larumipsum"
   },
   "created_at": "2026-05-24T12:00:01Z"
 }
@@ -265,6 +265,13 @@ schema_version
 UNIQUE(chain_id, step)
 ```
 
+### Hardened after v0.1.7 / v0.1.9
+
+This document preserves the historical v0.0.1 foundation wording. In the active
+v0.1.7+ hardened Ledger flow, `target_kind` and `target_id` are required for
+LedgerEntry creation and persistence. Earlier optional wording is historical
+and must not be read as the active runtime contract.
+
 ### Example
 
 ```json
@@ -336,8 +343,8 @@ A BeliefStateSnapshot must reference at least one EvidenceRecord.
   "scope": "memory",
   "source_evidence_ids_json": ["ev_001"],
   "payload_json": {
-    "pending_memory_request": true,
-    "candidate_content": "larumipsum"
+    "observed_memory_request": true,
+    "observed_memory_content": "larumipsum"
   },
   "created_at": "2026-05-24T12:00:04Z"
 }
@@ -469,7 +476,7 @@ WorldEvent
 Observation(memory_request_observed)
 EvidenceRecord(observed)
 LedgerEntry
-BeliefStateSnapshot(pending_memory_request=true)
+BeliefStateSnapshot(observed_memory_request=true)
 ObservationReport(no_action_possible=true)
 ```
 

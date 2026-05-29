@@ -99,6 +99,7 @@ def test_ledger_entry_requires_target_id(target_id: str | None) -> None:
         "world_truth",
         "belief",
         "pending_memory_request",
+        "observed_memory_request",
         "decision",
         "action",
         "reaction",

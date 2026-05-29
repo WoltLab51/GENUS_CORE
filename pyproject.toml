@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.1.8"
-description = "GENUS_CORE v0.1.8 Release Integrity Finalization"
+version = "0.1.9"
+description = "GENUS_CORE v0.1.9 Boundary Naming Cleanup"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

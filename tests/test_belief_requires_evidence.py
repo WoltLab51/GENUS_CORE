@@ -24,5 +24,7 @@ def test_belief_references_evidence_ids() -> None:
     belief = build_belief_state_snapshot([evidence])
 
     assert belief.source_evidence_ids_json == [evidence.evidence_id]
-    assert belief.payload_json["pending_memory_request"] is True
-    assert belief.payload_json["candidate_content"] == "larumipsum"
+    assert belief.payload_json["observed_memory_request"] is True
+    assert belief.payload_json["observed_memory_content"] == "larumipsum"
+    assert "pending_memory_request" not in belief.payload_json
+    assert "candidate_content" not in belief.payload_json

@@ -1,4 +1,4 @@
-"""Minimal CLI smoke path for GENUS_CORE v0.0.1."""
+"""Minimal CLI smoke path for the passive GENUS_CORE foundation."""
 
 import argparse
 import os
@@ -43,7 +43,7 @@ def _observe(text: str) -> int:
     print(f"LedgerEntry appended: {ledger_entry.ledger_id}")
     print(f"BeliefStateSnapshot created: {belief_state_snapshot.state_id}")
     print(f"ObservationReport created: {observation_report.report_id}")
-    print("No action possible in v0.0.1")
+    print("No action is possible under the passive foundation boundary.")
     return 0
 
 

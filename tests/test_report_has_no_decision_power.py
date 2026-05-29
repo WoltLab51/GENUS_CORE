@@ -38,8 +38,10 @@ def test_report_has_no_decision_power() -> None:
     assert not isinstance(report, type(belief))
     assert report.source_state_id == belief.state_id
     assert report.payload_json["no_action_possible"] is True
-    assert report.payload_json["pending_memory_request"] is True
-    assert report.payload_json["candidate_content"] == "larumipsum"
+    assert report.payload_json["observed_memory_request"] is True
+    assert report.payload_json["observed_memory_content"] == "larumipsum"
+    assert "pending_memory_request" not in report.payload_json
+    assert "candidate_content" not in report.payload_json
     assert report.payload_json["source_evidence_ids"] == [evidence.evidence_id]
     for field_name in FORBIDDEN_REPORT_FIELDS:
         assert not hasattr(report, field_name)
@@ -100,8 +102,9 @@ def test_report_summary_remains_descriptive() -> None:
     belief = build_belief_state_snapshot([evidence])
     report = create_observation_report(belief)
 
-    assert "pending as a derived belief" in report.summary
-    assert "No action possible in v0.0.1" in report.summary
+    assert "observed as a derived belief" in report.summary
+    assert "passive foundation boundary" in report.summary
+    assert "pending" not in report.summary.lower()
     lowered_summary = report.summary.lower()
     for phrase in FORBIDDEN_SUMMARY_PHRASES:
         assert phrase not in lowered_summary

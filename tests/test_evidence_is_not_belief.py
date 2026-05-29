@@ -43,7 +43,7 @@ def test_evidence_payload_records_observation_without_claiming_world_truth() -> 
         "memory_request_observed"
     )
     assert evidence.payload_json["observation_payload"] == {
-        "candidate_content": "larumipsum"
+        "observed_memory_content": "larumipsum"
     }
     assert evidence.payload_json["observation_confidence"] == "high"
     assert evidence.payload_json["observation_scope"] == "memory"
@@ -57,6 +57,7 @@ def test_evidence_payload_excludes_belief_decision_and_action_fields() -> None:
 
     forbidden_fields = {
         "pending_memory_request",
+        "observed_memory_request",
         "decision",
         "action",
         "reaction",

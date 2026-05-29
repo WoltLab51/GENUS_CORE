@@ -35,8 +35,8 @@ def observe_event(world_event: WorldEvent) -> Observation:
         )
 
     if world_event.event_type == "user_text" and lowered.startswith(MEMORY_REQUEST_PREFIX):
-        candidate = text[len(MEMORY_REQUEST_PREFIX) :].strip()
-        if not candidate:
+        observed_memory_content = text[len(MEMORY_REQUEST_PREFIX) :].strip()
+        if not observed_memory_content:
             return Observation(
                 source_event_id=world_event.event_id,
                 observation_type="ambiguous_input_observed",
@@ -52,7 +52,7 @@ def observe_event(world_event: WorldEvent) -> Observation:
             observation_type="memory_request_observed",
             scope="memory",
             confidence="high",
-            payload_json={"candidate_content": candidate},
+            payload_json={"observed_memory_content": observed_memory_content},
         )
 
     if world_event.event_type != "user_text":

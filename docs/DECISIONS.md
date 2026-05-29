@@ -461,3 +461,24 @@ Impact:
 The CI workflow remains minimal: install, pytest, CLI smoke. v0.1.8 records the
 green post-fix baseline and preserves the v0.1.7 tag as historical rather than
 rewriting it.
+
+## Decision 0024 - v0.1.9 uses observation-only memory request names
+
+Decision:
+
+Ephemeral Belief and Report payloads use `observed_memory_request` and
+`observed_memory_content` instead of `pending_memory_request` and
+`candidate_content`.
+
+Reason:
+
+`pending` can imply an execution queue, and `candidate` can imply a selected
+transition or action surface. The passive foundation must only say what was
+observed and derived, not what should be executed, stored, or chosen.
+
+Impact:
+
+v0.1.9 changes active ephemeral payload names, report wording, documentation,
+and tests. It does not change `SCHEMA_VERSION`, add compatibility aliases, add
+persistence tables, introduce passive Physics, expand the CLI, or add product
+capability.

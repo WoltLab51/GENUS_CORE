@@ -45,8 +45,8 @@ def build_belief_state_snapshot(
         if not isinstance(evidence, EvidenceRecord):
             raise TypeError("Belief derivation requires EvidenceRecord inputs")
 
-    pending_memory_request = False
-    candidate_content: str | None = None
+    observed_memory_request = False
+    observed_memory_content: str | None = None
     observed_scope: str | None = None
 
     for evidence in evidence_records:
@@ -67,12 +67,12 @@ def build_belief_state_snapshot(
 
         observation_payload = evidence.payload_json.get("observation_payload", {})
         if observation_type == "memory_request_observed":
-            pending_memory_request = True
-            candidate_content = observation_payload.get("candidate_content")
+            observed_memory_request = True
+            observed_memory_content = observation_payload.get("observed_memory_content")
 
-    payload: dict[str, object] = {"pending_memory_request": pending_memory_request}
-    if candidate_content:
-        payload["candidate_content"] = candidate_content
+    payload: dict[str, object] = {"observed_memory_request": observed_memory_request}
+    if observed_memory_content:
+        payload["observed_memory_content"] = observed_memory_content
     forbidden = FORBIDDEN_BELIEF_PAYLOAD_FIELDS.intersection(payload)
     if forbidden:
         names = ", ".join(sorted(forbidden))

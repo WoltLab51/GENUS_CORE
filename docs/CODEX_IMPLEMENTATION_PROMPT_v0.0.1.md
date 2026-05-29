@@ -228,7 +228,7 @@ EvidenceRecord created
 LedgerEntry appended
 BeliefStateSnapshot created
 ObservationReport created
-No action possible in v0.0.1
+No action is possible under the passive foundation boundary.
 ```
 
 ## Required tests

@@ -11,7 +11,8 @@ def test_user_text_memory_request_observed() -> None:
     assert observation.observation_type == "memory_request_observed"
     assert observation.scope == "memory"
     assert observation.confidence == "high"
-    assert observation.payload_json["candidate_content"] == "larumipsum"
+    assert observation.payload_json["observed_memory_content"] == "larumipsum"
+    assert "candidate_content" not in observation.payload_json
 
 
 def test_incomplete_memory_request_is_ambiguous() -> None:

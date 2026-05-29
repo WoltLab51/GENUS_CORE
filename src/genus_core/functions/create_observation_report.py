@@ -22,31 +22,31 @@ def create_observation_report(
             f"BeliefStateSnapshot payload cannot be reflected in report: {names}"
         )
 
-    pending_memory_request = bool(
-        belief_state_snapshot.payload_json.get("pending_memory_request")
+    observed_memory_request = bool(
+        belief_state_snapshot.payload_json.get("observed_memory_request")
     )
-    if pending_memory_request:
+    if observed_memory_request:
         summary = (
-            "A memory request is pending as a derived belief. "
-            "No action possible in v0.0.1."
+            "A memory request was observed as a derived belief. "
+            "No action is possible under the passive foundation boundary."
         )
     else:
         summary = (
             "A belief was derived from recorded evidence. "
-            "No action possible in v0.0.1."
+            "No action is possible under the passive foundation boundary."
         )
 
     payload_json = {
         "no_action_possible": True,
-        "pending_memory_request": pending_memory_request,
+        "observed_memory_request": observed_memory_request,
         "source_evidence_ids": list(belief_state_snapshot.source_evidence_ids_json),
     }
     if (
-        pending_memory_request
-        and "candidate_content" in belief_state_snapshot.payload_json
+        observed_memory_request
+        and "observed_memory_content" in belief_state_snapshot.payload_json
     ):
-        payload_json["candidate_content"] = belief_state_snapshot.payload_json[
-            "candidate_content"
+        payload_json["observed_memory_content"] = belief_state_snapshot.payload_json[
+            "observed_memory_content"
         ]
 
     return ObservationReport(

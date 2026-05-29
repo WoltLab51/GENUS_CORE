@@ -16,6 +16,7 @@ FORBIDDEN_LEDGER_PAYLOAD_FIELDS = frozenset(
         "world_truth",
         "belief",
         "pending_memory_request",
+        "observed_memory_request",
         "decision",
         "action",
         "reaction",

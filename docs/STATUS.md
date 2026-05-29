@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.1.8 - Release Integrity Finalization`
+Current baseline: `v0.1.9 - Boundary Naming Cleanup`
 
-Status: release integrity finalization after v0.1.7 Foundation Cleanup and Integrity Repair.
+Status: passive boundary naming cleanup after v0.1.8 Release Integrity Finalization.
 
 ## Released baselines
 
@@ -74,6 +74,10 @@ Commit: f0bcd1b23212daf1435939576ccc2287663fe35f
 v0.1.7 Foundation Cleanup and Integrity Repair
 Tag: genus-core-v0.1.7-foundation-cleanup-integrity-repair
 Commit: f288fd8a78e5fa400c76a909ab07a5233104ce0d
+
+v0.1.8 Release Integrity Finalization
+Tag: genus-core-v0.1.8-release-integrity-finalization
+Commit: e16b89d5e7ed81f8b4305ceee0bcaf2b3c235443
 ```
 
 ## Frozen foundation chain
@@ -91,15 +95,16 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.1.8` is Release Integrity Finalization.
+`GENUS_CORE v0.1.9` is Boundary Naming Cleanup.
 
-It finalizes the green pre-v0.2.0 baseline before passive Physics begins. It
-preserves the v0.1.7 cleanup, records the concrete Ledger target invariant,
-records the GitHub Actions YAML smoke fix, and keeps the v0.1.7 tag historical.
-It does not add runtime metric classes, metric records, metric functions,
-metric persistence, sentence types, CLI commands, or product behavior.
+It sharpens passive terminology before passive Physics begins. It renames
+ephemeral Belief/Report payload fields from action-like `pending`/`candidate`
+wording to observation-only `observed` wording, hardens the CI workflow test for
+the YAML block scalar smoke command, and keeps the v0.1.8 tag historical. It
+does not add runtime metric classes, metric records, metric functions, metric
+persistence, sentence types, CLI commands, or product behavior.
 
-The package version is `0.1.8`, while `SCHEMA_VERSION` remains
+The package version is `0.1.9`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
@@ -145,15 +150,14 @@ GraphDB
 RuntimeShape
 ```
 
-## v0.1.8 Release Integrity Acceptance
+## v0.1.9 Boundary Naming Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-GitHub Actions is green on the v0.1.8 commit
-Package version is 0.1.8
+Package version is 0.1.9
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
 Pre-Physics Requirements exist
@@ -165,6 +169,9 @@ LedgerEntry requires target_kind and target_id
 New SQLite ledger_entries tables require non-empty target_id
 worker remains only a passive scope label, not a Worker capability
 CI smoke command uses a YAML block scalar
+Belief and Report payloads use observed_memory_request
+Memory request content uses observed_memory_content
+Active Belief and Report payloads do not use pending_memory_request or candidate_content
 assessment_status = insufficient_input requires level = none
 assessment_status = not_applicable requires level = none
 assessment_status = assessed may use level = none | low | medium | high
@@ -172,5 +179,5 @@ cost and potential remain excluded from first implementation and first output sh
 Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
 Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
 CLI exposes only observe
-No product scope expansion exists in v0.1.8
+No product scope expansion exists in v0.1.9
 ```

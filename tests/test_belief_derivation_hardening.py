@@ -108,13 +108,15 @@ def test_belief_derivation_preserves_all_source_evidence_ids_in_order() -> None:
     ]
 
 
-def test_memory_request_evidence_derives_pending_memory_request() -> None:
+def test_memory_request_evidence_derives_observed_memory_request() -> None:
     evidence = _evidence_for()
 
     belief = build_belief_state_snapshot([evidence])
 
-    assert belief.payload_json["pending_memory_request"] is True
-    assert belief.payload_json["candidate_content"] == "larumipsum"
+    assert belief.payload_json["observed_memory_request"] is True
+    assert belief.payload_json["observed_memory_content"] == "larumipsum"
+    assert "pending_memory_request" not in belief.payload_json
+    assert "candidate_content" not in belief.payload_json
 
 
 @pytest.mark.parametrize(
@@ -126,7 +128,7 @@ def test_memory_request_evidence_derives_pending_memory_request() -> None:
         ("guard_blocked_transition", None, {"guard": "foundation_boundary"}),
     ],
 )
-def test_non_memory_request_evidence_derives_no_pending_memory_request(
+def test_non_memory_request_evidence_derives_no_observed_memory_request(
     event_type: str,
     raw_text: str | None,
     payload_json: dict | None,
@@ -139,7 +141,9 @@ def test_non_memory_request_evidence_derives_no_pending_memory_request(
 
     belief = build_belief_state_snapshot([evidence])
 
-    assert belief.payload_json["pending_memory_request"] is False
+    assert belief.payload_json["observed_memory_request"] is False
+    assert "pending_memory_request" not in belief.payload_json
+    assert "candidate_content" not in belief.payload_json
 
 
 def test_belief_payload_excludes_forbidden_fields_but_keeps_source_ids() -> None:

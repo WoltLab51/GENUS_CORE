@@ -989,3 +989,38 @@ PhysicsMetric or any metric model appears.
 The v0.1.7 tag is rewritten or moved.
 GitHub Actions fails on the v0.1.8 commit.
 ```
+
+## 58. v0.1.9 Boundary Naming Cleanup Gate
+
+`v0.1.9 - Boundary Naming Cleanup` is accepted only if:
+
+```text
+pytest green
+CLI smoke test green
+package version is 0.1.9
+SCHEMA_VERSION remains genus.foundation.v0.0.1
+Belief payload uses observed_memory_request and observed_memory_content
+Report payload uses observed_memory_request and observed_memory_content
+Active Belief and Report payloads do not use pending_memory_request or candidate_content
+Report summary uses passive foundation boundary wording
+CI workflow test verifies the CLI smoke command is inside a YAML block scalar
+allowed sentence types remain unchanged
+public foundation functions remain unchanged
+CLI exposes only observe
+no product scope expansion
+```
+
+## 59. v0.1.9 Stop Gate
+
+Stop development if any of these occur:
+
+```text
+SCHEMA_VERSION changes from genus.foundation.v0.0.1.
+A new CLI command appears.
+A new product capability appears.
+Metric safety rules are implemented in src/genus_core.
+PhysicsMetric or any metric model appears.
+pending_memory_request or candidate_content appears in active Belief or Report payloads.
+Report wording implies a queue, execution, memory write, decision, reaction, transition, or physics.
+The CI smoke command can move outside the YAML block scalar without a failing test.
+```

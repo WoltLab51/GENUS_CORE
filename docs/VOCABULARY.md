@@ -56,18 +56,27 @@ candidate fields in its payload.
 
 Allowed in: v0.0.1
 
-## pending_memory_request
+## observed_memory_request
 
 A Belief payload field indicating that observed Evidence supports the internal
-state "a memory request is pending".
+state "a memory request was observed".
 
 It may only be true when at least one source EvidenceRecord has
 `observed_observation_type = memory_request_observed`.
 
-It is not a MemoryWrite, approval, action, decision, reaction, or guarantee that
-memory will be stored.
+It is not a queue, MemoryWrite, approval, action, decision, reaction, or
+guarantee that memory will be stored.
 
-Allowed in: v0.0.1
+Allowed in: v0.1.9
+
+## observed_memory_content
+
+A passive Observation, Belief, or Report payload field containing text observed
+after the `merk dir das:` prefix.
+
+It is not selected content, approved content, a MemoryObject, or a memory write.
+
+Allowed in: v0.1.9
 
 ## source_evidence_ids_json
 
@@ -106,8 +115,8 @@ Allowed in: v0.0.1
 The structured ObservationReport payload containing only descriptive metadata
 and safe lineage references.
 
-It may include `no_action_possible`, `pending_memory_request`,
-`candidate_content`, and `source_evidence_ids` when those are descriptive.
+It may include `no_action_possible`, `observed_memory_request`,
+`observed_memory_content`, and `source_evidence_ids` when those are descriptive.
 
 It must not contain decision, action, execute, approval, reaction, memory_write,
 memory, memory_object, constraint, transition, candidate, physics, metric,

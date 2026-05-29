@@ -226,6 +226,14 @@ payload_json optional
 created_at
 ```
 
+Hardened after v0.1.7 / v0.1.9:
+
+```text
+The v0.0.1 wording above is historical.
+The active v0.1.7+ LedgerEntry flow requires target_kind and target_id.
+Current runtime behavior is governed by the hardened docs and tests.
+```
+
 Required invariant:
 
 ```text
@@ -276,10 +284,11 @@ mixed scopes are rejected
 all source EvidenceRecord IDs are preserved in input order
 ```
 
-The BELIEF payload may include `pending_memory_request` and `candidate_content`
-for observed memory requests. It must not include generic `evidence`, truth,
-truth_status, decision, approval, action, reaction, constraint, transition,
-physics, memory_write, execute, or generic `candidate` fields.
+The BELIEF payload may include `observed_memory_request` and
+`observed_memory_content` for observed memory requests. It must not include
+generic `evidence`, truth, truth_status, decision, approval, action, reaction,
+constraint, transition, physics, memory_write, execute, or generic `candidate`
+fields.
 
 ## 10. REPORT
 
@@ -323,11 +332,12 @@ approved
 rejected_by_policy
 ```
 
-In `GENUS_CORE v0.0.8`, REPORT may explain `source_state_id`,
-`pending_memory_request`, optional `candidate_content`, and safe source evidence
-lineage. REPORT must not decide, approve, execute, react, write memory, create
-new truth, create new belief, trigger transitions, apply constraints, or measure
-physics. No new sentence types are introduced.
+In `GENUS_CORE v0.0.8`, REPORT may explain `source_state_id`, safe source
+evidence lineage, and passive observed memory-request fields. In the active
+v0.1.9 boundary naming cleanup, those fields are `observed_memory_request` and
+optional `observed_memory_content`. REPORT must not decide, approve, execute,
+react, write memory, create new truth, create new belief, trigger transitions,
+apply constraints, or measure physics. No new sentence types are introduced.
 
 ## 11. Forbidden Language in v0.0.1
 

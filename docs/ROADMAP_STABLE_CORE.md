@@ -231,11 +231,20 @@ Finalizes the green pre-v0.2.0 baseline.
 It records the concrete Ledger target invariant and the GitHub Actions YAML
 smoke fix while preserving the v0.1.7 tag as historical.
 
+### v0.1.9 - Boundary Naming Cleanup
+
+Sharpens passive foundation terminology before passive Physics begins.
+
+It renames ephemeral Belief and Report memory-request payload fields from
+`pending_memory_request` and `candidate_content` to `observed_memory_request`
+and `observed_memory_content`, clarifies package/schema/capability boundaries,
+and hardens the CI workflow test for the YAML block scalar CLI smoke command.
+
 ### v0.2.0 - Passive Physics Seed
 
 Planned later step: first implementation of accepted passive Physics concepts,
 only after v0.1.1, v0.1.2, v0.1.3, v0.1.4, v0.1.5, v0.1.6, v0.1.7, and
-v0.1.8 are accepted.
+v0.1.8, and v0.1.9 are accepted.
 
 ## Later, Not Yet Active
 
