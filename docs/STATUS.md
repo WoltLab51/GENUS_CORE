@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.3.2 - Build Structure Guardrails`
+Current baseline: `v0.3.3 - Quality Gates Modularization`
 
-Status: project-structure governance baseline after v0.3.1.
+Status: modular quality-gates governance baseline after v0.3.2.
 
 ## Released baselines
 
@@ -119,11 +119,11 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.3.2` is Build Structure Guardrails.
+`GENUS_CORE v0.3.3` is Quality Gates Modularization.
 
-It adds no runtime capability. It treats code, tests, docs, specs, decisions,
-and quality gates as governed artifacts that must remain bounded, readable,
-reviewable, and auditable.
+It adds no runtime capability. It turns `docs/QUALITY_GATES.md` into an index
+and moves historical gate content into modular files under
+`docs/quality_gates/`.
 
 The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
@@ -133,13 +133,13 @@ TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
 persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
 RuntimeShape.
 
-The package version is `0.3.2`, while `SCHEMA_VERSION` remains
+The package version is `0.3.3`, while `SCHEMA_VERSION` remains
 `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
-Local pytest and CLI smoke checks are expected for the build structure
-guardrails state.
+Local pytest and CLI smoke checks are expected for the quality gates
+modularization state.
 
 GitHub Actions initially failed before creating jobs because the CLI smoke
 command used a YAML plain scalar containing `das: larumipsum`. The workflow now
@@ -184,22 +184,30 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.3.2 Build Structure Guardrails Acceptance
+## v0.3.3 Quality Gates Modularization Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.3.2
+Package version is 0.3.3
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md exists
 SAFETY_BOUNDARIES.md exists
 BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
 BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
 PROJECT_STRUCTURE.md exists
-Historical longfiles have explicit max_lines, reason, and planned_split_or_review entries
-Historical longfiles do not exceed their declared ceilings
+QUALITY_GATES.md is an index under the normal docs line-count target
+docs/quality_gates/v0.0.md exists
+docs/quality_gates/v0.1.md exists
+docs/quality_gates/v0.2.md exists
+docs/quality_gates/v0.3.md exists
+docs/quality_gates/planned.md exists
+QUALITY_GATES.md links all modular quality gate files
+QUALITY_GATES.md is no longer a historical longfile exception
+Remaining historical longfiles have explicit max_lines, reason, and planned_split_or_review entries
+Remaining historical longfiles do not exceed their declared ceilings
 New files over normal line-count targets require explicit exception
 GENUS Charter contains LLM proposes. GENUS governs.
 GENUS Charter contains Do not make GENUS powerful before making it bounded.
@@ -246,5 +254,5 @@ ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
 PassiveTransitionReport describes passive preview only
 v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond build structure guardrails in v0.3.2
+No product scope expansion exists beyond quality gates modularization in v0.3.3
 ```

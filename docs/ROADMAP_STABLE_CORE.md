@@ -317,11 +317,18 @@ It treats code, tests, docs, specs, decisions, and quality gates as governed
 artifacts and freezes historical longfiles behind explicit ceilings, reasons,
 and planned split/review notes.
 
+### v0.3.3 - Quality Gates Modularization
+
+Modularizes `QUALITY_GATES.md` without runtime capability.
+
+It turns `QUALITY_GATES.md` into an index and moves historical gate content
+into `docs/quality_gates/` by version series.
+
 ### Planned v0.4.0 - Passive Boundary Relevance Spec
 
 Spec-only planning for a later passive boundary relevance description.
 
-This is not an implementation and does not change the active v0.3.2 baseline.
+This is not an implementation and does not change the active v0.3.3 baseline.
 It defines how a later `PassiveBoundaryRelevancePreview` and
 `PassiveBoundaryRelevanceReport` may describe relevant boundary areas without
 evaluating boundaries, granting permission, producing policy results,

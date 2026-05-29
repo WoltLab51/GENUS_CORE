@@ -1,6 +1,6 @@
 # GENUS_CORE Project Structure
 
-Status: active for v0.3.2 Build Structure Guardrails
+Status: active for v0.3.3 Quality Gates Modularization
 
 GENUS_CORE treats code, tests, docs, specs, decisions, and quality gates as
 governed artifacts.
@@ -27,8 +27,8 @@ granularity, side effects, file growth, split rules, and documentation hygiene.
 
 `QUALITY_GATES.md`
 
-Records historical acceptance and stop gates. It is currently a historical
-longfile and must not receive unbounded new phase-specific bulk content.
+Indexes modular quality gate files. Historical acceptance and stop gates live
+under `docs/quality_gates/`.
 
 `DECISIONS.md`
 
@@ -61,16 +61,17 @@ Summarize release-specific changes. They should not redefine architecture.
 
 ## Historical Longfiles
 
-The following files are accepted historical longfiles for v0.3.2:
+The following files are accepted historical longfiles for v0.3.3:
 
 ```text
-docs/QUALITY_GATES.md
 docs/DECISIONS.md
 docs/FOUNDATION_SPEC_v0.0.1.md
 docs/GENUS_LANGUAGE_SPEC_v0.0.1.md
 docs/VOCABULARY.md
 docs/CODEX_IMPLEMENTATION_PROMPT_v0.0.1.md
 docs/ROADMAP_STABLE_CORE.md
+docs/quality_gates/v0.0.md
+docs/quality_gates/v0.1.md
 tests/test_ledger_lineage_hardening.py
 ```
 
@@ -94,14 +95,14 @@ modularization step.
 
 ## Planned Modularization
 
-`v0.3.3 Documentation Modularization` is the expected future cleanup step if
-historical longfiles need structural reduction.
+Quality gates were modularized in v0.3.3.
 
 Likely candidates:
 
 ```text
-docs/QUALITY_GATES.md
 docs/DECISIONS.md
+docs/VOCABULARY.md
 ```
 
-Until then, v0.3.2 freezes their growth through explicit ceilings.
+Remaining historical longfiles stay frozen through explicit ceilings until a
+future modularization step changes them.

@@ -13,15 +13,10 @@ NORMAL_LIMITS = {
 }
 
 HISTORICAL_LONGFILE_EXCEPTIONS = {
-    "docs/QUALITY_GATES.md": {
-        "max_lines": 1307,
-        "reason": "Historical acceptance and stop gates accumulated before modularization.",
-        "planned_split_or_review": "v0.3.3 Documentation Modularization",
-    },
     "docs/DECISIONS.md": {
-        "max_lines": 642,
+        "max_lines": 664,
         "reason": "Historical architecture decision log accumulated before ADR split.",
-        "planned_split_or_review": "v0.3.3 Documentation Modularization",
+        "planned_split_or_review": "Future decisions modularization",
     },
     "docs/FOUNDATION_SPEC_v0.0.1.md": {
         "max_lines": 507,
@@ -36,7 +31,7 @@ HISTORICAL_LONGFILE_EXCEPTIONS = {
     "docs/VOCABULARY.md": {
         "max_lines": 486,
         "reason": "Historical vocabulary ledger for active and planned terms.",
-        "planned_split_or_review": "v0.3.3 Documentation Modularization",
+        "planned_split_or_review": "Future vocabulary modularization",
     },
     "docs/CODEX_IMPLEMENTATION_PROMPT_v0.0.1.md": {
         "max_lines": 279,
@@ -44,9 +39,19 @@ HISTORICAL_LONGFILE_EXCEPTIONS = {
         "planned_split_or_review": "Review only if historical prompts are archived.",
     },
     "docs/ROADMAP_STABLE_CORE.md": {
-        "max_lines": 361,
+        "max_lines": 368,
         "reason": "Historical phase roadmap accumulated before roadmap split.",
-        "planned_split_or_review": "v0.3.3 Documentation Modularization",
+        "planned_split_or_review": "Future roadmap modularization",
+    },
+    "docs/quality_gates/v0.0.md": {
+        "max_lines": 540,
+        "reason": "Moved historical v0.0 quality gates.",
+        "planned_split_or_review": "Review only if historical gate files are split per release.",
+    },
+    "docs/quality_gates/v0.1.md": {
+        "max_lines": 490,
+        "reason": "Moved historical v0.1 quality gates.",
+        "planned_split_or_review": "Review only if historical gate files are split per release.",
     },
     "tests/test_ledger_lineage_hardening.py": {
         "max_lines": 305,
@@ -110,6 +115,26 @@ def test_project_structure_defines_document_roles_and_longfiles() -> None:
     assert "historical longfile" in text.lower()
     assert "max_lines" in text
     assert "planned_split_or_review" in text
+
+
+def test_quality_gates_are_modularized_and_indexed() -> None:
+    index_text = Path("docs/QUALITY_GATES.md").read_text(encoding="utf-8")
+    modular_files = {
+        Path("docs/quality_gates/v0.0.md"): "v0.0.1",
+        Path("docs/quality_gates/v0.1.md"): "v0.1.10",
+        Path("docs/quality_gates/v0.2.md"): "v0.2.1",
+        Path("docs/quality_gates/v0.3.md"): "v0.3.3",
+        Path("docs/quality_gates/planned.md"): "Planned v0.4.0",
+    }
+
+    assert _line_count(Path("docs/QUALITY_GATES.md")) <= NORMAL_LIMITS["docs"]
+    assert "docs/quality_gates/" in index_text
+    assert "docs/QUALITY_GATES.md" not in HISTORICAL_LONGFILE_EXCEPTIONS
+
+    for path, expected_label in modular_files.items():
+        assert path.exists()
+        assert path.as_posix() in index_text
+        assert expected_label in path.read_text(encoding="utf-8")
 
 
 def test_historical_longfile_exceptions_are_documented_and_bounded() -> None:

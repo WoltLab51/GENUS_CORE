@@ -640,3 +640,25 @@ This adds build rules, project-structure documentation, and structure tests
 only. It does not add runtime capability, CLI commands, SQLite tables, sentence
 types, schema changes, workers, LLMs, reactions, memory writes, transition
 candidates, constraint decisions, GraphDB, or RuntimeShape.
+
+## Decision 0032 - v0.3.3 modularizes quality gates first
+
+Decision:
+
+v0.3.3 modularizes `QUALITY_GATES.md` by version series before modularizing
+`DECISIONS.md` or other historical longfiles.
+
+Reason:
+
+`QUALITY_GATES.md` was the largest governance document and the clearest
+candidate for the v0.3.2 build-structure guardrails. Moving gate blocks into
+focused files reduces navigation cost without changing runtime behavior or
+rewriting historical acceptance criteria.
+
+Impact:
+
+`QUALITY_GATES.md` becomes an index. Historical gate content moves under
+`docs/quality_gates/`. `DECISIONS.md` remains a capped historical longfile for
+now. No runtime source package, class, function, CLI command, SQLite table,
+sentence type, schema version, worker, LLM, reaction, memory write, transition
+candidate, constraint decision, GraphDB, or RuntimeShape is introduced.

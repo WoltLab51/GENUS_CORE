@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.3.2"
-description = "GENUS_CORE v0.3.2 Build Structure Guardrails"
+version = "0.3.3"
+description = "GENUS_CORE v0.3.3 Quality Gates Modularization"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.3.2 Build Structure Guardrails
+Status: active for v0.3.3 Quality Gates Modularization
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md` and `SAFETY_BOUNDARIES.md`.
@@ -238,6 +238,7 @@ add an explicit exception with reason and planned_split_or_review
 defer bulk content to a planned modularization step
 ```
 
-After v0.3.2, new phase-specific gates and large decision blocks should not be
-added to historical monoliths unless the task explicitly updates their
-exception ceiling.
+After v0.3.3, new phase-specific gates should be added to the matching file in
+`docs/quality_gates/` or to a new focused gate file. Large decision blocks
+should not be added to historical monoliths unless the task explicitly updates
+their exception ceiling.

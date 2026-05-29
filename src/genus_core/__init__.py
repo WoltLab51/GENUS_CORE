@@ -1,4 +1,4 @@
-"""GENUS_CORE v0.3.2 Build Structure Guardrails."""
+"""GENUS_CORE v0.3.3 Quality Gates Modularization."""
 
 SCHEMA_VERSION = "genus.foundation.v0.0.1"
-__version__ = "0.3.2"
+__version__ = "0.3.3"
