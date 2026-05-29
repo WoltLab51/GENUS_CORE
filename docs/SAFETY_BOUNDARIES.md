@@ -181,3 +181,24 @@ question-like. It must not contain `should`, `must`, `allow`, `block`,
 `PassiveTransitionReport.summary` must remain descriptive-only. It must not
 imply approval, permission, decision, execution, action taken, memory creation,
 reaction creation, selected transition, selected candidate, or decision made.
+
+## Planned v0.4.0 Passive Boundary Relevance
+
+Planned v0.4.0 work is spec-only. It must not add runtime code.
+
+Passive Boundary Relevance may define how a later passive description names
+boundary areas that could be relevant. It must not evaluate boundaries, evaluate
+permission, evaluate policy, approve, reject, allow, block, decide, recommend,
+execute, react, or write memory.
+
+`boundary_area` must be planned as a closed enum:
+
+```text
+memory_boundary
+passive_foundation_boundary
+passive_preview_boundary
+```
+
+`observed_boundary_relevance` must remain descriptive and non-numeric. It must
+not imply score, rank, priority, severity, weight, recommendation, or
+permission.

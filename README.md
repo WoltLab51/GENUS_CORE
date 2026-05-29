@@ -40,6 +40,11 @@ permission, priority, approval, reaction, memory write, or action.
 v0.3.1 adds no capability; it hardens summary wording and neutralizes the
 memory-tension question.
 
+Planned v0.4.0 work is spec-only: Passive Boundary Relevance may describe how a
+later passive boundary relevance description is allowed to look. It must not
+evaluate boundaries, grant permission, produce policy results, allow/block,
+decide, react, write memory, or add runtime code.
+
 Governance documents:
 
 - `docs/GENUS_CHARTER.md`

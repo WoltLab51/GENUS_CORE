@@ -598,3 +598,24 @@ sentence types, CLI commands, SQLite schema, durable truth layer, and
 `SCHEMA_VERSION` remain unchanged. v0.3.1 does not add TransitionCandidate,
 ConstraintDecision, Reaction, MemoryWrite, worker execution, LLM calls, GraphDB,
 RuntimeShape, or product capability.
+
+## Decision 0030 - v0.4.0 is planned as passive boundary relevance, not evaluation
+
+Decision:
+
+v0.4.0 planning uses `Passive Boundary Relevance` language instead of
+`Passive Boundary Evaluation`.
+
+Reason:
+
+GENUS_CORE must not evaluate boundaries yet. The next planned step should only
+define how a later passive boundary relevance description may look. `Evaluation`
+can imply permission evaluation, policy evaluation, approval, rejection,
+allow/block, or decision, so the planned vocabulary stays on descriptive
+relevance mapping.
+
+Impact:
+
+This decision is spec-only. It adds documentation and tests only. It does not
+add runtime source packages, classes, functions, exports, CLI commands, SQLite
+tables, sentence types, a package version bump, or a `SCHEMA_VERSION` change.

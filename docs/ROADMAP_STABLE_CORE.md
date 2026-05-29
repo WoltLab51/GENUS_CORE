@@ -309,6 +309,19 @@ preview types, persistence, CLI commands, schema changes, transition
 candidates, constraint decisions, reactions, memory writes, workers, LLMs,
 GraphDB, or RuntimeShape.
 
+### Planned v0.4.0 - Passive Boundary Relevance Spec
+
+Spec-only planning for a later passive boundary relevance description.
+
+This is not an implementation and does not change the active v0.3.1 baseline.
+It defines how a later `PassiveBoundaryRelevancePreview` and
+`PassiveBoundaryRelevanceReport` may describe relevant boundary areas without
+evaluating boundaries, granting permission, producing policy results,
+allowing/blocking, deciding, reacting, or writing memory.
+
+The planned name is deliberately `Boundary Relevance`, not `Boundary
+Evaluation`, because v0.4.0 must not yet evaluate boundaries.
+
 ## Later, Not Yet Active
 
 Future planning may later introduce passive cognitive physics concepts, but
