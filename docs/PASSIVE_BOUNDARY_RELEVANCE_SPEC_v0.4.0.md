@@ -52,6 +52,25 @@ No `src/genus_core/passive_boundary*` package may exist for this spec step.
 No classes, functions, runtime exports, CLI commands, SQLite tables, sentence
 types, or schema changes are introduced by this spec.
 
+## Artifact Contract Alignment
+
+A later implementation must comply with `ARTIFACT_CONTRACTS.md`.
+
+Common contracts define compatibility, not identical field shape.
+
+Planned passive boundary relevance artifacts must preserve:
+
+```text
+primary ID plus id property
+created_at
+schema_version
+explicit source references
+source_evidence_ids_json from Belief lineage
+ephemeral-only lifecycle
+```
+
+Reports may explain source lineage, but reports must not create new lineage.
+
 ## Planned Inputs
 
 A later implementation may read only:
@@ -64,11 +83,52 @@ PassiveTransitionPreview
 
 These inputs must remain unchanged by a future implementation.
 
-## Planned Output Shape
+## Planned Preview Shape
 
-A later passive output may contain only descriptive fields such as:
+A later `PassiveBoundaryRelevancePreview` may contain only contract fields and
+descriptive fields such as:
 
 ```text
+preview_id
+source_state_id
+source_metric_snapshot_id
+source_transition_preview_id
+source_evidence_ids_json
+boundary_question
+boundary_area
+observed_boundary_relevance
+no_boundary_evaluation_possible
+no_decision_possible
+no_action_possible
+```
+
+`source_state_id`, `source_metric_snapshot_id`, and
+`source_transition_preview_id` must reference the three planned input artifacts.
+
+`source_evidence_ids_json` must be inherited from the source
+`BeliefStateSnapshot` lineage and must match the passive metric and passive
+transition preview lineage.
+
+## Planned Report Shape
+
+A later `PassiveBoundaryRelevanceReport` may contain only explanatory fields
+such as:
+
+```text
+report_id
+source_relevance_preview_id
+summary
+payload_json
+```
+
+The report payload may repeat the preview source references and descriptive
+fields for explanation only:
+
+```text
+source_state_id
+source_metric_snapshot_id
+source_transition_preview_id
+source_evidence_ids_json
 boundary_question
 boundary_area
 observed_boundary_relevance
@@ -79,6 +139,8 @@ no_action_possible
 
 `no_boundary_evaluation_possible`, `no_decision_possible`, and
 `no_action_possible` must be true.
+
+The report must not invent source references or evidence lineage.
 
 ## Boundary Area Enum
 

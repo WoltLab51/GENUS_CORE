@@ -683,3 +683,23 @@ This is a governance and test release only. It does not change runtime
 behavior, package schema, SQLite tables, CLI commands, sentence types,
 persistence, workers, LLMs, reactions, memory writes, transition candidates,
 constraint decisions, GraphDB, or RuntimeShape.
+
+## Decision 0034 - v0.4.0 spec must follow artifact contracts
+
+Decision:
+
+The planned v0.4.0 Passive Boundary Relevance spec must inherit the v0.3.4
+artifact contracts before any runtime implementation exists.
+
+Reason:
+
+The planned preview/report layer would otherwise define passive boundary fields
+without an explicit ID, source-lineage, evidence-lineage, report, and ephemeral
+lifecycle contract.
+
+Impact:
+
+This is spec-only. It changes docs and tests only. It does not bump package
+version, change `SCHEMA_VERSION`, add runtime artifacts, add persistence, add
+CLI commands, or introduce decisions, reactions, memory writes, workers, LLMs,
+GraphDB, or RuntimeShape.

@@ -14,7 +14,7 @@ NORMAL_LIMITS = {
 
 HISTORICAL_LONGFILE_EXCEPTIONS = {
     "docs/DECISIONS.md": {
-        "max_lines": 685,
+        "max_lines": 705,
         "reason": "Historical architecture decision log accumulated before ADR split.",
         "planned_split_or_review": "Future decisions modularization",
     },

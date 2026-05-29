@@ -9,12 +9,17 @@ spec-only step if:
 
 ```text
 pytest green
-package version remains 0.3.1
+package version remains 0.3.4
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 PASSIVE_BOUNDARY_RELEVANCE_SPEC_v0.4.0.md exists
 the spec states planned-not-active and spec-only
 the spec states no runtime implementation is introduced
+the spec references ARTIFACT_CONTRACTS.md
 planned artifacts are named only as planned-not-active
+planned preview shape includes preview_id, source_state_id, source_metric_snapshot_id, source_transition_preview_id, and source_evidence_ids_json
+planned report shape includes report_id, source_relevance_preview_id, summary, and payload_json
+planned report does not create new lineage
+planned artifacts remain ephemeral-only
 PassiveBoundaryRelevancePreview != ConstraintDecision
 PassiveBoundaryRelevanceReport != PolicyResult
 observed_boundary_relevance != permission
@@ -35,7 +40,7 @@ SQLite tables remain evidence_records and ledger_entries
 Stop development if any of these occur:
 
 ```text
-Package version changes from 0.3.1.
+Package version changes from 0.3.4.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 src/genus_core/passive_boundary* appears.
 PassiveBoundaryRelevancePreview or PassiveBoundaryRelevanceReport appears as a runtime class.
