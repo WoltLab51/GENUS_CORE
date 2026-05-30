@@ -1,8 +1,8 @@
 # GENUS_CORE Status
 
-Current baseline: `v0.3.4 - Artifact Contract Alignment`
+Current baseline: `v0.3.5 - Decisions Modularization`
 
-Status: artifact-contract governance baseline after v0.3.3.
+Status: decisions modularization baseline after v0.3.4.
 
 ## Released baselines
 
@@ -119,11 +119,10 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.3.4` is Artifact Contract Alignment.
+`GENUS_CORE v0.3.5` is Decisions Modularization.
 
-It adds no runtime capability. It documents shared artifact contracts for IDs,
-lineage, snapshot/preview/report roles, durable/ephemeral boundaries, report
-limits, compatibility, and watched evaluation wording.
+It adds no runtime capability. It turns `docs/DECISIONS.md` into an active
+index and moves decision blocks into modular files under `docs/decisions/`.
 
 The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
@@ -133,7 +132,7 @@ TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
 persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
 RuntimeShape.
 
-Package version is `0.3.4`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
+Package version is `0.3.5`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
@@ -183,20 +182,20 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.3.4 Artifact Contract Alignment Acceptance
+## v0.3.5 Decisions Modularization Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.3.4
+Package version is 0.3.5
 SCHEMA_VERSION remains genus.foundation.v0.0.1
-GENUS_CHARTER.md exists
-SAFETY_BOUNDARIES.md exists
-ARTIFACT_CONTRACTS.md exists
-ARTIFACT_CONTRACTS.md says contracts do not require identical fields
-ARTIFACT_CONTRACTS.md says reports do not create new lineage
+GENUS_CHARTER.md, SAFETY_BOUNDARIES.md, and ARTIFACT_CONTRACTS.md exist
+DECISIONS.md is an active index under the normal docs line-count target
+docs/decisions/v0.0.md through docs/decisions/v0.3.md exist
+DECISIONS.md links all modular decision files
+Decision numbers 0001 through 0034 exist exactly once
 BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
 BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
 PROJECT_STRUCTURE.md exists
@@ -207,7 +206,7 @@ docs/quality_gates/v0.2.md exists
 docs/quality_gates/v0.3.md exists
 docs/quality_gates/planned.md exists
 QUALITY_GATES.md links all modular quality gate files
-QUALITY_GATES.md is no longer a historical longfile exception
+QUALITY_GATES.md and DECISIONS.md are no longer historical longfile exceptions
 Remaining historical longfiles have explicit max_lines, reason, and planned_split_or_review entries
 Remaining historical longfiles do not exceed their declared ceilings
 New files over normal line-count targets require explicit exception
@@ -256,5 +255,5 @@ ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
 PassiveTransitionReport describes passive preview only
 v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond artifact contract alignment in v0.3.4
+No product scope expansion exists beyond decisions modularization in v0.3.5
 ```

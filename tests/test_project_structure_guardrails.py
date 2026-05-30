@@ -13,11 +13,6 @@ NORMAL_LIMITS = {
 }
 
 HISTORICAL_LONGFILE_EXCEPTIONS = {
-    "docs/DECISIONS.md": {
-        "max_lines": 705,
-        "reason": "Historical architecture decision log accumulated before ADR split.",
-        "planned_split_or_review": "Future decisions modularization",
-    },
     "docs/FOUNDATION_SPEC_v0.0.1.md": {
         "max_lines": 507,
         "reason": "Frozen historical foundation specification.",
@@ -39,9 +34,14 @@ HISTORICAL_LONGFILE_EXCEPTIONS = {
         "planned_split_or_review": "Review only if historical prompts are archived.",
     },
     "docs/ROADMAP_STABLE_CORE.md": {
-        "max_lines": 376,
+        "max_lines": 383,
         "reason": "Historical phase roadmap accumulated before roadmap split.",
         "planned_split_or_review": "Future roadmap modularization",
+    },
+    "docs/decisions/v0.0.md": {
+        "max_lines": 294,
+        "reason": "Moved historical v0.0 through v0.1.0 decisions.",
+        "planned_split_or_review": "Review only if historical decision files are split per release.",
     },
     "docs/quality_gates/v0.0.md": {
         "max_lines": 540,
@@ -131,6 +131,25 @@ def test_quality_gates_are_modularized_and_indexed() -> None:
     assert _line_count(Path("docs/QUALITY_GATES.md")) <= NORMAL_LIMITS["docs"]
     assert "docs/quality_gates/" in index_text
     assert "docs/QUALITY_GATES.md" not in HISTORICAL_LONGFILE_EXCEPTIONS
+
+    for path, expected_label in modular_files.items():
+        assert path.exists()
+        assert path.as_posix() in index_text
+        assert expected_label in path.read_text(encoding="utf-8")
+
+
+def test_decisions_are_modularized_and_indexed() -> None:
+    index_text = Path("docs/DECISIONS.md").read_text(encoding="utf-8")
+    modular_files = {
+        Path("docs/decisions/v0.0.md"): "Decision 0015",
+        Path("docs/decisions/v0.1.md"): "Decision 0025",
+        Path("docs/decisions/v0.2.md"): "Decision 0027",
+        Path("docs/decisions/v0.3.md"): "Decision 0034",
+    }
+
+    assert _line_count(Path("docs/DECISIONS.md")) <= NORMAL_LIMITS["docs"]
+    assert "Active Decision Map" in index_text
+    assert "docs/DECISIONS.md" not in HISTORICAL_LONGFILE_EXCEPTIONS
 
     for path, expected_label in modular_files.items():
         assert path.exists()

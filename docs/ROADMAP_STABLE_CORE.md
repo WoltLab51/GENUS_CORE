@@ -332,11 +332,18 @@ It defines ID, source-lineage, evidence-lineage, snapshot/preview/report,
 durable/ephemeral, report-boundary, compatibility, and watched-wording rules in
 `ARTIFACT_CONTRACTS.md`.
 
+### v0.3.5 - Decisions Modularization
+
+Modularizes `DECISIONS.md` without runtime capability.
+
+It keeps decisions as active GENUS build laws while moving decision blocks into
+`docs/decisions/` by version series.
+
 ### Planned v0.4.0 - Passive Boundary Relevance Spec
 
 Spec-only planning for a later passive boundary relevance description.
 
-This is not an implementation and does not change the active v0.3.4 baseline.
+This is not an implementation and does not change the active v0.3.5 baseline.
 It defines how a later `PassiveBoundaryRelevancePreview` and
 `PassiveBoundaryRelevanceReport` may describe relevant boundary areas without
 evaluating boundaries, granting permission, producing policy results,

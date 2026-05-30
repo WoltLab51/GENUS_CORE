@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.3.4 Artifact Contract Alignment
+Status: active for v0.3.5 Decisions Modularization
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md`, `SAFETY_BOUNDARIES.md`, and `ARTIFACT_CONTRACTS.md`.
@@ -242,6 +242,10 @@ After v0.3.3, new phase-specific gates should be added to the matching file in
 `docs/quality_gates/` or to a new focused gate file. Large decision blocks
 should not be added to historical monoliths unless the task explicitly updates
 their exception ceiling.
+
+After v0.3.5, new decision blocks should be added to the matching file in
+`docs/decisions/` or to a new focused decision file. They must not be appended
+to the `DECISIONS.md` index.
 
 ## 12. Artifact Contract Rule
 

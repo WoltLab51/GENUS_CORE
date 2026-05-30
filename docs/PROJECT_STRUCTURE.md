@@ -1,6 +1,6 @@
 # GENUS_CORE Project Structure
 
-Status: active for v0.3.4 Artifact Contract Alignment
+Status: active for v0.3.5 Decisions Modularization
 
 GENUS_CORE treats code, tests, docs, specs, decisions, and quality gates as
 governed artifacts.
@@ -38,8 +38,8 @@ under `docs/quality_gates/`.
 
 `DECISIONS.md`
 
-Records architectural decisions. It is currently a historical longfile and
-should not absorb large new decision blocks indefinitely.
+Indexes modular architectural decisions. Decisions are active GENUS build laws,
+not only historical notes. Decision blocks live under `docs/decisions/`.
 
 `STATUS.md`
 
@@ -67,15 +67,15 @@ Summarize release-specific changes. They should not redefine architecture.
 
 ## Historical Longfiles
 
-The following files are accepted historical longfiles for v0.3.4:
+The following files are accepted historical longfiles for v0.3.5:
 
 ```text
-docs/DECISIONS.md
 docs/FOUNDATION_SPEC_v0.0.1.md
 docs/GENUS_LANGUAGE_SPEC_v0.0.1.md
 docs/VOCABULARY.md
 docs/CODEX_IMPLEMENTATION_PROMPT_v0.0.1.md
 docs/ROADMAP_STABLE_CORE.md
+docs/decisions/v0.0.md
 docs/quality_gates/v0.0.md
 docs/quality_gates/v0.1.md
 tests/test_ledger_lineage_hardening.py
@@ -102,11 +102,11 @@ modularization step.
 ## Planned Modularization
 
 Quality gates were modularized in v0.3.3.
+Decisions were modularized in v0.3.5.
 
 Likely candidates:
 
 ```text
-docs/DECISIONS.md
 docs/VOCABULARY.md
 ```
 

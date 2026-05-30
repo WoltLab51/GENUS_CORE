@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates
 
-Status: active for v0.3.4 Artifact Contract Alignment
+Status: active for v0.3.5 Decisions Modularization
 
 ## 1. Purpose
 
