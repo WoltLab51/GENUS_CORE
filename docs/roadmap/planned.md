@@ -1,5 +1,5 @@
 # GENUS_CORE Roadmap - Planned
-Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
+Status: active for v0.4.3 Artifact Contract and Boundary Wording Alignment
 Moved from `docs/ROADMAP_STABLE_CORE.md`.
 
 ### v0.4.0 - Passive Boundary Relevance Spec
@@ -39,6 +39,13 @@ Audit baseline for the v0.4.1 runtime. It adds no capability and verifies
 summary language, neutral boundary questions, non-prioritizing relevance
 labels, report-lineage mirroring, and continued non-emission of
 `passive_foundation_boundary`.
+
+### v0.4.3 - Artifact Contract and Boundary Wording Alignment
+
+Alignment baseline for active v0.4.x contracts. It adds no capability and
+updates artifact contracts, build rules, function-cell contracts, README
+wording, forbidden Boundary Relevance payload fields, and passive transition
+runtime wording.
 
 ## Later, Not Yet Active
 

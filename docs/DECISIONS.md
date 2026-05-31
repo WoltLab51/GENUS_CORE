@@ -1,6 +1,6 @@
 # GENUS_CORE Decisions
 
-Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
+Status: active for v0.4.3 Artifact Contract and Boundary Wording Alignment
 
 Decisions govern how GENUS may be built. They are active build laws, not only historical notes.
 
@@ -24,6 +24,7 @@ Build governance: governed artifacts, modular quality gates, modular decisions, 
 v0.4.0 constraint: Boundary Relevance, not Boundary Evaluation.
 v0.4.1 constraint: passive Boundary Relevance preview, not permission or decision.
 v0.4.2 constraint: Boundary Relevance audit adds no new capability.
+v0.4.3 constraint: artifact contracts and wording must match active runtime.
 ```
 
 ## Modular Decision Files

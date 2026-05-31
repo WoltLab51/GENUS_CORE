@@ -15,7 +15,18 @@ ALLOWED_PASSIVE_TRANSITION_PREVIEW_TYPES = frozenset(
     }
 )
 FORBIDDEN_POSSIBLE_FUTURE_QUESTION_WORDS = frozenset(
-    {"should", "must", "allow", "block", "execute", "write", "approve", "recommend"}
+    {
+        "should",
+        "must",
+        "allow",
+        "block",
+        "execute",
+        "write",
+        "approve",
+        "recommend",
+        "evaluate",
+        "evaluation",
+    }
 )
 FORBIDDEN_PASSIVE_TRANSITION_FIELDS = frozenset(
     {
@@ -43,6 +54,8 @@ FORBIDDEN_PASSIVE_TRANSITION_FIELDS = frozenset(
         "world_truth",
         "policy",
         "policy_result",
+        "policy_status",
+        "authorization",
         "allow",
         "block",
         "activation",

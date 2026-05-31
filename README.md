@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.4.2` is Passive Boundary Relevance Boundary Audit.
+`GENUS_CORE v0.4.3` is Artifact Contract and Boundary Wording Alignment.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,17 +15,18 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release adds a narrow passive Boundary Relevance preview/report layer
-without adding decision, permission, reaction, memory write, CLI, SQLite, or
-schema capability. It keeps code, tests, docs, specs, decisions, quality gates,
-vocabulary, roadmap, and artifact lineage governed while
+This release aligns artifact contracts and boundary wording after the narrow
+passive Boundary Relevance preview/report layer. It adds no decision,
+permission, reaction, memory write, CLI, SQLite, or schema capability. It keeps
+code, tests, docs, specs, decisions, quality gates, vocabulary, roadmap, and
+artifact lineage governed while
 keeping agents, workers, LLM calls, memory writes, reactions, decisions,
 cognitive maps, transition candidates, constraint decisions, runtime cells,
 organs, and GraphDB truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.4.2`
+Package version: `0.4.3`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
@@ -68,6 +69,9 @@ or persist new state.
 v0.4.2 adds no capability; it audits summary language, neutral boundary
 questions, non-prioritizing relevance labels, report lineage mirroring, and the
 continued non-emission of `passive_foundation_boundary`.
+v0.4.3 adds no capability; it aligns artifact contracts, build rules,
+README wording, forbidden Boundary Relevance payload fields, and passive
+transition wording with the active v0.4.2 runtime.
 
 Governance documents:
 
@@ -143,5 +147,9 @@ react, or write memory.
 not decide, approve, execute, recommend, prioritize, permit, select a target
 state, create a candidate, constrain, react, or write memory.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.4.0 is spec-only, not
-schema expansion.
+`PassiveBoundaryRelevanceReport` describes passive boundary relevance only. It
+does not evaluate boundaries, grant permission, produce policy results,
+allow/block, decide, recommend, prioritize, react, write memory, or execute.
+
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.4.0 through v0.4.3 do
+not expand the durable schema.

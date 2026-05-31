@@ -82,9 +82,10 @@ def test_memory_request_metrics_create_passive_tension_preview() -> None:
     assert preview.no_action_possible is True
     assert preview.no_decision_possible is True
     assert preview.possible_future_question == (
-        "Could a later governed boundary evaluate whether observed memory "
+        "Could a later governed boundary describe whether observed memory "
         "content raises a governed memory question?"
     )
+    assert "evaluate" not in preview.possible_future_question.lower()
 
 
 def test_no_visible_tension_preview_for_neutral_metrics() -> None:

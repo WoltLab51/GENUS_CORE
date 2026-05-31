@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.4.2
+Status: active boundary document for GENUS_CORE v0.4.3
 
 ## Purpose
 

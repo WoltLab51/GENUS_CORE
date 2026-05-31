@@ -5,11 +5,7 @@ from genus_core import SCHEMA_VERSION
 from genus_core.truth import connect
 
 ROOTS = (Path("src"), Path("tests"), Path("docs"))
-NORMAL_LIMITS = {
-    "src": 220,
-    "tests": 220,
-    "docs": 260,
-}
+NORMAL_LIMITS = {"src": 220, "tests": 220, "docs": 260}
 
 HISTORICAL_LONGFILE_EXCEPTIONS = {
     "docs/FOUNDATION_SPEC_v0.0.1.md": {
@@ -85,6 +81,9 @@ def test_build_rules_define_governed_artifacts_and_codex_split_rule() -> None:
         assert term in text
     assert "Codex must not silently append bulk content to oversized files." in text
     assert "split into a focused document" in text
+    assert "genus_core.passive_boundary_relevance" in text
+    assert "PassiveBoundaryRelevancePreview" in text
+    assert "These artifacts must not enter `genus_core.functions.__all__`." in text
 
 
 def test_project_structure_defines_document_roles_and_longfiles() -> None:
@@ -95,6 +94,7 @@ def test_project_structure_defines_document_roles_and_longfiles() -> None:
         "SAFETY_BOUNDARIES.md",
         "BUILD_RULES.md",
         "ARTIFACT_CONTRACTS.md",
+        "FUNCTION_CELLS.md",
         "SPEC_BOUNDARIES.md",
         "QUALITY_GATES.md",
         "DECISIONS.md",
@@ -140,7 +140,7 @@ def test_decisions_are_modularized_and_indexed() -> None:
         Path("docs/decisions/v0.1.md"): "Decision 0025",
         Path("docs/decisions/v0.2.md"): "Decision 0027",
         Path("docs/decisions/v0.3.md"): "Decision 0038",
-        Path("docs/decisions/v0.4.md"): "Decision 0041",
+        Path("docs/decisions/v0.4.md"): "Decision 0042",
     }
 
     assert _line_count(Path("docs/DECISIONS.md")) <= NORMAL_LIMITS["docs"]

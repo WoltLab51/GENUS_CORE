@@ -47,7 +47,7 @@ def build_passive_transition_preview(
             "inhibition remains high under the current boundary."
         )
         possible_future_question = (
-            "Could a later governed boundary evaluate whether observed memory "
+            "Could a later governed boundary describe whether observed memory "
             "content raises a governed memory question?"
         )
     else:
@@ -57,7 +57,7 @@ def build_passive_transition_preview(
             "belief and metric snapshots."
         )
         possible_future_question = (
-            "Could a later governed boundary evaluate whether any passive "
+            "Could a later governed boundary describe whether any passive "
             "state question is visible?"
         )
 

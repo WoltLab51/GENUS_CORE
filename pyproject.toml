@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.4.2"
-description = "GENUS_CORE v0.4.2 Passive Boundary Relevance Boundary Audit"
+version = "0.4.3"
+description = "GENUS_CORE v0.4.3 Artifact Contract and Boundary Wording Alignment"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

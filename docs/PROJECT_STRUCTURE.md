@@ -1,6 +1,6 @@
 # GENUS_CORE Project Structure
 
-Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
+Status: active for v0.4.3 Artifact Contract and Boundary Wording Alignment
 
 GENUS_CORE treats code, tests, docs, specs, decisions, and quality gates as
 governed artifacts.
@@ -30,6 +30,11 @@ granularity, side effects, file growth, split rules, and documentation hygiene.
 Defines how GENUS artifacts compose through IDs, source lineage, evidence
 lineage, snapshot/preview/report roles, durable/ephemeral boundaries, and report
 limits.
+
+`FUNCTION_CELLS.md`
+
+Defines reviewable contracts for public GENUS functions without expanding
+runtime files into documentation containers.
 
 `SPEC_BOUNDARIES.md`
 

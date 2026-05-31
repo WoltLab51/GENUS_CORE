@@ -9,7 +9,7 @@ under this spec.
 The v0.4.0 baseline was docs and tests only. The v0.4.1 baseline activates
 only the passive preview and report artifacts named below.
 
-Package version is `0.4.2`.
+Package version is `0.4.3`.
 
 `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 

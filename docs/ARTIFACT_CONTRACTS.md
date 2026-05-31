@@ -1,6 +1,6 @@
 # GENUS_CORE Artifact Contracts
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.3 Artifact Contract and Boundary Wording Alignment
 
 GENUS artifacts are allowed to have different shapes. They still need shared
 contracts so they can compose without turning into a monolith.
@@ -25,6 +25,8 @@ PassiveMetricSnapshot.snapshot_id
 PassiveMetricReport.report_id
 PassiveTransitionPreview.preview_id
 PassiveTransitionReport.report_id
+PassiveBoundaryRelevancePreview.preview_id
+PassiveBoundaryRelevanceReport.report_id
 ```
 
 Every active artifact also carries `created_at` and `schema_version`.
@@ -48,6 +50,10 @@ PassiveMetricReport.source_snapshot_id -> PassiveMetricSnapshot.snapshot_id
 PassiveTransitionPreview.source_state_id -> BeliefStateSnapshot.state_id
 PassiveTransitionPreview.source_metric_snapshot_id -> PassiveMetricSnapshot.snapshot_id
 PassiveTransitionReport.source_preview_id -> PassiveTransitionPreview.preview_id
+PassiveBoundaryRelevancePreview.source_state_id -> BeliefStateSnapshot.state_id
+PassiveBoundaryRelevancePreview.source_metric_snapshot_id -> PassiveMetricSnapshot.snapshot_id
+PassiveBoundaryRelevancePreview.source_transition_preview_id -> PassiveTransitionPreview.preview_id
+PassiveBoundaryRelevanceReport.source_relevance_preview_id -> PassiveBoundaryRelevancePreview.preview_id
 ```
 
 ## Evidence Lineage Contract
@@ -62,8 +68,10 @@ BeliefStateSnapshot.source_evidence_ids_json
 PassiveMetricSnapshot.source_evidence_ids_json
 PassiveMetricSnapshot.metrics_json[*].source_evidence_ids_json
 PassiveTransitionPreview.source_evidence_ids_json
+PassiveBoundaryRelevancePreview.source_evidence_ids_json
 PassiveMetricReport.payload_json.source_evidence_ids_json
 PassiveTransitionReport.payload_json.source_evidence_ids_json
+PassiveBoundaryRelevanceReport.payload_json.source_evidence_ids_json
 ```
 
 Reports may explain lineage, but reports do not create new lineage.
@@ -108,8 +116,8 @@ PassiveMetricSnapshot
 PassiveMetricReport
 PassiveTransitionPreview
 PassiveTransitionReport
-planned PassiveBoundaryRelevancePreview
-planned PassiveBoundaryRelevanceReport
+PassiveBoundaryRelevancePreview
+PassiveBoundaryRelevanceReport
 ```
 
 ## Report Boundary Contract

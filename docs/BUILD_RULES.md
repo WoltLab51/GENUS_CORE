@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
+Status: active for v0.4.3 Artifact Contract and Boundary Wording Alignment
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md`, `SAFETY_BOUNDARIES.md`, and `ARTIFACT_CONTRACTS.md`.
@@ -139,38 +139,17 @@ Forbidden misuse
 
 Every new capability must have a test before it is accepted.
 
-For the foundation namespace, this means only the accepted foundation
-capabilities may exist:
+Allowed public capability namespaces:
 
 ```text
-observe_event()
-create_evidence_record()
-append_ledger_entry()
-build_belief_state_snapshot()
-create_observation_report()
-save_evidence_record()
-save_ledger_entry()
+genus_core.functions: observe_event(), create_evidence_record(), append_ledger_entry(), build_belief_state_snapshot(), create_observation_report()
+genus_core.truth: save_evidence_record(), save_ledger_entry()
+genus_core.passive_physics: PassiveMetricSnapshot, PassiveMetricReport, build_passive_metric_snapshot(), create_passive_metric_report()
+genus_core.passive_transition: PassiveTransitionPreview, PassiveTransitionReport, build_passive_transition_preview(), create_passive_transition_report()
+genus_core.passive_boundary_relevance: PassiveBoundaryRelevancePreview, PassiveBoundaryRelevanceReport, build_passive_boundary_relevance_preview(), create_passive_boundary_relevance_report()
 ```
 
-The separate `genus_core.passive_physics` namespace may expose only the
-accepted passive v0.2.x artifacts:
-
-```text
-PassiveMetricSnapshot
-PassiveMetricReport
-build_passive_metric_snapshot()
-create_passive_metric_report()
-```
-
-The separate `genus_core.passive_transition` namespace may expose only the
-accepted passive v0.3.0 preview artifacts:
-
-```text
-PassiveTransitionPreview
-PassiveTransitionReport
-build_passive_transition_preview()
-create_passive_transition_report()
-```
+These artifacts must not enter `genus_core.functions.__all__`.
 
 ## 9. Governed Artifacts
 

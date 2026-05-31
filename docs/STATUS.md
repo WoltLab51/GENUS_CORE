@@ -1,7 +1,7 @@
 # GENUS_CORE Status
-Current baseline: `v0.4.2 - Passive Boundary Relevance Boundary Audit`
+Current baseline: `v0.4.3 - Artifact Contract and Boundary Wording Alignment`
 
-Status: audited narrow Passive Boundary Relevance runtime baseline.
+Status: aligned narrow Passive Boundary Relevance runtime baseline.
 
 ## Released baselines
 
@@ -105,6 +105,14 @@ Commit: aa829e0f36edf715ab0ab41f96720edfaabf2e5b
 v0.4.0 Passive Boundary Relevance Spec
 Tag: genus-core-v0.4.0-passive-boundary-relevance-spec
 Commit: d51baee9b7e88532853a810dd3185cdb561e418c
+
+v0.4.1 Passive Boundary Relevance Preview Seed
+Tag: genus-core-v0.4.1-passive-boundary-relevance-preview-seed
+Commit: 7a1d1f6
+
+v0.4.2 Passive Boundary Relevance Boundary Audit
+Tag: genus-core-v0.4.2-passive-boundary-relevance-boundary-audit
+Commit: 18ab623
 ```
 
 ## Frozen foundation chain
@@ -122,7 +130,7 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.4.2` is Passive Boundary Relevance Boundary Audit.
+`GENUS_CORE v0.4.3` is Artifact Contract and Boundary Wording Alignment.
 
 It adds the narrow `genus_core.passive_boundary_relevance` runtime namespace
 for `PassiveBoundaryRelevancePreview` and `PassiveBoundaryRelevanceReport`.
@@ -141,7 +149,7 @@ TransitionCandidate, ConstraintDecision, PolicyResult, permission, allow/block,
 Reaction, MemoryWrite, metric or boundary persistence, sentence types, CLI
 commands, workers, LLM calls, GraphDB, or RuntimeShape.
 
-Package version is `0.4.2`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
+Package version is `0.4.3`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
 

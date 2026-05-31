@@ -1,5 +1,5 @@
 # GENUS_CORE Roadmap - Pre-Physics
-Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
+Status: active for v0.4.3 Artifact Contract and Boundary Wording Alignment
 Moved from `docs/ROADMAP_STABLE_CORE.md`.
 
 ### v0.1.1 - Pre-Physics Requirements

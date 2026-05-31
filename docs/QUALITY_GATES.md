@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates
 
-Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
+Status: active for v0.4.3 Artifact Contract and Boundary Wording Alignment
 
 ## 1. Purpose
 

@@ -14,7 +14,7 @@ def _preview() -> PassiveTransitionPreview:
         preview_type="memory_request_transition_tension_preview",
         observed_tension_summary="A passive memory-request tension is visible.",
         possible_future_question=(
-            "Could a later governed boundary evaluate whether observed memory "
+            "Could a later governed boundary describe whether observed memory "
             "content raises a governed memory question?"
         ),
     )
@@ -37,7 +37,7 @@ def test_passive_transition_preview_rejects_unknown_preview_type() -> None:
             source_evidence_ids_json=["ev_1"],
             preview_type="transition_candidate",
             observed_tension_summary="A passive tension is visible.",
-            possible_future_question="Could a later governed boundary evaluate it?",
+            possible_future_question="Could a later governed boundary describe it?",
         )
 
 
@@ -49,7 +49,7 @@ def test_passive_transition_preview_requires_passive_no_action_flags() -> None:
             source_evidence_ids_json=["ev_1"],
             preview_type="no_visible_transition_tension_preview",
             observed_tension_summary="No passive tension is visible.",
-            possible_future_question="Could a later governed boundary evaluate it?",
+            possible_future_question="Could a later governed boundary describe it?",
             no_action_possible=False,
         )
 
@@ -60,14 +60,25 @@ def test_passive_transition_preview_requires_passive_no_action_flags() -> None:
             source_evidence_ids_json=["ev_1"],
             preview_type="no_visible_transition_tension_preview",
             observed_tension_summary="No passive tension is visible.",
-            possible_future_question="Could a later governed boundary evaluate it?",
+            possible_future_question="Could a later governed boundary describe it?",
             no_decision_possible=False,
         )
 
 
 @pytest.mark.parametrize(
     "word",
-    ("should", "must", "allow", "block", "execute", "write", "approve", "recommend"),
+    (
+        "should",
+        "must",
+        "allow",
+        "block",
+        "execute",
+        "write",
+        "approve",
+        "recommend",
+        "evaluate",
+        "evaluation",
+    ),
 )
 def test_possible_future_question_rejects_forbidden_runtime_words(word: str) -> None:
     with pytest.raises(ValueError, match="forbidden runtime word"):
@@ -89,7 +100,7 @@ def test_possible_future_question_must_be_question_like() -> None:
             source_evidence_ids_json=["ev_1"],
             preview_type="no_visible_transition_tension_preview",
             observed_tension_summary="No passive tension is visible.",
-            possible_future_question="A later governed boundary could evaluate it.",
+            possible_future_question="A later governed boundary could describe it.",
         )
 
 
@@ -101,7 +112,7 @@ def test_passive_transition_preview_rejects_extra_output_fields() -> None:
             source_evidence_ids_json=["ev_1"],
             preview_type="no_visible_transition_tension_preview",
             observed_tension_summary="No passive tension is visible.",
-            possible_future_question="Could a later governed boundary evaluate it?",
+            possible_future_question="Could a later governed boundary describe it?",
             transition="forbidden",  # type: ignore[call-arg]
         )
 
@@ -124,6 +135,11 @@ def test_passive_transition_preview_rejects_extra_output_fields() -> None:
         "reaction",
         "memory_write",
         "truth",
+        "target_state",
+        "selected_transition",
+        "proposed_transition",
+        "policy_status",
+        "authorization",
     ),
 )
 def test_passive_transition_report_rejects_forbidden_payload_fields(

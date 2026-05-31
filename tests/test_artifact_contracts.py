@@ -10,6 +10,8 @@ from genus_core.functions import (
 )
 from genus_core.models import WorldEvent
 from genus_core.passive_boundary_relevance import (
+    PassiveBoundaryRelevancePreview,
+    PassiveBoundaryRelevanceReport,
     build_passive_boundary_relevance_preview,
     create_passive_boundary_relevance_report,
 )
@@ -167,6 +169,26 @@ def test_passive_downstream_artifacts_preserve_belief_evidence_lineage() -> None
     )
     for metric in artifacts["metric_snapshot"].metrics_json:
         assert metric["source_evidence_ids_json"] == source_evidence_ids
+
+
+def test_artifact_contracts_include_active_boundary_relevance_artifacts() -> None:
+    text = CONTRACTS_PATH.read_text(encoding="utf-8")
+
+    for phrase in (
+        "PassiveBoundaryRelevancePreview.preview_id",
+        "PassiveBoundaryRelevanceReport.report_id",
+        "PassiveBoundaryRelevancePreview.source_state_id -> BeliefStateSnapshot.state_id",
+        "PassiveBoundaryRelevancePreview.source_metric_snapshot_id -> PassiveMetricSnapshot.snapshot_id",
+        "PassiveBoundaryRelevancePreview.source_transition_preview_id -> PassiveTransitionPreview.preview_id",
+        "PassiveBoundaryRelevanceReport.source_relevance_preview_id -> PassiveBoundaryRelevancePreview.preview_id",
+        "PassiveBoundaryRelevancePreview.source_evidence_ids_json",
+        "PassiveBoundaryRelevanceReport.payload_json.source_evidence_ids_json",
+    ):
+        assert phrase in text
+    assert "planned PassiveBoundaryRelevancePreview" not in text
+    assert "planned PassiveBoundaryRelevanceReport" not in text
+    assert PassiveBoundaryRelevancePreview.__name__ in text
+    assert PassiveBoundaryRelevanceReport.__name__ in text
 
 
 def test_artifact_contract_alignment_keeps_durable_sqlite_layer_unchanged(tmp_path) -> None:
