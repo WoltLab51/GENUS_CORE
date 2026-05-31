@@ -13,12 +13,12 @@ NORMAL_LIMITS = {
 
 HISTORICAL_LONGFILE_EXCEPTIONS = {
     "docs/FOUNDATION_SPEC_v0.0.1.md": {
-        "max_lines": 507,
+        "max_lines": 512,
         "reason": "Frozen historical foundation specification.",
         "planned_split_or_review": "Review only if foundation spec is superseded.",
     },
     "docs/GENUS_LANGUAGE_SPEC_v0.0.1.md": {
-        "max_lines": 372,
+        "max_lines": 377,
         "reason": "Frozen historical language specification.",
         "planned_split_or_review": "Review only if language spec is superseded.",
     },
@@ -26,11 +26,6 @@ HISTORICAL_LONGFILE_EXCEPTIONS = {
         "max_lines": 279,
         "reason": "Historical implementation prompt snapshot.",
         "planned_split_or_review": "Review only if historical prompts are archived.",
-    },
-    "docs/ROADMAP_STABLE_CORE.md": {
-        "max_lines": 390,
-        "reason": "Historical phase roadmap accumulated before roadmap split.",
-        "planned_split_or_review": "Future roadmap modularization",
     },
     "docs/decisions/v0.0.md": {
         "max_lines": 294,
@@ -51,11 +46,6 @@ HISTORICAL_LONGFILE_EXCEPTIONS = {
         "max_lines": 490,
         "reason": "Moved historical v0.1 quality gates.",
         "planned_split_or_review": "Review only if historical gate files are split per release.",
-    },
-    "tests/test_ledger_lineage_hardening.py": {
-        "max_lines": 305,
-        "reason": "Historical focused ledger lineage hardening coverage.",
-        "planned_split_or_review": "Review only when ledger tests are modularized.",
     },
 }
 
@@ -105,6 +95,7 @@ def test_project_structure_defines_document_roles_and_longfiles() -> None:
         "SAFETY_BOUNDARIES.md",
         "BUILD_RULES.md",
         "ARTIFACT_CONTRACTS.md",
+        "SPEC_BOUNDARIES.md",
         "QUALITY_GATES.md",
         "DECISIONS.md",
         "STATUS.md",
@@ -125,6 +116,9 @@ def test_quality_gates_are_modularized_and_indexed() -> None:
         Path("docs/quality_gates/v0.2.md"): "v0.2.1",
         Path("docs/quality_gates/v0.3.md"): "v0.3.3",
         Path("docs/quality_gates/v0.3.6.md"): "v0.3.6",
+        Path("docs/quality_gates/v0.3.7.md"): "v0.3.7",
+        Path("docs/quality_gates/v0.3.8.md"): "v0.3.8",
+        Path("docs/quality_gates/v0.3.9.md"): "v0.3.9",
         Path("docs/quality_gates/planned.md"): "Planned v0.4.0",
     }
 
@@ -144,7 +138,7 @@ def test_decisions_are_modularized_and_indexed() -> None:
         Path("docs/decisions/v0.0.md"): "Decision 0015",
         Path("docs/decisions/v0.1.md"): "Decision 0025",
         Path("docs/decisions/v0.2.md"): "Decision 0027",
-        Path("docs/decisions/v0.3.md"): "Decision 0035",
+        Path("docs/decisions/v0.3.md"): "Decision 0038",
     }
 
     assert _line_count(Path("docs/DECISIONS.md")) <= NORMAL_LIMITS["docs"]

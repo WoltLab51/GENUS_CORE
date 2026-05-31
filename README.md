@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.3.6` is Vocabulary Modularization.
+`GENUS_CORE v0.3.9` is Ledger Test Modularization.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,16 +15,16 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release modularizes vocabulary without adding runtime capability. It keeps
-code, tests, docs, specs, decisions, quality gates, vocabulary, and artifact
-lineage governed while
+This release finishes the current structure cleanup without adding runtime
+capability. It keeps code, tests, docs, specs, decisions, quality gates,
+vocabulary, roadmap, and artifact lineage governed while
 keeping agents, workers, LLM calls, memory writes, reactions, decisions,
 cognitive maps, transition candidates, constraint decisions, runtime cells,
 organs, and GraphDB truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.3.6`
+Package version: `0.3.9`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
@@ -51,6 +51,12 @@ v0.3.5 adds no runtime capability; it turns `DECISIONS.md` into an active index
 and moves decision blocks into `docs/decisions/`.
 v0.3.6 adds no runtime capability; it turns `VOCABULARY.md` into an active
 index and moves vocabulary blocks into `docs/vocabulary/`.
+v0.3.7 adds no runtime capability; it turns `ROADMAP_STABLE_CORE.md` into an
+index and moves roadmap phases into `docs/roadmap/`.
+v0.3.8 adds no runtime capability; it marks historical v0.0.1 specs as frozen
+references and anchors active spec authority in current governance docs.
+v0.3.9 adds no runtime capability; it splits Ledger lineage hardening tests
+into focused model/function and SQLite test files.
 
 Planned v0.4.0 work is spec-only: Passive Boundary Relevance may describe how a
 later passive boundary relevance description is allowed to look. It must not
@@ -62,6 +68,7 @@ Governance documents:
 - `docs/GENUS_CHARTER.md`
 - `docs/SAFETY_BOUNDARIES.md`
 - `docs/ARTIFACT_CONTRACTS.md`
+- `docs/SPEC_BOUNDARIES.md`
 
 Durable truth layer:
 
@@ -128,6 +135,5 @@ react, or write memory.
 not decide, approve, execute, recommend, prioritize, permit, select a target
 state, create a candidate, constrain, react, or write memory.
 
-`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.3.4 is artifact
-contract alignment, v0.3.5 is decisions modularization, and v0.3.6 is
-vocabulary modularization, not schema expansion.
+`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.3.7 through v0.3.9 are
+project-structure governance steps, not schema expansion.

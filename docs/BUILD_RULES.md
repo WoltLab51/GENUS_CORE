@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.3.6 Vocabulary Modularization
+Status: active for v0.3.9 Ledger Test Modularization
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md`, `SAFETY_BOUNDARIES.md`, and `ARTIFACT_CONTRACTS.md`.
@@ -238,20 +238,21 @@ add an explicit exception with reason and planned_split_or_review
 defer bulk content to a planned modularization step
 ```
 
-After v0.3.3, new phase-specific gates should be added to the matching file in
-`docs/quality_gates/` or to a new focused gate file. Large decision blocks
-should not be added to historical monoliths unless the task explicitly updates
-their exception ceiling.
+After v0.3.3, new phase-specific gates go under `docs/quality_gates/` or a
+focused gate file, not the index.
 
-After v0.3.5, new decision blocks should be added to the matching file in
-`docs/decisions/` or to a new focused decision file. They must not be appended
-to the `DECISIONS.md` index.
+After v0.3.5, new decision blocks go under `docs/decisions/` or a focused
+decision file, not the `DECISIONS.md` index.
 
-After v0.3.6, new vocabulary blocks should be added to the matching file in
-`docs/vocabulary/` or to a new focused vocabulary file. They must not be
-appended to the `VOCABULARY.md` index.
+After v0.3.6, new vocabulary blocks go under `docs/vocabulary/` or a focused
+vocabulary file, not the `VOCABULARY.md` index.
 
-## 12. Artifact Contract Rule
+After v0.3.7, roadmap phase notes go under `docs/roadmap/` or a focused
+roadmap file, not the `ROADMAP_STABLE_CORE.md` index.
+
+After v0.3.9, Ledger lineage tests should stay split between model/function
+hardening and SQLite constraint hardening. New Ledger coverage should extend a
+focused test file or create a new focused Ledger test file.
 
 Runtime artifacts, tests, docs, specs, reports, snapshots, and previews must
 respect `docs/ARTIFACT_CONTRACTS.md`. Shared contracts define compatibility,

@@ -1,6 +1,6 @@
 # GENUS_CORE Vocabulary
 
-Status: active for v0.3.6 Vocabulary Modularization
+Status: active for v0.3.9 Ledger Test Modularization
 
 Vocabulary defines how GENUS terms may be used. It is a build boundary, not a synonym list.
 

@@ -1,7 +1,7 @@
 # GENUS_CORE Status
-Current baseline: `v0.3.6 - Vocabulary Modularization`
+Current baseline: `v0.3.9 - Ledger Test Modularization`
 
-Status: vocabulary modularization baseline after v0.3.5.
+Status: structure cleanup baseline after v0.3.6.
 
 ## Released baselines
 
@@ -118,10 +118,11 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.3.6` is Vocabulary Modularization.
+`GENUS_CORE v0.3.9` is Ledger Test Modularization.
 
-It adds no runtime capability. It turns `docs/VOCABULARY.md` into an active
-index and moves vocabulary blocks into modular files under `docs/vocabulary/`.
+It adds no runtime capability. v0.3.7 modularized the roadmap, v0.3.8 marked
+historical specs as frozen references, and v0.3.9 split Ledger lineage
+hardening tests into focused files.
 
 The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
@@ -131,17 +132,7 @@ TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
 persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
 RuntimeShape.
 
-Package version is `0.3.6`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
-
-## Current CI Signal
-
-Local pytest and CLI smoke checks are expected for the quality gates
-modularization state.
-
-GitHub Actions initially failed before creating jobs because the CLI smoke
-command used a YAML plain scalar containing `das: larumipsum`. The workflow now
-uses a block scalar for the smoke command so the colon remains part of the CLI
-argument. v0.3.1 acceptance requires a green run on the v0.3.1 commit.
+Package version is `0.3.9`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
 
@@ -181,14 +172,14 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.3.6 Vocabulary Modularization Acceptance
+## v0.3.9 Structure Cleanup Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.3.6
+Package version is 0.3.9
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md, SAFETY_BOUNDARIES.md, and ARTIFACT_CONTRACTS.md exist
 VOCABULARY.md is an active index under the normal docs line-count target
@@ -197,9 +188,19 @@ docs/vocabulary/forbidden_future.md exists
 docs/vocabulary/passive_layers.md exists
 VOCABULARY.md links all modular vocabulary files
 Vocabulary headings remain exactly once across modular vocabulary files
+ROADMAP_STABLE_CORE.md is an active index under the normal docs line-count target
+docs/roadmap/foundation.md exists
+docs/roadmap/pre_physics.md exists
+docs/roadmap/passive_layers.md exists
+docs/roadmap/governance.md exists
+docs/roadmap/planned.md exists
+SPEC_BOUNDARIES.md exists
+FOUNDATION_SPEC_v0.0.1.md is marked frozen historical reference
+GENUS_LANGUAGE_SPEC_v0.0.1.md is marked frozen historical reference
+Ledger lineage model/function tests are focused
+Ledger lineage SQLite tests are focused
 BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
 BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
-PROJECT_STRUCTURE.md exists
 QUALITY_GATES.md is an index under the normal docs line-count target
 docs/quality_gates/v0.0.md exists
 docs/quality_gates/v0.1.md exists
@@ -207,7 +208,7 @@ docs/quality_gates/v0.2.md exists
 docs/quality_gates/v0.3.md exists
 docs/quality_gates/planned.md exists
 QUALITY_GATES.md links all modular quality gate files
-QUALITY_GATES.md, DECISIONS.md, and VOCABULARY.md are no longer historical longfile exceptions
+QUALITY_GATES.md, DECISIONS.md, VOCABULARY.md, ROADMAP_STABLE_CORE.md, and Ledger lineage tests are no longer historical longfile exceptions
 Remaining historical longfiles have explicit max_lines, reason, and planned_split_or_review entries
 Remaining historical longfiles do not exceed their declared ceilings
 New files over normal line-count targets require explicit exception
@@ -237,7 +238,6 @@ Pre-Physics Requirements exist
 Passive Metric Vocabulary exists
 Passive Metric Acceptance Criteria exist
 Passive Metric Output Shape exists
-CI Gate exists
 LedgerEntry requires target_kind and target_id
 New SQLite ledger_entries tables require non-empty target_id
 worker remains only a passive scope label, not a Worker capability
@@ -256,5 +256,5 @@ ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
 PassiveTransitionReport describes passive preview only
 v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond vocabulary modularization in v0.3.6
+No product scope expansion exists beyond structure cleanup in v0.3.9
 ```

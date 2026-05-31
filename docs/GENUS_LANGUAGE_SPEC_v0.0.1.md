@@ -1,7 +1,12 @@
 # GENUS Language Spec v0.0.1
 
-Status: draft for foundation freeze  
+Status: frozen historical reference; active contracts live in current governance docs
 Scope: minimal internal language for `GENUS_CORE v0.0.1`
+
+Boundary note: this document preserves historical v0.0.1 language wording.
+It must not override `GENUS_CHARTER.md`, `SAFETY_BOUNDARIES.md`,
+`ARTIFACT_CONTRACTS.md`, `BUILD_RULES.md`, `QUALITY_GATES.md`,
+`DECISIONS.md`, `VOCABULARY.md`, or `STATUS.md`.
 
 ## 1. Purpose
 

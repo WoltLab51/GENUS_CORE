@@ -1,6 +1,6 @@
 # GENUS_CORE Decisions
 
-Status: active for v0.3.6 Vocabulary Modularization
+Status: active for v0.3.9 Ledger Test Modularization
 
 Decisions govern how GENUS may be built. They are active build laws, not only historical notes.
 
@@ -31,7 +31,7 @@ v0.4.0 remains planned spec-only until separately accepted.
 docs/decisions/v0.0.md - Decisions 0001-0015
 docs/decisions/v0.1.md - Decisions 0016-0025
 docs/decisions/v0.2.md - Decisions 0026-0027
-docs/decisions/v0.3.md - Decisions 0028-0035
+docs/decisions/v0.3.md - Decisions 0028-0038
 ```
 
 Decision blocks remain numbered and authoritative in their modular files. New decision blocks should be added to the matching modular decision file or to a new focused decision file, not appended to this index.

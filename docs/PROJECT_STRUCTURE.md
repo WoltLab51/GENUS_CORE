@@ -1,6 +1,6 @@
 # GENUS_CORE Project Structure
 
-Status: active for v0.3.6 Vocabulary Modularization
+Status: active for v0.3.9 Ledger Test Modularization
 
 GENUS_CORE treats code, tests, docs, specs, decisions, and quality gates as
 governed artifacts.
@@ -31,6 +31,11 @@ Defines how GENUS artifacts compose through IDs, source lineage, evidence
 lineage, snapshot/preview/report roles, durable/ephemeral boundaries, and report
 limits.
 
+`SPEC_BOUNDARIES.md`
+
+Marks historical specs as frozen references and points active contracts to
+current governance docs.
+
 `QUALITY_GATES.md`
 
 Indexes modular quality gate files. Historical acceptance and stop gates live
@@ -48,8 +53,8 @@ for full design specs.
 
 `ROADMAP_STABLE_CORE.md`
 
-Summarizes accepted and planned phases. It should stay navigational, not become
-a second spec archive.
+Indexes modular roadmap files. It should stay navigational, not become a
+second spec archive.
 
 `VOCABULARY.md`
 
@@ -67,18 +72,16 @@ Summarize release-specific changes. They should not redefine architecture.
 
 ## Historical Longfiles
 
-The following files are accepted historical longfiles for v0.3.6:
+The following files are accepted historical longfiles for v0.3.9:
 
 ```text
 docs/FOUNDATION_SPEC_v0.0.1.md
 docs/GENUS_LANGUAGE_SPEC_v0.0.1.md
 docs/CODEX_IMPLEMENTATION_PROMPT_v0.0.1.md
-docs/ROADMAP_STABLE_CORE.md
 docs/decisions/v0.0.md
 docs/vocabulary/foundation.md
 docs/quality_gates/v0.0.md
 docs/quality_gates/v0.1.md
-tests/test_ledger_lineage_hardening.py
 ```
 
 They may remain in place, but they are not permission to keep growing.
@@ -104,12 +107,9 @@ modularization step.
 Quality gates were modularized in v0.3.3.
 Decisions were modularized in v0.3.5.
 Vocabulary was modularized in v0.3.6.
-
-Likely candidates:
-
-```text
-docs/ROADMAP_STABLE_CORE.md
-```
+Roadmap was modularized in v0.3.7.
+Historical spec boundaries were clarified in v0.3.8.
+Ledger lineage tests were modularized in v0.3.9.
 
 Remaining historical longfiles stay frozen through explicit ceilings until a
 future modularization step changes them.

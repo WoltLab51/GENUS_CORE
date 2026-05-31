@@ -65,7 +65,7 @@ def test_passive_boundary_relevance_spec_keeps_planned_artifacts_ephemeral_only(
 def test_planned_quality_gate_tracks_contract_alignment_and_active_version() -> None:
     text = PLANNED_GATES_PATH.read_text(encoding="utf-8")
 
-    assert "package version remains 0.3.6" in text
+    assert "package version remains 0.3.9" in text
     assert "the spec references ARTIFACT_CONTRACTS.md" in text
     assert "planned preview shape includes preview_id" in text
     assert "planned report shape includes report_id" in text
