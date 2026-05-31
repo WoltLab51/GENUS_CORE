@@ -1,6 +1,6 @@
 # GENUS_CORE Vocabulary
 
-Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
+Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
 
 Vocabulary defines how GENUS terms may be used. It is a build boundary, not a synonym list.
 

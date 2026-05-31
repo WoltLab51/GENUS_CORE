@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates
 
-Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
+Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
 
 ## 1. Purpose
 

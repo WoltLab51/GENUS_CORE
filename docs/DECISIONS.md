@@ -1,6 +1,6 @@
 # GENUS_CORE Decisions
 
-Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
+Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
 
 Decisions govern how GENUS may be built. They are active build laws, not only historical notes.
 
@@ -23,6 +23,7 @@ Capability order: Foundation -> passive Physics -> passive transition preview ->
 Build governance: governed artifacts, modular quality gates, modular decisions, modular vocabulary, and artifact contracts.
 v0.4.0 constraint: Boundary Relevance, not Boundary Evaluation.
 v0.4.1 constraint: passive Boundary Relevance preview, not permission or decision.
+v0.4.2 constraint: Boundary Relevance audit adds no new capability.
 ```
 
 ## Modular Decision Files

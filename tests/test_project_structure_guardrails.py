@@ -140,7 +140,7 @@ def test_decisions_are_modularized_and_indexed() -> None:
         Path("docs/decisions/v0.1.md"): "Decision 0025",
         Path("docs/decisions/v0.2.md"): "Decision 0027",
         Path("docs/decisions/v0.3.md"): "Decision 0038",
-        Path("docs/decisions/v0.4.md"): "Decision 0040",
+        Path("docs/decisions/v0.4.md"): "Decision 0041",
     }
 
     assert _line_count(Path("docs/DECISIONS.md")) <= NORMAL_LIMITS["docs"]

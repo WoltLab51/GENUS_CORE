@@ -64,7 +64,7 @@ def test_passive_boundary_relevance_spec_keeps_planned_artifacts_ephemeral_only(
 def test_v0_4_quality_gate_tracks_contract_alignment_and_active_version() -> None:
     text = V0_4_GATES_PATH.read_text(encoding="utf-8")
 
-    assert "package version is 0.4.1" in text
+    assert "package version is 0.4.2" in text
     assert "the spec references ARTIFACT_CONTRACTS.md" in text
     assert "runtime fields do not include evaluation" in text
     assert "report payload mirrors source lineage" in text

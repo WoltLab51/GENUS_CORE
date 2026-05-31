@@ -1,7 +1,7 @@
 # GENUS_CORE Status
-Current baseline: `v0.4.1 - Passive Boundary Relevance Preview Seed`
+Current baseline: `v0.4.2 - Passive Boundary Relevance Boundary Audit`
 
-Status: accepted narrow Passive Boundary Relevance runtime baseline.
+Status: audited narrow Passive Boundary Relevance runtime baseline.
 
 ## Released baselines
 
@@ -122,7 +122,7 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.4.1` is Passive Boundary Relevance Preview Seed.
+`GENUS_CORE v0.4.2` is Passive Boundary Relevance Boundary Audit.
 
 It adds the narrow `genus_core.passive_boundary_relevance` runtime namespace
 for `PassiveBoundaryRelevancePreview` and `PassiveBoundaryRelevanceReport`.
@@ -141,7 +141,7 @@ TransitionCandidate, ConstraintDecision, PolicyResult, permission, allow/block,
 Reaction, MemoryWrite, metric or boundary persistence, sentence types, CLI
 commands, workers, LLM calls, GraphDB, or RuntimeShape.
 
-Package version is `0.4.1`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
+Package version is `0.4.2`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
 

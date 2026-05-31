@@ -110,6 +110,6 @@ def test_vocabulary_terms_remain_in_expected_modules() -> None:
 def test_vocabulary_modularization_updates_active_version_without_schema_change() -> None:
     pyproject = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
 
-    assert pyproject["project"]["version"] == "0.4.1"
-    assert genus_core.__version__ == "0.4.1"
+    assert pyproject["project"]["version"] == "0.4.2"
+    assert genus_core.__version__ == "0.4.2"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"

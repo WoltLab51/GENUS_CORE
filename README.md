@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.4.1` is Passive Boundary Relevance Preview Seed.
+`GENUS_CORE v0.4.2` is Passive Boundary Relevance Boundary Audit.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -25,7 +25,7 @@ organs, and GraphDB truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.4.1`
+Package version: `0.4.2`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
@@ -65,6 +65,9 @@ boundary relevance description is allowed to look. v0.4.1 activates only
 `genus_core.passive_boundary_relevance`. It does not evaluate boundaries, grant
 permission, produce policy results, allow/block, decide, react, write memory,
 or persist new state.
+v0.4.2 adds no capability; it audits summary language, neutral boundary
+questions, non-prioritizing relevance labels, report lineage mirroring, and the
+continued non-emission of `passive_foundation_boundary`.
 
 Governance documents:
 

@@ -1,5 +1,5 @@
 # GENUS_CORE Roadmap - Planned
-Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
+Status: active for v0.4.2 Passive Boundary Relevance Boundary Audit
 Moved from `docs/ROADMAP_STABLE_CORE.md`.
 
 ### v0.4.0 - Passive Boundary Relevance Spec
@@ -32,6 +32,13 @@ BeliefStateSnapshot
 It emits only `memory_boundary` and `passive_preview_boundary`.
 `passive_foundation_boundary` remains spec-known but not emitted until a later
 explicit passive derivation rule exists.
+
+### v0.4.2 - Passive Boundary Relevance Boundary Audit
+
+Audit baseline for the v0.4.1 runtime. It adds no capability and verifies
+summary language, neutral boundary questions, non-prioritizing relevance
+labels, report-lineage mirroring, and continued non-emission of
+`passive_foundation_boundary`.
 
 ## Later, Not Yet Active
 
