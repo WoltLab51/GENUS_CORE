@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 SPEC_PATH = Path("docs/PASSIVE_BOUNDARY_RELEVANCE_SPEC_v0.4.0.md")
-PLANNED_GATES_PATH = Path("docs/quality_gates/planned.md")
+V0_4_GATES_PATH = Path("docs/quality_gates/v0.4.md")
 
 
 def _spec_text() -> str:
@@ -29,7 +29,6 @@ def test_passive_boundary_relevance_preview_shape_preserves_contract_lineage() -
         "boundary_question",
         "boundary_area",
         "observed_boundary_relevance",
-        "no_boundary_evaluation_possible",
         "no_decision_possible",
         "no_action_possible",
     ):
@@ -62,12 +61,12 @@ def test_passive_boundary_relevance_spec_keeps_planned_artifacts_ephemeral_only(
     assert "SQLite table" in text
 
 
-def test_planned_quality_gate_tracks_contract_alignment_and_active_version() -> None:
-    text = PLANNED_GATES_PATH.read_text(encoding="utf-8")
+def test_v0_4_quality_gate_tracks_contract_alignment_and_active_version() -> None:
+    text = V0_4_GATES_PATH.read_text(encoding="utf-8")
 
-    assert "package version remains 0.3.9" in text
+    assert "package version is 0.4.0" in text
     assert "the spec references ARTIFACT_CONTRACTS.md" in text
-    assert "planned preview shape includes preview_id" in text
-    assert "planned report shape includes report_id" in text
+    assert "planned preview shape excludes no_boundary_evaluation_possible" in text
+    assert "planned report shape excludes no_boundary_evaluation_possible" in text
     assert "planned report does not create new lineage" in text
     assert "planned artifacts remain ephemeral-only" in text

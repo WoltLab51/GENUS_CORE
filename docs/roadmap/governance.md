@@ -1,5 +1,5 @@
 # GENUS_CORE Roadmap - Governance
-Status: active for v0.3.9 Ledger Test Modularization
+Status: active for v0.4.0 Passive Boundary Relevance Spec
 Moved from `docs/ROADMAP_STABLE_CORE.md`.
 
 ### v0.3.2 - Build Structure Guardrails

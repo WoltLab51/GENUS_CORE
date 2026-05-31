@@ -16,7 +16,7 @@ def test_roadmap_is_modularized_and_indexed() -> None:
         Path("docs/roadmap/pre_physics.md"): "v0.1.10",
         Path("docs/roadmap/passive_layers.md"): "v0.3.1",
         Path("docs/roadmap/governance.md"): "v0.3.9",
-        Path("docs/roadmap/planned.md"): "Planned v0.4.0",
+        Path("docs/roadmap/planned.md"): "v0.4.0",
     }
 
     assert _line_count(Path("docs/ROADMAP_STABLE_CORE.md")) <= NORMAL_DOC_LIMIT

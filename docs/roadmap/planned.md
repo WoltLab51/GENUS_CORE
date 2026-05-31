@@ -1,18 +1,18 @@
 # GENUS_CORE Roadmap - Planned
-Status: active for v0.3.9 Ledger Test Modularization
+Status: active for v0.4.0 Passive Boundary Relevance Spec
 Moved from `docs/ROADMAP_STABLE_CORE.md`.
 
-### Planned v0.4.0 - Passive Boundary Relevance Spec
+### v0.4.0 - Passive Boundary Relevance Spec
 
-Spec-only planning for a later passive boundary relevance description.
+Spec-only baseline for a later passive boundary relevance description.
 
-This is not an implementation and does not change the active v0.3.9 baseline.
-It defines how a later `PassiveBoundaryRelevancePreview` and
+This is not a runtime implementation. It defines how a later
+`PassiveBoundaryRelevancePreview` and
 `PassiveBoundaryRelevanceReport` may describe relevant boundary areas without
 evaluating boundaries, granting permission, producing policy results,
 allowing/blocking, deciding, reacting, or writing memory.
 
-The planned name is deliberately `Boundary Relevance`, not `Boundary
+The name is deliberately `Boundary Relevance`, not `Boundary
 Evaluation`, because v0.4.0 must not yet evaluate boundaries.
 
 ## Later, Not Yet Active

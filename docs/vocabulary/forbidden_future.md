@@ -1,5 +1,5 @@
 # GENUS_CORE Vocabulary - Forbidden Future Concepts
-Status: active for v0.3.9 Ledger Test Modularization
+Status: active for v0.4.0 Passive Boundary Relevance Spec
 Vocabulary blocks moved verbatim from `docs/VOCABULARY.md`.
 
 ## ReactionExecution

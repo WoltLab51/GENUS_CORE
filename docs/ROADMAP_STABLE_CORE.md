@@ -1,6 +1,6 @@
 # GENUS_CORE Roadmap to Stable Core
 
-Status: active for v0.3.9 Ledger Test Modularization
+Status: active for v0.4.0 Passive Boundary Relevance Spec
 
 `ROADMAP_STABLE_CORE.md` is the active roadmap index. Detailed phase notes live
 in modular roadmap files.
@@ -28,18 +28,18 @@ docs/roadmap/foundation.md - v0.0.1 through v0.1.0 foundation freeze
 docs/roadmap/pre_physics.md - v0.1.1 through v0.1.10 pre-Physics governance
 docs/roadmap/passive_layers.md - v0.2.0 through v0.3.1 passive layers
 docs/roadmap/governance.md - v0.3.2 through v0.3.x build governance
-docs/roadmap/planned.md - planned v0.4.0 and later inactive concepts
+docs/roadmap/planned.md - v0.4.0 spec and later inactive concepts
 ```
 
 ## Current Baseline
 
-Current active baseline: `v0.3.9 - Ledger Test Modularization`.
+Current active baseline: `v0.4.0 - Passive Boundary Relevance Spec`.
 
 v0.3.7 modularized this roadmap without adding runtime capability.
 v0.3.8 marked historical specs as frozen reference material.
 v0.3.9 modularized ledger lineage hardening tests.
 
-Planned v0.4.0 remains spec-only until separately accepted.
+v0.4.0 is accepted spec-only; runtime implementation remains deferred.
 
 ## Boundary
 

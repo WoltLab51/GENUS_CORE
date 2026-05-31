@@ -119,6 +119,7 @@ def test_quality_gates_are_modularized_and_indexed() -> None:
         Path("docs/quality_gates/v0.3.7.md"): "v0.3.7",
         Path("docs/quality_gates/v0.3.8.md"): "v0.3.8",
         Path("docs/quality_gates/v0.3.9.md"): "v0.3.9",
+        Path("docs/quality_gates/v0.4.md"): "v0.4.0",
         Path("docs/quality_gates/planned.md"): "Planned v0.4.0",
     }
 
@@ -139,6 +140,7 @@ def test_decisions_are_modularized_and_indexed() -> None:
         Path("docs/decisions/v0.1.md"): "Decision 0025",
         Path("docs/decisions/v0.2.md"): "Decision 0027",
         Path("docs/decisions/v0.3.md"): "Decision 0038",
+        Path("docs/decisions/v0.4.md"): "Decision 0039",
     }
 
     assert _line_count(Path("docs/DECISIONS.md")) <= NORMAL_LIMITS["docs"]
@@ -157,6 +159,7 @@ def test_vocabulary_is_modularized_and_indexed() -> None:
         Path("docs/vocabulary/foundation.md"): "WorldEvent",
         Path("docs/vocabulary/forbidden_future.md"): "MemoryWrite",
         Path("docs/vocabulary/passive_layers.md"): "PassiveMetricSnapshot",
+        Path("docs/vocabulary/boundary_relevance.md"): "Passive Boundary Relevance",
     }
 
     assert _line_count(Path("docs/VOCABULARY.md")) <= NORMAL_LIMITS["docs"]

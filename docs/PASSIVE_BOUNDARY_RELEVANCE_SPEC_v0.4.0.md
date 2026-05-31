@@ -1,13 +1,13 @@
 # Passive Boundary Relevance Spec v0.4.0
 
-Status: planned-not-active specification
+Status: accepted spec-only baseline
 
-This is a planning-only boundary specification. It defines how a later passive
+This is an accepted boundary specification. It defines how a later passive
 boundary relevance description may look. It does not implement runtime code.
 
-Expected diff for this spec step is docs and tests only.
+The v0.4.0 baseline is docs and tests only.
 
-Package version remains `0.3.9`.
+Package version is `0.4.0`.
 
 `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
@@ -24,7 +24,7 @@ write memory.
 
 ## Planned Flow
 
-The planned later flow is:
+The later implementation flow is:
 
 ```text
 BeliefStateSnapshot
@@ -32,14 +32,13 @@ BeliefStateSnapshot
 + PassiveTransitionPreview
 -> PassiveBoundaryRelevancePreview
 -> PassiveBoundaryRelevanceReport
--> no boundary evaluation
 -> no decision
 -> no action
 ```
 
 ## Planned Artifacts
 
-These names are planned-not-active only:
+These names are accepted for future implementation only:
 
 ```text
 PassiveBoundaryRelevancePreview
@@ -48,7 +47,7 @@ build_passive_boundary_relevance_preview(...)
 create_passive_boundary_relevance_report(...)
 ```
 
-No `src/genus_core/passive_boundary*` package may exist for this spec step.
+No `src/genus_core/passive_boundary*` package may exist in v0.4.0.
 No classes, functions, runtime exports, CLI commands, SQLite tables, sentence
 types, or schema changes are introduced by this spec.
 
@@ -58,7 +57,7 @@ A later implementation must comply with `ARTIFACT_CONTRACTS.md`.
 
 Common contracts define compatibility, not identical field shape.
 
-Planned passive boundary relevance artifacts must preserve:
+Passive boundary relevance artifacts must preserve:
 
 ```text
 primary ID plus id property
@@ -97,7 +96,6 @@ source_evidence_ids_json
 boundary_question
 boundary_area
 observed_boundary_relevance
-no_boundary_evaluation_possible
 no_decision_possible
 no_action_possible
 ```
@@ -132,13 +130,11 @@ source_evidence_ids_json
 boundary_question
 boundary_area
 observed_boundary_relevance
-no_boundary_evaluation_possible
 no_decision_possible
 no_action_possible
 ```
 
-`no_boundary_evaluation_possible`, `no_decision_possible`, and
-`no_action_possible` must be true.
+`no_decision_possible` and `no_action_possible` must be true.
 
 The report must not invent source references or evidence lineage.
 
@@ -247,7 +243,6 @@ PassiveBoundaryRelevancePreview class
 PassiveBoundaryRelevanceReport class
 build_passive_boundary_relevance_preview function
 create_passive_boundary_relevance_report function
-package version bump
 SCHEMA_VERSION change
 SQLite table
 CLI command

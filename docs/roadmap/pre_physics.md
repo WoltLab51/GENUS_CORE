@@ -1,5 +1,5 @@
 # GENUS_CORE Roadmap - Pre-Physics
-Status: active for v0.3.9 Ledger Test Modularization
+Status: active for v0.4.0 Passive Boundary Relevance Spec
 Moved from `docs/ROADMAP_STABLE_CORE.md`.
 
 ### v0.1.1 - Pre-Physics Requirements

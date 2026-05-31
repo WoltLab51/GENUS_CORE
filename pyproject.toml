@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.3.9"
-description = "GENUS_CORE v0.3.9 Ledger Test Modularization"
+version = "0.4.0"
+description = "GENUS_CORE v0.4.0 Passive Boundary Relevance Spec"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

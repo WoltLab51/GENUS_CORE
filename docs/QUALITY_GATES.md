@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates
 
-Status: active for v0.3.9 Ledger Test Modularization
+Status: active for v0.4.0 Passive Boundary Relevance Spec
 
 ## 1. Purpose
 
@@ -52,9 +52,11 @@ docs/quality_gates/v0.3.6.md
 docs/quality_gates/v0.3.7.md
 docs/quality_gates/v0.3.8.md
 docs/quality_gates/v0.3.9.md
+docs/quality_gates/v0.4.md
 docs/quality_gates/planned.md
 ```
 
-Planned v0.4.0 spec-only gates live in `docs/quality_gates/planned.md`.
+Accepted v0.4.x gates live in `docs/quality_gates/v0.4.md`; v0.4.0 is
+spec-only.
 
 New phase-specific gates must be added to the matching modular gate file or to a new focused gate file. They must not be appended to this index.

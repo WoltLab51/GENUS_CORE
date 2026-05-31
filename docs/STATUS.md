@@ -1,7 +1,7 @@
 # GENUS_CORE Status
-Current baseline: `v0.3.9 - Ledger Test Modularization`
+Current baseline: `v0.4.0 - Passive Boundary Relevance Spec`
 
-Status: structure cleanup baseline after v0.3.6.
+Status: accepted Passive Boundary Relevance spec baseline.
 
 ## Released baselines
 
@@ -118,11 +118,10 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.3.9` is Ledger Test Modularization.
+`GENUS_CORE v0.4.0` is Passive Boundary Relevance Spec.
 
-It adds no runtime capability. v0.3.7 modularized the roadmap, v0.3.8 marked
-historical specs as frozen references, and v0.3.9 split Ledger lineage
-hardening tests into focused files.
+It adds no runtime capability. It finalizes the Passive Boundary Relevance
+spec as an accepted baseline while keeping runtime implementation deferred.
 
 The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
@@ -132,7 +131,7 @@ TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
 persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
 RuntimeShape.
 
-Package version is `0.3.9`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
+Package version is `0.4.0`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
 
@@ -172,20 +171,19 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.3.9 Structure Cleanup Acceptance
+## v0.4.0 Passive Boundary Relevance Spec Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.3.9
+Package version is 0.4.0
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md, SAFETY_BOUNDARIES.md, and ARTIFACT_CONTRACTS.md exist
 VOCABULARY.md is an active index under the normal docs line-count target
 docs/vocabulary/foundation.md exists
 docs/vocabulary/forbidden_future.md exists
-docs/vocabulary/passive_layers.md exists
 VOCABULARY.md links all modular vocabulary files
 Vocabulary headings remain exactly once across modular vocabulary files
 ROADMAP_STABLE_CORE.md is an active index under the normal docs line-count target
@@ -193,12 +191,14 @@ docs/roadmap/foundation.md exists
 docs/roadmap/pre_physics.md exists
 docs/roadmap/passive_layers.md exists
 docs/roadmap/governance.md exists
-docs/roadmap/planned.md exists
 SPEC_BOUNDARIES.md exists
 FOUNDATION_SPEC_v0.0.1.md is marked frozen historical reference
 GENUS_LANGUAGE_SPEC_v0.0.1.md is marked frozen historical reference
 Ledger lineage model/function tests are focused
 Ledger lineage SQLite tests are focused
+PASSIVE_BOUNDARY_RELEVANCE_SPEC_v0.4.0.md is accepted spec-only
+Passive Boundary Relevance runtime package does not exist yet
+no_boundary_evaluation_possible is not a planned field
 BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
 BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
 QUALITY_GATES.md is an index under the normal docs line-count target
@@ -256,5 +256,5 @@ ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
 PassiveTransitionReport describes passive preview only
 v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond structure cleanup in v0.3.9
+No product scope expansion exists beyond spec finalization in v0.4.0
 ```

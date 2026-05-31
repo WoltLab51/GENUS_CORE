@@ -1,6 +1,6 @@
 # GENUS_CORE Artifact Contracts
 
-Status: active for v0.3.9 Ledger Test Modularization
+Status: active for v0.4.0 Passive Boundary Relevance Spec
 
 GENUS artifacts are allowed to have different shapes. They still need shared
 contracts so they can compose without turning into a monolith.

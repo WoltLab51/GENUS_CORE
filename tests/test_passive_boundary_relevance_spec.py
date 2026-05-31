@@ -105,10 +105,10 @@ def test_passive_boundary_relevance_spec_exists_and_is_spec_only() -> None:
     assert SPEC_PATH.exists()
 
     text = _spec_text()
-    assert "Status: planned-not-active specification" in text
-    assert "This is a planning-only boundary specification." in text
+    assert "Status: accepted spec-only baseline" in text
+    assert "This is an accepted boundary specification." in text
     assert "It does not implement runtime code." in text
-    assert "Expected diff for this spec step is docs and tests only." in text
+    assert "The v0.4.0 baseline is docs and tests only." in text
     assert "No classes, functions, runtime exports, CLI commands" in text
 
 
@@ -116,10 +116,10 @@ def test_passive_boundary_relevance_spec_preserves_active_versions() -> None:
     pyproject = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
     text = _spec_text()
 
-    assert pyproject["project"]["version"] == "0.3.9"
-    assert genus_core.__version__ == "0.3.9"
+    assert pyproject["project"]["version"] == "0.4.0"
+    assert genus_core.__version__ == "0.4.0"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"
-    assert "Package version remains `0.3.9`." in text
+    assert "Package version is `0.4.0`." in text
     assert "`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`." in text
 
 
@@ -130,7 +130,7 @@ def test_passive_boundary_relevance_artifacts_are_planned_not_active() -> None:
 
     for artifact in PLANNED_NOT_ACTIVE_ARTIFACTS:
         assert artifact in text
-    assert "These names are planned-not-active only:" in text
+    assert "These names are accepted for future implementation only:" in text
     assert PLANNED_NOT_ACTIVE_ARTIFACTS.isdisjoint(runtime_names)
     assert not list(runtime_root.glob("passive_boundary*"))
 
@@ -186,7 +186,6 @@ def test_passive_boundary_relevance_docs_link_to_planned_v0_4_0_only() -> None:
     for path in DOCS_WITH_PLANNED_V0_4_0_REFERENCES:
         text = path.read_text(encoding="utf-8").lower()
         assert "v0.4.0" in text
-        assert "planned" in text
         assert "spec-only" in text
 
 

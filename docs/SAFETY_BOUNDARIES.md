@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.3.9
+Status: active boundary document for GENUS_CORE v0.4.0
 
 ## Purpose
 
@@ -186,9 +186,9 @@ question-like. It must not contain `should`, `must`, `allow`, `block`,
 imply approval, permission, decision, execution, action taken, memory creation,
 reaction creation, selected transition, selected candidate, or decision made.
 
-## Planned v0.4.0 Passive Boundary Relevance
+## v0.4.0 Passive Boundary Relevance
 
-Planned v0.4.0 work is spec-only. It must not add runtime code.
+v0.4.0 is accepted spec-only. It must not add runtime code.
 
 Passive Boundary Relevance may define how a later passive description names
 boundary areas that could be relevant. It must not evaluate boundaries, evaluate
