@@ -1,7 +1,7 @@
 # GENUS_CORE Status
-Current baseline: `v0.4.0 - Passive Boundary Relevance Spec`
+Current baseline: `v0.4.1 - Passive Boundary Relevance Preview Seed`
 
-Status: accepted Passive Boundary Relevance spec baseline.
+Status: accepted narrow Passive Boundary Relevance runtime baseline.
 
 ## Released baselines
 
@@ -101,6 +101,10 @@ Commit: 2c2bfe1ba8d44662126ba13e9f073475aa96ebe0
 v0.3.1 Passive Transition Boundary Audit
 Tag: genus-core-v0.3.1-passive-transition-boundary-audit
 Commit: aa829e0f36edf715ab0ab41f96720edfaabf2e5b
+
+v0.4.0 Passive Boundary Relevance Spec
+Tag: genus-core-v0.4.0-passive-boundary-relevance-spec
+Commit: d51baee9b7e88532853a810dd3185cdb561e418c
 ```
 
 ## Frozen foundation chain
@@ -118,20 +122,26 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.4.0` is Passive Boundary Relevance Spec.
+`GENUS_CORE v0.4.1` is Passive Boundary Relevance Preview Seed.
 
-It adds no runtime capability. It finalizes the Passive Boundary Relevance
-spec as an accepted baseline while keeping runtime implementation deferred.
+It adds the narrow `genus_core.passive_boundary_relevance` runtime namespace
+for `PassiveBoundaryRelevancePreview` and `PassiveBoundaryRelevanceReport`.
+The layer is descriptive, side-effect free, ephemeral, and downstream of
+`BeliefStateSnapshot`, `PassiveMetricSnapshot`, and `PassiveTransitionPreview`.
 
 The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
 `build_passive_transition_preview`, and `create_passive_transition_report` in
-the separate `genus_core.passive_transition` namespace. It does not add
-TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
-persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
-RuntimeShape.
+the separate `genus_core.passive_transition` namespace. The allowed v0.4.1
+artifacts are `PassiveBoundaryRelevancePreview`,
+`PassiveBoundaryRelevanceReport`, `build_passive_boundary_relevance_preview`,
+and `create_passive_boundary_relevance_report` in the separate
+`genus_core.passive_boundary_relevance` namespace. It does not add
+TransitionCandidate, ConstraintDecision, PolicyResult, permission, allow/block,
+Reaction, MemoryWrite, metric or boundary persistence, sentence types, CLI
+commands, workers, LLM calls, GraphDB, or RuntimeShape.
 
-Package version is `0.4.0`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
+Package version is `0.4.1`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Explicitly not active
 
@@ -171,90 +181,8 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.4.0 Passive Boundary Relevance Spec Acceptance
+## Acceptance Pointers
 
-The implementation is accepted only while these remain true:
+Current acceptance gates live in `docs/quality_gates/v0.4.md`.
 
-```text
-pytest is green
-CLI smoke test is green
-Package version is 0.4.0
-SCHEMA_VERSION remains genus.foundation.v0.0.1
-GENUS_CHARTER.md, SAFETY_BOUNDARIES.md, and ARTIFACT_CONTRACTS.md exist
-VOCABULARY.md is an active index under the normal docs line-count target
-docs/vocabulary/foundation.md exists
-docs/vocabulary/forbidden_future.md exists
-VOCABULARY.md links all modular vocabulary files
-Vocabulary headings remain exactly once across modular vocabulary files
-ROADMAP_STABLE_CORE.md is an active index under the normal docs line-count target
-docs/roadmap/foundation.md exists
-docs/roadmap/pre_physics.md exists
-docs/roadmap/passive_layers.md exists
-docs/roadmap/governance.md exists
-SPEC_BOUNDARIES.md exists
-FOUNDATION_SPEC_v0.0.1.md is marked frozen historical reference
-GENUS_LANGUAGE_SPEC_v0.0.1.md is marked frozen historical reference
-Ledger lineage model/function tests are focused
-Ledger lineage SQLite tests are focused
-PASSIVE_BOUNDARY_RELEVANCE_SPEC_v0.4.0.md is accepted spec-only
-Passive Boundary Relevance runtime package does not exist yet
-no_boundary_evaluation_possible is not a planned field
-BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
-BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
-QUALITY_GATES.md is an index under the normal docs line-count target
-docs/quality_gates/v0.0.md exists
-docs/quality_gates/v0.1.md exists
-docs/quality_gates/v0.2.md exists
-docs/quality_gates/v0.3.md exists
-docs/quality_gates/planned.md exists
-QUALITY_GATES.md links all modular quality gate files
-QUALITY_GATES.md, DECISIONS.md, VOCABULARY.md, ROADMAP_STABLE_CORE.md, and Ledger lineage tests are no longer historical longfile exceptions
-Remaining historical longfiles have explicit max_lines, reason, and planned_split_or_review entries
-Remaining historical longfiles do not exceed their declared ceilings
-New files over normal line-count targets require explicit exception
-GENUS Charter contains LLM proposes. GENUS governs.
-GENUS Charter contains Do not make GENUS powerful before making it bounded.
-Safety Boundaries forbid active MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, Agent, GraphDB, RuntimeShape
-PassiveMetricSnapshot exists only in genus_core.passive_physics
-PassiveMetricReport exists only in genus_core.passive_physics
-build_passive_metric_snapshot exists only in genus_core.passive_physics
-create_passive_metric_report exists only in genus_core.passive_physics
-PassiveTransitionPreview exists only in genus_core.passive_transition
-PassiveTransitionReport exists only in genus_core.passive_transition
-build_passive_transition_preview exists only in genus_core.passive_transition
-create_passive_transition_report exists only in genus_core.passive_transition
-build_passive_metric_snapshot accepts only BeliefStateSnapshot
-build_passive_transition_preview accepts only BeliefStateSnapshot and PassiveMetricSnapshot
-Passive metrics are exactly pressure, inhibition, stability
-cost and potential remain excluded from the first implementation
-Passive metric outputs are not persisted
-Passive transition previews are not persisted
-PassiveTransitionPreview is not TransitionCandidate
-PassiveTransitionReport is not ConstraintDecision
-possible_future_question contains none of should, must, allow, block, execute, write, approve, recommend
-PassiveTransitionReport summary contains none of approved, allowed, decided, executed, action taken, memory written, memory created, reaction created, transition selected, transition executed, candidate selected, decision made
-PASSIVE_METRIC_SAFETY_AUDIT_v0.1.6.md exists
-Pre-Physics Requirements exist
-Passive Metric Vocabulary exists
-Passive Metric Acceptance Criteria exist
-Passive Metric Output Shape exists
-LedgerEntry requires target_kind and target_id
-New SQLite ledger_entries tables require non-empty target_id
-worker remains only a passive scope label, not a Worker capability
-CI smoke command uses a YAML block scalar
-Belief and Report payloads use observed_memory_request
-Memory request content uses observed_memory_content
-Active Belief and Report payloads do not use pending_memory_request or candidate_content
-assessment_status = insufficient_input requires level = none
-assessment_status = not_applicable requires level = none
-assessment_status = assessed may use level = none | low | medium | high
-cost and potential remain excluded from first implementation and first output shape
-Allowed sentence types remain exactly WORLD_EVENT, OBSERVATION, EVIDENCE, LEDGER, BELIEF, REPORT
-Public foundation functions remain exactly observe_event, create_evidence_record, append_ledger_entry, build_belief_state_snapshot, create_observation_report
-CLI exposes only observe
-ObservationReport does not measure physics
-PassiveMetricReport describes passive metrics only
-PassiveTransitionReport describes passive preview only
-v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond spec finalization in v0.4.0
-```
+The short status document must not duplicate the quality gate ledger.

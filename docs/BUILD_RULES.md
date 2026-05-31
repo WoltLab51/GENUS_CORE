@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md`, `SAFETY_BOUNDARIES.md`, and `ARTIFACT_CONTRACTS.md`.

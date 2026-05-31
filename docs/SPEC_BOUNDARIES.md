@@ -1,6 +1,6 @@
 # GENUS_CORE Spec Boundaries
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 
 ## Purpose
 

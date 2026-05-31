@@ -1,6 +1,6 @@
 # GENUS_CORE Project Structure
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 
 GENUS_CORE treats code, tests, docs, specs, decisions, and quality gates as
 governed artifacts.

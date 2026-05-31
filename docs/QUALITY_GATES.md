@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 
 ## 1. Purpose
 
@@ -57,6 +57,7 @@ docs/quality_gates/planned.md
 ```
 
 Accepted v0.4.x gates live in `docs/quality_gates/v0.4.md`; v0.4.0 is
-spec-only.
+spec-only and v0.4.1 activates only the narrow passive Boundary Relevance
+preview/report layer.
 
 New phase-specific gates must be added to the matching modular gate file or to a new focused gate file. They must not be appended to this index.

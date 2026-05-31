@@ -12,7 +12,7 @@ def _spec_text() -> str:
 def test_passive_boundary_relevance_spec_references_artifact_contracts() -> None:
     text = _spec_text()
 
-    assert "A later implementation must comply with `ARTIFACT_CONTRACTS.md`." in text
+    assert "The v0.4.1 implementation must comply with `ARTIFACT_CONTRACTS.md`." in text
     assert "Common contracts define compatibility, not identical field shape." in text
     assert "Reports may explain source lineage, but reports must not create new lineage." in text
 
@@ -57,16 +57,15 @@ def test_passive_boundary_relevance_spec_keeps_planned_artifacts_ephemeral_only(
     text = _spec_text()
 
     assert "ephemeral-only lifecycle" in text
-    assert "No classes, functions, runtime exports, CLI commands, SQLite tables" in text
+    assert "No CLI commands, SQLite tables, sentence types" in text
     assert "SQLite table" in text
 
 
 def test_v0_4_quality_gate_tracks_contract_alignment_and_active_version() -> None:
     text = V0_4_GATES_PATH.read_text(encoding="utf-8")
 
-    assert "package version is 0.4.0" in text
+    assert "package version is 0.4.1" in text
     assert "the spec references ARTIFACT_CONTRACTS.md" in text
-    assert "planned preview shape excludes no_boundary_evaluation_possible" in text
-    assert "planned report shape excludes no_boundary_evaluation_possible" in text
-    assert "planned report does not create new lineage" in text
-    assert "planned artifacts remain ephemeral-only" in text
+    assert "runtime fields do not include evaluation" in text
+    assert "report payload mirrors source lineage" in text
+    assert "PassiveBoundaryRelevancePreview and PassiveBoundaryRelevanceReport are ephemeral" in text

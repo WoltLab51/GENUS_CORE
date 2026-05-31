@@ -53,6 +53,7 @@ EXPECTED_DECISION_TITLES = {
     "0037": "v0.3.8 freezes historical specs as references",
     "0038": "v0.3.9 modularizes Ledger lineage tests",
     "0039": "v0.4.0 finalizes Passive Boundary Relevance spec-only",
+    "0040": "v0.4.1 activates narrow Passive Boundary Relevance preview",
 }
 
 
@@ -84,8 +85,8 @@ def test_decisions_index_links_all_modular_decision_files() -> None:
 def test_decision_numbers_exist_exactly_once_in_modules() -> None:
     headings = re.findall(r"^## Decision (\d{4})", _module_text(), flags=re.MULTILINE)
 
-    assert headings == [f"{number:04d}" for number in range(1, 40)]
-    assert len(headings) == len(set(headings)) == 39
+    assert headings == [f"{number:04d}" for number in range(1, 41)]
+    assert len(headings) == len(set(headings)) == 40
 
 
 def test_decision_headings_keep_expected_titles() -> None:
@@ -102,6 +103,6 @@ def test_decision_headings_keep_expected_titles() -> None:
 def test_decisions_modularization_updates_active_version_without_schema_change() -> None:
     pyproject = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
 
-    assert pyproject["project"]["version"] == "0.4.0"
-    assert genus_core.__version__ == "0.4.0"
+    assert pyproject["project"]["version"] == "0.4.1"
+    assert genus_core.__version__ == "0.4.1"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"

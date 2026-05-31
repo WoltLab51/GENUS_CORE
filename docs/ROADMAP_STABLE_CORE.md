@@ -1,6 +1,6 @@
 # GENUS_CORE Roadmap to Stable Core
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 
 `ROADMAP_STABLE_CORE.md` is the active roadmap index. Detailed phase notes live
 in modular roadmap files.
@@ -33,13 +33,14 @@ docs/roadmap/planned.md - v0.4.0 spec and later inactive concepts
 
 ## Current Baseline
 
-Current active baseline: `v0.4.0 - Passive Boundary Relevance Spec`.
+Current active baseline: `v0.4.1 - Passive Boundary Relevance Preview Seed`.
 
 v0.3.7 modularized this roadmap without adding runtime capability.
 v0.3.8 marked historical specs as frozen reference material.
 v0.3.9 modularized ledger lineage hardening tests.
 
-v0.4.0 is accepted spec-only; runtime implementation remains deferred.
+v0.4.0 accepted the Passive Boundary Relevance spec-only baseline.
+v0.4.1 activates the narrow passive Boundary Relevance preview/report layer.
 
 ## Boundary
 

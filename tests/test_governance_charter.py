@@ -38,8 +38,9 @@ def test_safety_boundaries_keep_current_forbidden_capabilities_out() -> None:
     text = SAFETY_BOUNDARIES_PATH.read_text(encoding="utf-8")
 
     required = (
-        "passive foundation plus passive Physics plus passive transition preview only",
-        "The only new product capability allowed in v0.3.0 is passive transition",
+            "passive foundation plus passive Physics plus passive transition preview plus",
+            "The only new product capability allowed in v0.3.0 is passive transition",
+            "The only new product capability allowed in v0.4.1 is passive Boundary",
         "MemoryWrite",
         "Reaction",
         "TransitionCandidate",

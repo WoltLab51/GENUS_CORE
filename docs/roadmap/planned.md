@@ -1,10 +1,10 @@
 # GENUS_CORE Roadmap - Planned
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 Moved from `docs/ROADMAP_STABLE_CORE.md`.
 
 ### v0.4.0 - Passive Boundary Relevance Spec
 
-Spec-only baseline for a later passive boundary relevance description.
+Accepted spec-only baseline for passive boundary relevance description.
 
 This is not a runtime implementation. It defines how a later
 `PassiveBoundaryRelevancePreview` and
@@ -13,7 +13,25 @@ evaluating boundaries, granting permission, producing policy results,
 allowing/blocking, deciding, reacting, or writing memory.
 
 The name is deliberately `Boundary Relevance`, not `Boundary
-Evaluation`, because v0.4.0 must not yet evaluate boundaries.
+Evaluation`, because boundary relevance must not evaluate boundaries.
+
+### v0.4.1 - Passive Boundary Relevance Preview Seed
+
+Active narrow runtime baseline for:
+
+```text
+BeliefStateSnapshot
++ PassiveMetricSnapshot
++ PassiveTransitionPreview
+-> PassiveBoundaryRelevancePreview
+-> PassiveBoundaryRelevanceReport
+-> no decision
+-> no action
+```
+
+It emits only `memory_boundary` and `passive_preview_boundary`.
+`passive_foundation_boundary` remains spec-known but not emitted until a later
+explicit passive derivation rule exists.
 
 ## Later, Not Yet Active
 

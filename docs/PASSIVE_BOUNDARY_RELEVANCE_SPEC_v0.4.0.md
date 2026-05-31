@@ -1,13 +1,15 @@
 # Passive Boundary Relevance Spec v0.4.0
 
-Status: accepted spec-only baseline
+Status: accepted spec baseline with narrow v0.4.1 runtime seed
 
-This is an accepted boundary specification. It defines how a later passive
-boundary relevance description may look. It does not implement runtime code.
+This is an accepted boundary specification. It defines how a passive boundary
+relevance description may look. v0.4.1 implements the first narrow runtime seed
+under this spec.
 
-The v0.4.0 baseline is docs and tests only.
+The v0.4.0 baseline was docs and tests only. The v0.4.1 baseline activates
+only the passive preview and report artifacts named below.
 
-Package version is `0.4.0`.
+Package version is `0.4.1`.
 
 `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
@@ -22,9 +24,9 @@ It does not evaluate policy.
 It does not approve, reject, allow, block, decide, recommend, execute, react, or
 write memory.
 
-## Planned Flow
+## Active Flow
 
-The later implementation flow is:
+The v0.4.1 implementation flow is:
 
 ```text
 BeliefStateSnapshot
@@ -36,9 +38,9 @@ BeliefStateSnapshot
 -> no action
 ```
 
-## Planned Artifacts
+## Active Artifacts
 
-These names are accepted for future implementation only:
+These names are active in v0.4.1:
 
 ```text
 PassiveBoundaryRelevancePreview
@@ -47,13 +49,13 @@ build_passive_boundary_relevance_preview(...)
 create_passive_boundary_relevance_report(...)
 ```
 
-No `src/genus_core/passive_boundary*` package may exist in v0.4.0.
-No classes, functions, runtime exports, CLI commands, SQLite tables, sentence
-types, or schema changes are introduced by this spec.
+Only `src/genus_core/passive_boundary_relevance` may implement these names.
+No CLI commands, SQLite tables, sentence types, or schema changes are introduced
+by the v0.4.1 runtime seed.
 
 ## Artifact Contract Alignment
 
-A later implementation must comply with `ARTIFACT_CONTRACTS.md`.
+The v0.4.1 implementation must comply with `ARTIFACT_CONTRACTS.md`.
 
 Common contracts define compatibility, not identical field shape.
 
@@ -70,9 +72,9 @@ ephemeral-only lifecycle
 
 Reports may explain source lineage, but reports must not create new lineage.
 
-## Planned Inputs
+## Active Inputs
 
-A later implementation may read only:
+The v0.4.1 implementation may read only:
 
 ```text
 BeliefStateSnapshot
@@ -80,11 +82,11 @@ PassiveMetricSnapshot
 PassiveTransitionPreview
 ```
 
-These inputs must remain unchanged by a future implementation.
+These inputs must remain unchanged by the implementation.
 
-## Planned Preview Shape
+## Active Preview Shape
 
-A later `PassiveBoundaryRelevancePreview` may contain only contract fields and
+`PassiveBoundaryRelevancePreview` may contain only contract fields and
 descriptive fields such as:
 
 ```text
@@ -107,9 +109,9 @@ no_action_possible
 `BeliefStateSnapshot` lineage and must match the passive metric and passive
 transition preview lineage.
 
-## Planned Report Shape
+## Active Report Shape
 
-A later `PassiveBoundaryRelevanceReport` may contain only explanatory fields
+`PassiveBoundaryRelevanceReport` may contain only explanatory fields
 such as:
 
 ```text
@@ -142,7 +144,7 @@ The report must not invent source references or evidence lineage.
 
 `boundary_area` must be a closed enum, not free-form text.
 
-First planned values only:
+Closed enum values:
 
 ```text
 memory_boundary
@@ -150,7 +152,17 @@ passive_foundation_boundary
 passive_preview_boundary
 ```
 
-Unknown `boundary_area` values must be rejected in a future implementation.
+Unknown `boundary_area` values must be rejected.
+
+`passive_foundation_boundary` remains a spec-known value, but v0.4.1 must not
+emit it until an explicit passive derivation rule exists.
+
+Emitted v0.4.1 values are only:
+
+```text
+memory_boundary
+passive_preview_boundary
+```
 
 ## Relevance Semantics
 
@@ -198,7 +210,7 @@ boundary_question != allow/block
 
 ## Hard Exclusions
 
-The following are forbidden for any future runtime payload in this boundary:
+The following are forbidden for runtime payloads in this boundary:
 
 ```text
 ConstraintDecision
@@ -232,20 +244,15 @@ GraphDB
 RuntimeShape
 ```
 
-## Explicit Non-Implementation
+## v0.4.1 Runtime Limits
 
-This spec step must not add:
+The runtime seed must not add:
 
 ```text
 src/genus_core/passive_boundary
-src/genus_core/passive_boundary_relevance
-PassiveBoundaryRelevancePreview class
-PassiveBoundaryRelevanceReport class
-build_passive_boundary_relevance_preview function
-create_passive_boundary_relevance_report function
 SCHEMA_VERSION change
 SQLite table
 CLI command
 sentence type
-runtime export
+foundation function export
 ```

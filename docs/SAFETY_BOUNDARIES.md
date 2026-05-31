@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.4.0
+Status: active boundary document for GENUS_CORE v0.4.1
 
 ## Purpose
 
@@ -19,7 +19,8 @@ without forcing every artifact to use identical fields.
 The current active boundary is:
 
 ```text
-passive foundation plus passive Physics plus passive transition preview only
+passive foundation plus passive Physics plus passive transition preview plus
+passive Boundary Relevance preview only
 ```
 
 The active foundation chain remains:
@@ -70,6 +71,24 @@ The only new product capability allowed in v0.3.0 is passive transition
 preview.
 
 No further product capability is allowed in v0.3.0.
+
+The only new product capability allowed in v0.4.1 is passive Boundary
+Relevance preview:
+
+```text
+BeliefStateSnapshot
++ PassiveMetricSnapshot
++ PassiveTransitionPreview
+-> PassiveBoundaryRelevancePreview
+-> PassiveBoundaryRelevanceReport
+-> no decision
+-> no action
+```
+
+It must remain descriptive, side-effect free, ephemeral, and not persisted.
+It must not evaluate boundaries, grant permission, produce policy results,
+allow/block, decide, recommend, prioritize, execute, react, write memory, or
+create truth.
 
 ## Forbidden in the Current Boundary
 
@@ -145,7 +164,7 @@ Stop development if any of these occur:
 
 ```text
 A new CLI command appears.
-A new product capability appears beyond passive Physics.
+A new product capability appears beyond the accepted passive layer.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1 without an accepted schema release.
 Observation, Evidence, Belief, Report, Decision, or Action are mixed.
 LLM output is treated as truth.

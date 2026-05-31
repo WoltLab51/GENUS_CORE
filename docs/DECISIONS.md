@@ -1,6 +1,6 @@
 # GENUS_CORE Decisions
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 
 Decisions govern how GENUS may be built. They are active build laws, not only historical notes.
 
@@ -22,7 +22,7 @@ No-action boundary: Report is not Decision; no MemoryWrite or Reaction exists.
 Capability order: Foundation -> passive Physics -> passive transition preview -> boundary relevance spec.
 Build governance: governed artifacts, modular quality gates, modular decisions, modular vocabulary, and artifact contracts.
 v0.4.0 constraint: Boundary Relevance, not Boundary Evaluation.
-v0.4.0 remains planned spec-only until separately accepted.
+v0.4.1 constraint: passive Boundary Relevance preview, not permission or decision.
 ```
 
 ## Modular Decision Files

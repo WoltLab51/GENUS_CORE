@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.4.0` is Passive Boundary Relevance Spec.
+`GENUS_CORE v0.4.1` is Passive Boundary Relevance Preview Seed.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,8 +15,9 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release finalizes the Passive Boundary Relevance spec without adding
-runtime capability. It keeps code, tests, docs, specs, decisions, quality gates,
+This release adds a narrow passive Boundary Relevance preview/report layer
+without adding decision, permission, reaction, memory write, CLI, SQLite, or
+schema capability. It keeps code, tests, docs, specs, decisions, quality gates,
 vocabulary, roadmap, and artifact lineage governed while
 keeping agents, workers, LLM calls, memory writes, reactions, decisions,
 cognitive maps, transition candidates, constraint decisions, runtime cells,
@@ -24,12 +25,12 @@ organs, and GraphDB truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.4.0`
+Package version: `0.4.1`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
 Capability boundary: passive foundation plus passive Physics plus passive
-transition preview only
+transition preview plus passive Boundary Relevance preview only
 
 Passive Physics in v0.2.x is a narrow passive metric description layer. It is
 not dynamic physics, simulation, transition physics, constraint decision,
@@ -58,10 +59,12 @@ references and anchors active spec authority in current governance docs.
 v0.3.9 adds no runtime capability; it splits Ledger lineage hardening tests
 into focused model/function and SQLite test files.
 
-v0.4.0 is spec-only: Passive Boundary Relevance describes how a later passive
-boundary relevance description is allowed to look. It does not evaluate
-boundaries, grant permission, produce policy results, allow/block, decide,
-react, write memory, or add runtime code.
+v0.4.0 was spec-only: Passive Boundary Relevance described how a later passive
+boundary relevance description is allowed to look. v0.4.1 activates only
+`PassiveBoundaryRelevancePreview` and `PassiveBoundaryRelevanceReport` in
+`genus_core.passive_boundary_relevance`. It does not evaluate boundaries, grant
+permission, produce policy results, allow/block, decide, react, write memory,
+or persist new state.
 
 Governance documents:
 
@@ -85,6 +88,8 @@ Ephemeral derivation:
 - PassiveMetricReport
 - PassiveTransitionPreview
 - PassiveTransitionReport
+- PassiveBoundaryRelevancePreview
+- PassiveBoundaryRelevanceReport
 
 ## Install
 

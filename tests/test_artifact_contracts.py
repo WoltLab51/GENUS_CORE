@@ -9,6 +9,10 @@ from genus_core.functions import (
     observe_event,
 )
 from genus_core.models import WorldEvent
+from genus_core.passive_boundary_relevance import (
+    build_passive_boundary_relevance_preview,
+    create_passive_boundary_relevance_report,
+)
 from genus_core.passive_physics import (
     build_passive_metric_snapshot,
     create_passive_metric_report,
@@ -41,6 +45,12 @@ def _artifact_chain() -> dict[str, object]:
     metric_report = create_passive_metric_report(metric_snapshot)
     transition_preview = build_passive_transition_preview(belief, metric_snapshot)
     transition_report = create_passive_transition_report(transition_preview)
+    boundary_preview = build_passive_boundary_relevance_preview(
+        belief,
+        metric_snapshot,
+        transition_preview,
+    )
+    boundary_report = create_passive_boundary_relevance_report(boundary_preview)
 
     return {
         "event": event,
@@ -53,6 +63,8 @@ def _artifact_chain() -> dict[str, object]:
         "metric_report": metric_report,
         "transition_preview": transition_preview,
         "transition_report": transition_report,
+        "boundary_preview": boundary_preview,
+        "boundary_report": boundary_report,
     }
 
 
@@ -100,6 +112,8 @@ def test_active_artifacts_have_primary_ids_and_common_metadata() -> None:
         "metric_report": "report_id",
         "transition_preview": "preview_id",
         "transition_report": "report_id",
+        "boundary_preview": "preview_id",
+        "boundary_report": "report_id",
     }
 
     for name, primary_id_field in primary_id_fields.items():
@@ -126,6 +140,10 @@ def test_reports_reference_their_single_source_artifact() -> None:
         artifacts["transition_report"].source_preview_id
         == artifacts["transition_preview"].preview_id
     )
+    assert (
+        artifacts["boundary_report"].source_relevance_preview_id
+        == artifacts["boundary_preview"].preview_id
+    )
 
 
 def test_passive_downstream_artifacts_preserve_belief_evidence_lineage() -> None:
@@ -134,12 +152,17 @@ def test_passive_downstream_artifacts_preserve_belief_evidence_lineage() -> None
 
     assert artifacts["metric_snapshot"].source_evidence_ids_json == source_evidence_ids
     assert artifacts["transition_preview"].source_evidence_ids_json == source_evidence_ids
+    assert artifacts["boundary_preview"].source_evidence_ids_json == source_evidence_ids
     assert (
         artifacts["metric_report"].payload_json["source_evidence_ids_json"]
         == source_evidence_ids
     )
     assert (
         artifacts["transition_report"].payload_json["source_evidence_ids_json"]
+        == source_evidence_ids
+    )
+    assert (
+        artifacts["boundary_report"].payload_json["source_evidence_ids_json"]
         == source_evidence_ids
     )
     for metric in artifacts["metric_snapshot"].metrics_json:

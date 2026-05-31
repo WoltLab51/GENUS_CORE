@@ -1,6 +1,6 @@
 # GENUS_CORE Vocabulary
 
-Status: active for v0.4.0 Passive Boundary Relevance Spec
+Status: active for v0.4.1 Passive Boundary Relevance Preview Seed
 
 Vocabulary defines how GENUS terms may be used. It is a build boundary, not a synonym list.
 
@@ -10,7 +10,7 @@ Vocabulary defines how GENUS terms may be used. It is a build boundary, not a sy
 Foundation terms: WorldEvent, Observation, EvidenceRecord, LedgerEntry, BeliefStateSnapshot, ObservationReport.
 Observation terms: memory_request_observed, memory_lookup_failure_observed, guard_block_observed, unknown_input_observed, ambiguous_input_observed.
 Passive layer terms: PassiveMetricSnapshot, PassiveMetricReport, PassiveTransitionPreview, PassiveTransitionReport.
-Boundary relevance terms: Passive Boundary Relevance, boundary_area, observed_boundary_relevance, boundary_question.
+Boundary relevance terms: PassiveBoundaryRelevancePreview, PassiveBoundaryRelevanceReport, boundary_area, observed_boundary_relevance, boundary_question.
 Forbidden future concepts: MemoryWrite, Reaction, TransitionCandidate, ConstraintDecision, Worker, LLM, GraphDB, RuntimeShape remain unavailable unless separately accepted.
 Boundary language: terms must not imply more capability than the active release permits.
 ```

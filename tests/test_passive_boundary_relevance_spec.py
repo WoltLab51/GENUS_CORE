@@ -12,7 +12,7 @@ from genus_core.truth import connect
 
 SPEC_PATH = Path("docs/PASSIVE_BOUNDARY_RELEVANCE_SPEC_v0.4.0.md")
 
-PLANNED_NOT_ACTIVE_ARTIFACTS = {
+ACTIVE_ARTIFACTS = {
     "PassiveBoundaryRelevancePreview",
     "PassiveBoundaryRelevanceReport",
     "build_passive_boundary_relevance_preview",
@@ -101,38 +101,36 @@ def _discover_runtime_names() -> set[str]:
     return discovered_names
 
 
-def test_passive_boundary_relevance_spec_exists_and_is_spec_only() -> None:
+def test_passive_boundary_relevance_spec_exists_and_marks_runtime_seed() -> None:
     assert SPEC_PATH.exists()
 
     text = _spec_text()
-    assert "Status: accepted spec-only baseline" in text
-    assert "This is an accepted boundary specification." in text
-    assert "It does not implement runtime code." in text
-    assert "The v0.4.0 baseline is docs and tests only." in text
-    assert "No classes, functions, runtime exports, CLI commands" in text
+    assert "Status: accepted spec baseline with narrow v0.4.1 runtime seed" in text
+    assert "The v0.4.0 baseline was docs and tests only." in text
+    assert "The v0.4.1 baseline activates" in text
+    assert "passive preview and report artifacts" in text
+    assert "No CLI commands, SQLite tables, sentence types" in text
 
 
 def test_passive_boundary_relevance_spec_preserves_active_versions() -> None:
     pyproject = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
     text = _spec_text()
 
-    assert pyproject["project"]["version"] == "0.4.0"
-    assert genus_core.__version__ == "0.4.0"
+    assert pyproject["project"]["version"] == "0.4.1"
+    assert genus_core.__version__ == "0.4.1"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"
-    assert "Package version is `0.4.0`." in text
+    assert "Package version is `0.4.1`." in text
     assert "`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`." in text
 
 
-def test_passive_boundary_relevance_artifacts_are_planned_not_active() -> None:
+def test_passive_boundary_relevance_artifacts_are_active_but_not_foundation() -> None:
     text = _spec_text()
     runtime_names = _discover_runtime_names()
-    runtime_root = Path(genus_core.__file__).parent
 
-    for artifact in PLANNED_NOT_ACTIVE_ARTIFACTS:
+    for artifact in ACTIVE_ARTIFACTS:
         assert artifact in text
-    assert "These names are accepted for future implementation only:" in text
-    assert PLANNED_NOT_ACTIVE_ARTIFACTS.isdisjoint(runtime_names)
-    assert not list(runtime_root.glob("passive_boundary*"))
+        assert artifact in runtime_names
+    assert "These names are active in v0.4.1:" in text
 
 
 def test_passive_boundary_relevance_spec_defines_closed_enum_and_rejections() -> None:
@@ -182,16 +180,16 @@ def test_passive_boundary_relevance_spec_contains_all_hard_exclusions() -> None:
         assert exclusion in text
 
 
-def test_passive_boundary_relevance_docs_link_to_planned_v0_4_0_only() -> None:
+def test_passive_boundary_relevance_docs_link_to_v0_4_boundary() -> None:
     for path in DOCS_WITH_PLANNED_V0_4_0_REFERENCES:
         text = path.read_text(encoding="utf-8").lower()
         assert "v0.4.0" in text
-        assert "spec-only" in text
+        assert "v0.4.1" in text or "passive boundary relevance" in text
 
 
 def test_passive_boundary_relevance_keeps_foundation_api_unchanged() -> None:
     assert set(foundation_functions.__all__) == FOUNDATION_FUNCTIONS
-    assert PLANNED_NOT_ACTIVE_ARTIFACTS.isdisjoint(foundation_functions.__all__)
+    assert ACTIVE_ARTIFACTS.isdisjoint(foundation_functions.__all__)
 
 
 def test_passive_boundary_relevance_keeps_cli_observe_only(capsys) -> None:
