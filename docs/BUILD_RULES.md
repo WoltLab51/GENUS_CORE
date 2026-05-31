@@ -1,6 +1,6 @@
 # GENUS_CORE Build Rules
 
-Status: active for v0.3.5 Decisions Modularization
+Status: active for v0.3.6 Vocabulary Modularization
 
 These rules implement the repository-level governance defined in
 `GENUS_CHARTER.md`, `SAFETY_BOUNDARIES.md`, and `ARTIFACT_CONTRACTS.md`.
@@ -123,7 +123,7 @@ STATUS.md reflects it.
 
 ## 7. No New Concepts Without Vocabulary
 
-Every new concept must be defined in `VOCABULARY.md` before code uses it.
+Every new concept must be defined through `VOCABULARY.md` before code uses it.
 
 A concept definition must include:
 
@@ -246,6 +246,10 @@ their exception ceiling.
 After v0.3.5, new decision blocks should be added to the matching file in
 `docs/decisions/` or to a new focused decision file. They must not be appended
 to the `DECISIONS.md` index.
+
+After v0.3.6, new vocabulary blocks should be added to the matching file in
+`docs/vocabulary/` or to a new focused vocabulary file. They must not be
+appended to the `VOCABULARY.md` index.
 
 ## 12. Artifact Contract Rule
 

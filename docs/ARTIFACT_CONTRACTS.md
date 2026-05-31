@@ -1,6 +1,6 @@
 # GENUS_CORE Artifact Contracts
 
-Status: active for v0.3.5 Decisions Modularization
+Status: active for v0.3.6 Vocabulary Modularization
 
 GENUS artifacts are allowed to have different shapes. They still need shared
 contracts so they can compose without turning into a monolith.

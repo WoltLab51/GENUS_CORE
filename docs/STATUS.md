@@ -1,8 +1,7 @@
 # GENUS_CORE Status
+Current baseline: `v0.3.6 - Vocabulary Modularization`
 
-Current baseline: `v0.3.5 - Decisions Modularization`
-
-Status: decisions modularization baseline after v0.3.4.
+Status: vocabulary modularization baseline after v0.3.5.
 
 ## Released baselines
 
@@ -119,10 +118,10 @@ WorldEvent
 
 ## Current implementation state
 
-`GENUS_CORE v0.3.5` is Decisions Modularization.
+`GENUS_CORE v0.3.6` is Vocabulary Modularization.
 
-It adds no runtime capability. It turns `docs/DECISIONS.md` into an active
-index and moves decision blocks into modular files under `docs/decisions/`.
+It adds no runtime capability. It turns `docs/VOCABULARY.md` into an active
+index and moves vocabulary blocks into modular files under `docs/vocabulary/`.
 
 The allowed passive v0.3.x artifacts remain
 `PassiveTransitionPreview`, `PassiveTransitionReport`,
@@ -132,7 +131,7 @@ TransitionCandidate, ConstraintDecision, Reaction, MemoryWrite, metric
 persistence, sentence types, CLI commands, workers, LLM calls, GraphDB, or
 RuntimeShape.
 
-Package version is `0.3.5`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
+Package version is `0.3.6`; `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 
 ## Current CI Signal
 
@@ -182,20 +181,22 @@ RuntimeShape
 function, docs, and test names when clearly qualified as passive preview. It is
 not an output or payload field and does not imply an active transition.
 
-## v0.3.5 Decisions Modularization Acceptance
+## v0.3.6 Vocabulary Modularization Acceptance
 
 The implementation is accepted only while these remain true:
 
 ```text
 pytest is green
 CLI smoke test is green
-Package version is 0.3.5
+Package version is 0.3.6
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 GENUS_CHARTER.md, SAFETY_BOUNDARIES.md, and ARTIFACT_CONTRACTS.md exist
-DECISIONS.md is an active index under the normal docs line-count target
-docs/decisions/v0.0.md through docs/decisions/v0.3.md exist
-DECISIONS.md links all modular decision files
-Decision numbers 0001 through 0034 exist exactly once
+VOCABULARY.md is an active index under the normal docs line-count target
+docs/vocabulary/foundation.md exists
+docs/vocabulary/forbidden_future.md exists
+docs/vocabulary/passive_layers.md exists
+VOCABULARY.md links all modular vocabulary files
+Vocabulary headings remain exactly once across modular vocabulary files
 BUILD_RULES.md references GENUS_CHARTER.md and SAFETY_BOUNDARIES.md
 BUILD_RULES.md treats code, tests, docs, specs, decisions, and quality gates as governed artifacts
 PROJECT_STRUCTURE.md exists
@@ -206,7 +207,7 @@ docs/quality_gates/v0.2.md exists
 docs/quality_gates/v0.3.md exists
 docs/quality_gates/planned.md exists
 QUALITY_GATES.md links all modular quality gate files
-QUALITY_GATES.md and DECISIONS.md are no longer historical longfile exceptions
+QUALITY_GATES.md, DECISIONS.md, and VOCABULARY.md are no longer historical longfile exceptions
 Remaining historical longfiles have explicit max_lines, reason, and planned_split_or_review entries
 Remaining historical longfiles do not exceed their declared ceilings
 New files over normal line-count targets require explicit exception
@@ -255,5 +256,5 @@ ObservationReport does not measure physics
 PassiveMetricReport describes passive metrics only
 PassiveTransitionReport describes passive preview only
 v0.3.x passive preview is not active transition, constraint decision, recommendation, permission, reaction, memory write, or action
-No product scope expansion exists beyond decisions modularization in v0.3.5
+No product scope expansion exists beyond vocabulary modularization in v0.3.6
 ```

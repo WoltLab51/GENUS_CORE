@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates Planned
 
-Status: active for v0.3.5 Decisions Modularization
+Status: active for v0.3.6 Vocabulary Modularization
 
 ## 70. Planned v0.4.0 Passive Boundary Relevance Spec Gate
 
@@ -9,7 +9,7 @@ spec-only step if:
 
 ```text
 pytest green
-package version remains 0.3.5
+package version remains 0.3.6
 SCHEMA_VERSION remains genus.foundation.v0.0.1
 PASSIVE_BOUNDARY_RELEVANCE_SPEC_v0.4.0.md exists
 the spec states planned-not-active and spec-only
@@ -40,7 +40,7 @@ SQLite tables remain evidence_records and ledger_entries
 Stop development if any of these occur:
 
 ```text
-Package version changes from 0.3.5.
+Package version changes from 0.3.6.
 SCHEMA_VERSION changes from genus.foundation.v0.0.1.
 src/genus_core/passive_boundary* appears.
 PassiveBoundaryRelevancePreview or PassiveBoundaryRelevanceReport appears as a runtime class.

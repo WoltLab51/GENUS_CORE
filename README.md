@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml/badge.svg)](https://github.com/WoltLab51/GENUS_CORE/actions/workflows/ci.yml)
 
-`GENUS_CORE v0.3.5` is Decisions Modularization.
+`GENUS_CORE v0.3.6` is Vocabulary Modularization.
 
 It keeps the `v0.1.0` passive foundation frozen:
 
@@ -15,16 +15,16 @@ WorldEvent
 -> ObservationReport
 ```
 
-This release modularizes decisions without adding runtime capability. It keeps
-code, tests, docs, specs, decisions, quality gates, and artifact lineage
-governed while
+This release modularizes vocabulary without adding runtime capability. It keeps
+code, tests, docs, specs, decisions, quality gates, vocabulary, and artifact
+lineage governed while
 keeping agents, workers, LLM calls, memory writes, reactions, decisions,
 cognitive maps, transition candidates, constraint decisions, runtime cells,
 organs, and GraphDB truth out of scope.
 
 ## Version and Boundary
 
-Package version: `0.3.5`
+Package version: `0.3.6`
 
 Foundation schema version: `genus.foundation.v0.0.1`
 
@@ -49,6 +49,8 @@ evidence-lineage, snapshot/preview/report, durable/ephemeral, and report
 boundary contracts in `docs/ARTIFACT_CONTRACTS.md`.
 v0.3.5 adds no runtime capability; it turns `DECISIONS.md` into an active index
 and moves decision blocks into `docs/decisions/`.
+v0.3.6 adds no runtime capability; it turns `VOCABULARY.md` into an active
+index and moves vocabulary blocks into `docs/vocabulary/`.
 
 Planned v0.4.0 work is spec-only: Passive Boundary Relevance may describe how a
 later passive boundary relevance description is allowed to look. It must not
@@ -127,5 +129,5 @@ not decide, approve, execute, recommend, prioritize, permit, select a target
 state, create a candidate, constrain, react, or write memory.
 
 `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`; v0.3.4 is artifact
-contract alignment, not a schema expansion. v0.3.5 is decisions modularization,
-not a schema expansion.
+contract alignment, v0.3.5 is decisions modularization, and v0.3.6 is
+vocabulary modularization, not schema expansion.

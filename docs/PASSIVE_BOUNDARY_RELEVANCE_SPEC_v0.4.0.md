@@ -7,7 +7,7 @@ boundary relevance description may look. It does not implement runtime code.
 
 Expected diff for this spec step is docs and tests only.
 
-Package version remains `0.3.5`.
+Package version remains `0.3.6`.
 
 `SCHEMA_VERSION` remains `genus.foundation.v0.0.1`.
 

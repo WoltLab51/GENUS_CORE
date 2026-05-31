@@ -1,6 +1,6 @@
 # GENUS_CORE Safety Boundaries
 
-Status: active boundary document for GENUS_CORE v0.3.5
+Status: active boundary document for GENUS_CORE v0.3.6
 
 ## Purpose
 
@@ -59,7 +59,7 @@ the change:
 ```text
 GENUS_CHARTER.md allows the direction.
 SAFETY_BOUNDARIES.md defines the boundary.
-VOCABULARY.md defines the concept.
+VOCABULARY.md indexes the vocabulary definition.
 QUALITY_GATES.md defines acceptance.
 DECISIONS.md records the reason.
 STATUS.md reflects the current state.

@@ -116,10 +116,10 @@ def test_passive_boundary_relevance_spec_preserves_active_versions() -> None:
     pyproject = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
     text = _spec_text()
 
-    assert pyproject["project"]["version"] == "0.3.5"
-    assert genus_core.__version__ == "0.3.5"
+    assert pyproject["project"]["version"] == "0.3.6"
+    assert genus_core.__version__ == "0.3.6"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"
-    assert "Package version remains `0.3.5`." in text
+    assert "Package version remains `0.3.6`." in text
     assert "`SCHEMA_VERSION` remains `genus.foundation.v0.0.1`." in text
 
 

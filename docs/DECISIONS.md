@@ -1,6 +1,6 @@
 # GENUS_CORE Decisions
 
-Status: active for v0.3.5 Decisions Modularization
+Status: active for v0.3.6 Vocabulary Modularization
 
 Decisions govern how GENUS may be built. They are active build laws, not only historical notes.
 
@@ -20,7 +20,7 @@ Impact
 Epistemic boundary: Observation, Evidence, Ledger, Belief, and Report stay distinct.
 No-action boundary: Report is not Decision; no MemoryWrite or Reaction exists.
 Capability order: Foundation -> passive Physics -> passive transition preview -> boundary relevance spec.
-Build governance: governed artifacts, modular quality gates, modular decisions, and artifact contracts.
+Build governance: governed artifacts, modular quality gates, modular decisions, modular vocabulary, and artifact contracts.
 v0.4.0 constraint: Boundary Relevance, not Boundary Evaluation.
 v0.4.0 remains planned spec-only until separately accepted.
 ```
@@ -31,7 +31,7 @@ v0.4.0 remains planned spec-only until separately accepted.
 docs/decisions/v0.0.md - Decisions 0001-0015
 docs/decisions/v0.1.md - Decisions 0016-0025
 docs/decisions/v0.2.md - Decisions 0026-0027
-docs/decisions/v0.3.md - Decisions 0028-0034
+docs/decisions/v0.3.md - Decisions 0028-0035
 ```
 
 Decision blocks remain numbered and authoritative in their modular files. New decision blocks should be added to the matching modular decision file or to a new focused decision file, not appended to this index.

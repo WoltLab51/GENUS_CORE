@@ -47,6 +47,7 @@ EXPECTED_DECISION_TITLES = {
     "0032": "v0.3.3 modularizes quality gates first",
     "0033": "v0.3.4 aligns artifact contracts",
     "0034": "v0.4.0 spec must follow artifact contracts",
+    "0035": "v0.3.6 modularizes vocabulary",
 }
 
 
@@ -78,8 +79,8 @@ def test_decisions_index_links_all_modular_decision_files() -> None:
 def test_decision_numbers_exist_exactly_once_in_modules() -> None:
     headings = re.findall(r"^## Decision (\d{4})", _module_text(), flags=re.MULTILINE)
 
-    assert headings == [f"{number:04d}" for number in range(1, 35)]
-    assert len(headings) == len(set(headings)) == 34
+    assert headings == [f"{number:04d}" for number in range(1, 36)]
+    assert len(headings) == len(set(headings)) == 35
 
 
 def test_decision_headings_keep_expected_titles() -> None:
@@ -96,6 +97,6 @@ def test_decision_headings_keep_expected_titles() -> None:
 def test_decisions_modularization_updates_active_version_without_schema_change() -> None:
     pyproject = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
 
-    assert pyproject["project"]["version"] == "0.3.5"
-    assert genus_core.__version__ == "0.3.5"
+    assert pyproject["project"]["version"] == "0.3.6"
+    assert genus_core.__version__ == "0.3.6"
     assert genus_core.SCHEMA_VERSION == "genus.foundation.v0.0.1"

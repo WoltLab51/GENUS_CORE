@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "genus-core"
-version = "0.3.5"
-description = "GENUS_CORE v0.3.5 Decisions Modularization"
+version = "0.3.6"
+description = "GENUS_CORE v0.3.6 Vocabulary Modularization"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

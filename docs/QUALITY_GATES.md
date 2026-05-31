@@ -1,6 +1,6 @@
 # GENUS_CORE Quality Gates
 
-Status: active for v0.3.5 Decisions Modularization
+Status: active for v0.3.6 Vocabulary Modularization
 
 ## 1. Purpose
 
@@ -48,6 +48,7 @@ docs/quality_gates/v0.0.md
 docs/quality_gates/v0.1.md
 docs/quality_gates/v0.2.md
 docs/quality_gates/v0.3.md
+docs/quality_gates/v0.3.6.md
 docs/quality_gates/planned.md
 ```
 

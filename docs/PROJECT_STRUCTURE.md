@@ -1,6 +1,6 @@
 # GENUS_CORE Project Structure
 
-Status: active for v0.3.5 Decisions Modularization
+Status: active for v0.3.6 Vocabulary Modularization
 
 GENUS_CORE treats code, tests, docs, specs, decisions, and quality gates as
 governed artifacts.
@@ -53,8 +53,8 @@ a second spec archive.
 
 `VOCABULARY.md`
 
-Defines active and planned terms. It should clarify language boundaries without
-becoming an implementation guide.
+Indexes modular vocabulary files. Vocabulary defines how GENUS terms may be
+used. It is a build boundary, not a synonym list.
 
 `PASSIVE_*_SPEC_*.md` and related spec files
 
@@ -67,15 +67,15 @@ Summarize release-specific changes. They should not redefine architecture.
 
 ## Historical Longfiles
 
-The following files are accepted historical longfiles for v0.3.5:
+The following files are accepted historical longfiles for v0.3.6:
 
 ```text
 docs/FOUNDATION_SPEC_v0.0.1.md
 docs/GENUS_LANGUAGE_SPEC_v0.0.1.md
-docs/VOCABULARY.md
 docs/CODEX_IMPLEMENTATION_PROMPT_v0.0.1.md
 docs/ROADMAP_STABLE_CORE.md
 docs/decisions/v0.0.md
+docs/vocabulary/foundation.md
 docs/quality_gates/v0.0.md
 docs/quality_gates/v0.1.md
 tests/test_ledger_lineage_hardening.py
@@ -103,11 +103,12 @@ modularization step.
 
 Quality gates were modularized in v0.3.3.
 Decisions were modularized in v0.3.5.
+Vocabulary was modularized in v0.3.6.
 
 Likely candidates:
 
 ```text
-docs/VOCABULARY.md
+docs/ROADMAP_STABLE_CORE.md
 ```
 
 Remaining historical longfiles stay frozen through explicit ceilings until a
