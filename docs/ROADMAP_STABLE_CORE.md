@@ -29,6 +29,7 @@ docs/roadmap/pre_physics.md - v0.1.1 through v0.1.10 pre-Physics governance
 docs/roadmap/passive_layers.md - v0.2.0 through v0.3.1 passive layers
 docs/roadmap/governance.md - v0.3.2 through v0.3.x build governance
 docs/roadmap/planned.md - v0.4.0 spec and later inactive concepts
+docs/roadmap/kernel.md - planned GENUS_KERNEL docs-only baseline
 ```
 
 ## Current Baseline

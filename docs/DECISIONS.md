@@ -25,6 +25,7 @@ v0.4.0 constraint: Boundary Relevance, not Boundary Evaluation.
 v0.4.1 constraint: passive Boundary Relevance preview, not permission or decision.
 v0.4.2 constraint: Boundary Relevance audit adds no new capability.
 v0.4.3 constraint: artifact contracts and wording must match active runtime.
+v0.5.0 planned constraint: GENUS_KERNEL STCT remains docs-only until accepted.
 ```
 
 ## Modular Decision Files
@@ -35,6 +36,7 @@ docs/decisions/v0.1.md - Decisions 0016-0025
 docs/decisions/v0.2.md - Decisions 0026-0027
 docs/decisions/v0.3.md - Decisions 0028-0038
 docs/decisions/v0.4.md - Decisions 0039+
+docs/decisions/v0.5.md - Planned GENUS_KERNEL STCT baseline decisions
 ```
 
 Decision blocks remain numbered and authoritative in their modular files. New decision blocks should be added to the matching modular decision file or to a new focused decision file, not appended to this index.
