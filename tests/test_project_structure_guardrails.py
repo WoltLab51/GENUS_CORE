@@ -103,6 +103,8 @@ def test_project_structure_defines_document_roles_and_longfiles() -> None:
         "VOCABULARY.md",
     ):
         assert doc_name in text
+    for expected in ("docs/reviews/*.md", "docs/kernel/*.md", "review-only synthesis", "GENUS_KERNEL spec and planning strand"):
+        assert expected in text
     assert "historical longfile" in text.lower()
     assert "max_lines" in text
     assert "planned_split_or_review" in text

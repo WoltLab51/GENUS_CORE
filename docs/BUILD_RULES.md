@@ -191,10 +191,12 @@ test files: <= 220 lines
 docs files: <= 260 lines
 ```
 
-Historical longfiles may remain only when they are listed as explicit
-exceptions in the project-structure guardrail tests.
+The target protects review quality; it is not permission to delete required
+architecture context.
 
-Every historical exception must record:
+Longform exceptions, including historical files or future cross-layer
+architecture maps, may exist only when listed in the project-structure
+guardrail tests. Every exception must record:
 
 ```text
 max_lines
@@ -209,7 +211,7 @@ The exception is not permission to grow indefinitely.
 Codex must not silently append bulk content to oversized files.
 
 If a requested change would push a governed artifact over its target or over a
-declared historical ceiling, Codex must propose one of:
+declared exception ceiling, Codex must propose one of:
 
 ```text
 split into a focused document

@@ -71,13 +71,24 @@ used. It is a build boundary, not a synonym list.
 Describe planned or accepted narrow concepts. Specs should stay focused on one
 boundary or artifact family.
 
+`docs/reviews/*.md`
+
+Capture review-only synthesis, compatibility checks, and architecture
+exploration. Reviews must not introduce runtime capability unless promoted
+through accepted governance.
+
+`docs/kernel/*.md`
+
+Holds the GENUS_KERNEL spec and planning strand while it remains docs-only.
+Kernel docs must not imply active GENUS_CORE runtime artifacts.
+
 `RELEASE_NOTES_*.md`
 
 Summarize release-specific changes. They should not redefine architecture.
 
-## Historical Longfiles
+## Longfile Exceptions
 
-The following files are accepted historical longfiles for v0.3.9:
+The following files are accepted historical longfile exceptions for v0.3.9:
 
 ```text
 docs/FOUNDATION_SPEC_v0.0.1.md
@@ -90,8 +101,10 @@ docs/quality_gates/v0.1.md
 ```
 
 They may remain in place, but they are not permission to keep growing.
+Future cross-layer architecture maps may receive the same treatment only when
+an explicit exception records a ceiling, reason, and split or review plan.
 
-Each historical longfile must have:
+Each longfile exception must have:
 
 ```text
 max_lines
@@ -103,7 +116,7 @@ planned_split_or_review
 
 New content should go into focused documents or focused tests.
 
-If a change would push a file over its normal target or declared historical
+If a change would push a file over its normal target or declared exception
 ceiling, Codex must propose a split, a justified exception, or a dedicated
 modularization step.
 
